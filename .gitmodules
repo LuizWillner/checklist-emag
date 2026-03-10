@@ -1,0 +1,6 @@
+[submodule "eMag-checklist-front"]
+	path = eMag-checklist-front
+	url = git@github.com:LuizWillner/eMag-checklist-front.git
+[submodule "eMag-checklist-back"]
+	path = eMag-checklist-back
+	url = git@github.com:LuizWillner/eMag-checklist-back.git

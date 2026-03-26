@@ -1,14 +1,20 @@
 # Colocar aqui o conteúdo do relatório de revisão e classificação de defasagem feita do conteúdo do eMAG
 
-<!-- ======================================================================= -->
+----------------------------------------------------------------------------
 
 ### 1 Marcação
 
 #### 1.1 Respeitar os Padrões Web
 
+----------------------------------------------------------------------------
+
 #### 1.2 Organizar o código HTML de forma lógica e semântica
 
+----------------------------------------------------------------------------
+
 #### 1.3 Utilizar corretamente os níveis de cabeçalho
+
+----------------------------------------------------------------------------
 
 #### 1.4 Ordenar de forma lógica e intuitiva a leitura e tabulação
 
@@ -21,6 +27,8 @@ A recomendação permanece consistente com orientações de acessibilidade atuai
 - O 3º critério de recomendação, sobre colocar no código-fonte o menu depois do conteúdo principal, foi removido. Isso porque o termo "é recomendável" antes de mencionar isso no eMAG sugere isso como algo opcional, apesar de haver uma justificativa plausível para isso. Uma discussão sobre essa questão foi movida para o exemplo de aplicação.
 
 - Além disso, o exemplo de aplicação do eMAG foi modernizado para usar elementos HTML semanticamente mais adequados.
+
+----------------------------------------------------------------------------
 
 #### 1.5 Fornecer âncoras para ir direto a um bloco de conteúdo
 
@@ -42,30 +50,49 @@ Portanto, as seguintes refatorações foram feitas:
 
 - A sugestão de uso do `accesskey` feita no eMAG não foi portada para o checklist, por se tratar de apenas uma sugestão e que ainda por cima é capaz de trazer problemas de acessibilidade, a depender da implementação.
 
+----------------------------------------------------------------------------
+
 #### 1.6 Não utilizar tabelas para diagramação
+
+----------------------------------------------------------------------------
 
 #### 1.7 Separar links adjacentes
 
+----------------------------------------------------------------------------
+
 #### 1.8 Dividir as áreas de informação
+
+----------------------------------------------------------------------------
 
 #### 1.9 Não abrir novas instâncias sem a solicitação do usuário
 
-<!-- ======================================================================= -->
+----------------------------------------------------------------------------
 
 ### 2 Comportamento (DOM)
 
-
 #### 2.1 Disponibilizar todas as funções da página via teclado
+
+----------------------------------------------------------------------------
 
 #### 2.2 Garantir que os objetos programáveis sejam acessíveis
 
+----------------------------------------------------------------------------
+
 #### 2.3 Não criar páginas com atualização automática periódica
+
+----------------------------------------------------------------------------
 
 #### 2.4 Não utilizar redirecionamento automático de páginas
 
+----------------------------------------------------------------------------
+
 #### 2.5 Fornecer alternativa para modificar limite de tempo
 
+----------------------------------------------------------------------------
+
 #### 2.6 Não incluir situações com intermitência de tela
+
+----------------------------------------------------------------------------
 
 #### 2.7 Assegurar o controle do usuário sobre as alterações temporais do conteúdo
 
@@ -89,23 +116,37 @@ Portanto:
 - O texto foi reescrito para que fosse menos ambíguo e mais enxuto na descrição do item no checklist, mantendo a essência da recomendação.
 - Um exemplo de aplicação utilizando `prefers-reduced-motion` como prática moderna de redução de movimento de elementos da página foi acrescentado, baseado no exemplo fornecido pela [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion).
 
-<!-- ======================================================================= -->
+----------------------------------------------------------------------------
 
 ### 3 Conteúdo/Informação
 
 #### 3.1 Identificar o idioma principal da página
 
+----------------------------------------------------------------------------
+
 #### 3.2 Informar mudança de idioma no conteúdo
+
+----------------------------------------------------------------------------
 
 #### 3.3 Oferecer um título descritivo e informativo à página
 
+----------------------------------------------------------------------------
+
 #### 3.4 Informar o usuário sobre sua localização na página
+
+----------------------------------------------------------------------------
 
 #### 3.5 Descrever links clara e sucintamente
 
+----------------------------------------------------------------------------
+
 #### 3.6 Fornecer alternativa em texto para as imagens do sítio
 
+----------------------------------------------------------------------------
+
 #### 3.7 Utilizar mapas de imagem de forma acessível
+
+----------------------------------------------------------------------------
 
 #### 3.8 Disponibilizar documentos em formatos acessíveis
 
@@ -131,16 +172,23 @@ Portanto:
 - Foi reconhecida na descrição do item no checklist a possibilidade do formato PDF ser utilizado de maneira suficiente, desde que a acessibilidade do documento seja garantida. Ainda assim, ressaltou-se que a preferência ainda deve ser sobretudo para o formato HTML.
 - Uma nova referência às [Técnicas do WCAG para tornar documentos em PDF acessíveis](https://www.w3.org/WAI/WCAG22/Techniques/#pdf)
 
+----------------------------------------------------------------------------
+
 #### 3.9 Em tabelas, utilizar títulos e resumos de forma apropriada
+
+----------------------------------------------------------------------------
 
 #### 3.10 Associar células de dados às células de cabeçalho
 
+----------------------------------------------------------------------------
+
 #### 3.11 Garantir a leitura e compreensão das informações
+
+----------------------------------------------------------------------------
 
 #### 3.12 Disponibilizar uma explicação para siglas, abreviaturas e palavras incomuns
 
-
-<!-- ======================================================================= -->
+----------------------------------------------------------------------------
 
 ### 4 Apresentação/Design
 
@@ -162,7 +210,11 @@ Portanto:
 - Foi deixado mais claro na descrição do item o mínimo recomendado para o contraste numa folha de alto contraste, já que isso só estava sendo especificado no exemplo de aplicação.
 - Um exemplo de má prática de foco com contraste insuficiente foi adicionado para que os inspetores também se atentem a esse aspecto. Esse exemplo conversa diretamente com a recomendação "Possibilitar que o elemento com foco seja visualmente evidente" e seus respectivos exemplos.
 
+----------------------------------------------------------------------------
+
 #### 4.2 Não utilizar apenas cor ou outras características sensoriais para diferenciar elementos
+
+----------------------------------------------------------------------------
 
 #### 4.3 Permitir redimensionamento sem perda de funcionalidade
 
@@ -192,20 +244,29 @@ Portanto:
 - O outro exemplo com imagem de layout responsivo foi mantido
 - Uma nova referência ao critério de sucesso 1.4.10 foi adicionada.
 
+----------------------------------------------------------------------------
+
 #### 4.4 Possibilitar que o elemento com foco seja visualmente evidente
 
-
-<!-- ======================================================================= -->
+----------------------------------------------------------------------------
 
 ### 5 Multimídia
 
 #### 5.1 Fornecer alternativa para vídeo
 
+----------------------------------------------------------------------------
+
 #### 5.2 Fornecer alternativa para áudio
+
+----------------------------------------------------------------------------
 
 #### 5.3 Oferecer audiodescrição para vídeo pré-gravado
 
+----------------------------------------------------------------------------
+
 #### 5.4 Fornecer controle de áudio para som
+
+----------------------------------------------------------------------------
 
 #### 5.5 Fornecer controle de animação
 
@@ -231,23 +292,37 @@ Como a recomendação 5.5 está dentro da categoria "Multimídia", foi considera
 Portanto:
 - Toda a ideia da recomendação foi mantida e foi dada uma ênfase maior ao fato dela tratar das "animações de mídia" de maneira mais específica.
 
-<!-- ======================================================================= -->
+----------------------------------------------------------------------------
 
 ### 6 Formulários
 
 #### 6.1 Fornecer alternativa em texto para os botões de imagem de formulários
 
+----------------------------------------------------------------------------
+
 #### 6.2 Associar etiquetas aos seus campos
+
+----------------------------------------------------------------------------
 
 #### 6.3 Estabelecer uma ordem lógica de navegação
 
+----------------------------------------------------------------------------
+
 #### 6.4 Não provocar automaticamente alteração no contexto
+
+----------------------------------------------------------------------------
 
 #### 6.5 Fornecer instruções para entrada de dados
 
+----------------------------------------------------------------------------
+
 #### 6.6 Identificar e descrever erros de entrada de dados e confirmar o envio das informações
 
+----------------------------------------------------------------------------
+
 #### 6.7 Agrupar campos de formulário
+
+----------------------------------------------------------------------------
 
 #### 6.8 Fornecer estratégias de segurança específicas ao invés de CAPTCHA
 
@@ -292,8 +367,7 @@ A complexidade da discussão impede que uma descrição detalhada no item do che
 
 - Referência ao [Critério de Sucesso 3.3.8 Autenticação Acessível (Mínimo)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#accessible-authentication-minimum) e ao [Critério de Sucesso 3.3.9 Autenticação Acessível (Melhorado)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#accessible-authentication-enhanced) foi adicionada.
 
-
-<!-- ======================================================================= -->
+----------------------------------------------------------------------------
 
 ### 7 Elementos padronizados de acessibilidade digital no Governo Federal
 

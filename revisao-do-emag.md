@@ -424,6 +424,37 @@ Portanto:
 
 #### 6.5 Fornecer instruções para entrada de dados
 
+**Defasagem do eMAG: nível moderado.**
+
+Embora o princípio da recomendação esteja alinhado com o WCAG e seja válido em termos de acessibilidade, algumas técnicas sugeridas estão desatualizadas e podem levar a implementações subótimas ou com impacto negativo na acessibilidade moderna.
+
+Em primeira análise, o texto do eMAG traz algumas soluções superadas para indicação de campos obrigatórios ao sugerir o uso de uma imagem com atributo `alt` ou um `<span>Obrigatório</span>` ocultado (exemplos 2 e 3). Atualmente, o atributo `required` (citado pelo próprio eMAG) e outros recursos como `aria-required="true` são mais apropriados para cumprirem esse papel. É necessário ressaltar, entretanto, que indicações visuais extras para denotar um campo obrigatório ainda são requeridas, conforme destacado pela [MDN Web Docs ao tratar do atributo required](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/required#accessibility_concerns). Ainda assim, há alternativas mais modernas para as implementações sugeridas pelo eMAG. Inclusive, particularmente, o próprio exemplo 3, com uso do `<span>Obrigatório</span>` escondido, não é muito apropriado, pois a indicação de obrigatoriedade, apesar de disponível para leitores de tela, não é visível para os demais usuários, quebrando o seu propósito. Válido ainda mencionar que o método utilizado com `text-indent: -20000px;` para esconder esse elemento também é defasado, conforme discutido na análise da recomendação 6.1 "Fornecer alternativa em texto para os botões de imagem de formulários".
+
+Em segundo plano, a apresentação do atributo `placeholder` no texto do eMAG fornece a seguinte descrição para ele:
+
+> "Além do atributo required, o HTML5 apresenta, também, o placeholder. Ele é utilizado com os elementos INPUT e TEXTAREA para definir uma dica de preenchimento do campo. Quando o campo recebe o foco, a dica desaparece, mas é lida pelo leitor de tela."
+
+Essa descrição gera uma ambiguidade que pode induzir o leitor a pensar que `placeholder` pode ser utilizado para fornecer instruções de preenchimento no lugar do elemento `<label>`. Essa noção é reforçada logo pelo exemplo seguinte, que apresenta um código HTML com campo de entrada para e-mail sem um label denotando esse propósito, que está indicado somente no atributo `placeholder`. O atributo `placeholder` não deve ser utilizado como uma alternativa para `<label>`, conforme afirmado explicitamente na própria [documentação do atributo no HTML Living Standard](https://html.spec.whatwg.org/multipage/input.html#the-placeholder-attribute). Além disso, a afirmação de que o `placeholder` é lido pelo leitor de tela pode não ser verdadeira para todas as tecnologias. Esse é o maior ponto de defasagem dessa recomendação, que eleva o nível para moderado.
+
+O texto ainda é um tanto prolixo ao enumerar uma série de atributos do HTML5 tidos como "*importantes para acrescentar informações aos campos do formulário*". Dentre eles, o atributo `autofocus` é destacado:
+
+> "autofocus: Utilizado para o foco do teclado ir diretamente ao campo que possua esse atributo quando a página com o formulário for carregada;"
+
+O ponto é que esse encorajamento ao uso do `autofocus` é potencialmente perigoso. Referências como o MDN Web Docs advertem contra o uso do `autofocus` na maioria dos cenários, e que qualquer implementação dele deve ser cuidadosamente considerada antes, uma vez que o atributo rouba o foco inicial da página, quebrando o contexto e jogando os usuários no meio da página sem aviso, o que pode causar grande confusão.
+
+Portanto:
+
+- Na descrição do item no checklist, foi proporcionado ao atributo `placeholder` uma explicação mais completa sobre seu uso, advertendo que ele não deve ser utilizado para substituir o elemento `<label>`, sendo utilizado apenas como informação adicional.
+
+- A enumeração dos diversos outros atributos do HTML5 que supostamente seriam importantes para acrescentar informações aos campos do formulário, incluindo o `autofocus`, foi suprimida.
+
+-  As orientações acerca dos campos obrigatórios foram melhoradas, citando que eles devem ser claramente assinalados e de maneira acessível. Foi ainda alertado que o uso do caractere asterisco sozinho para indicação, sem mecanismo adicional que torne essa informação acessível a leitores de tela, não deve ser feito.
+
+- O exemplo 1 do formato da data sendo especificado no `<label>` foi reaproveitado como um exemplo positivo.
+- Os exemplos 2 e 3 de indicação de campos obrigatórios com uso de uma imagem com atributo `alt` ou um `<span>Obrigatório</span>` ocultado foram descartados. Em seu lugar, 2 exemplos, um bom e outro ruim, de indicação de campos obrigatórios foram apresentados, explicando com mais detalhes algumas peculiaridades e pontos de atenção ao implementar esse mecanismo.
+
+- O exemplo de uso do `placeholder` foi reaproveitado, porém como um exemplo negativo, uma vez que o `placeholder` nele atua como única fonte de instrução de entrada de dados. Uma contraparte de exemplo positivo foi adicionado.
+
 ----------------------------------------------------------------------------
 
 #### 6.6 Identificar e descrever erros de entrada de dados e confirmar o envio das informações

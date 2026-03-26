@@ -4,12 +4,12 @@
 
 |                              | Nível Leve | Nível Moderado | Nível Crítico |
 | ---------------------------- | ---------- | -------------- | ------------- |
-| Marcação                     | 0          | 0              | 0             |
-| Comportamento (DOM)          | 0          | 0              | 0             |
-| Conteúdo/Informação          | 0          | 0              | 0             |
-| Apresentação/Design          | 0          | 0              | 0             |
-| Multimídia                   | 0          | 0              | 0             |
-| Formulários                  | 0          | 0              | 0             |
+| 1. Marcação                  | 0          | 0              | 0             |
+| 2. Comportamento (DOM)       | 0          | 0              | 0             |
+| 3. Conteúdo/Informação       | 0          | 0              | 0             |
+| 4. Apresentação/Design       | 0          | 0              | 0             |
+| 5. Multimídia                | 0          | 0              | 0             |
+| 6. Formulários               | 0          | 0              | 0             |
 | Padronização no Gov. Federal | 0          | 0              | 0             |
 | **TOTAL**                    | **0**      | **0**          | **0**         |
 
@@ -479,6 +479,6 @@ A complexidade da discussão impede que uma descrição detalhada no item do che
 
 ----------------------------------------------------------------------------
 
-### 7 Elementos padronizados de acessibilidade digital no Governo Federal
+### Elementos padronizados de acessibilidade digital no Governo Federal
 
 <!-- ======================================================================= -->

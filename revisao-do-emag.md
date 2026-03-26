@@ -251,6 +251,47 @@ Portanto:
 
 #### 6.8 Fornecer estratégias de segurança específicas ao invés de CAPTCHA
 
+**Defasagem do eMAG: nível crítico.**
+
+Essa é uma recomendação bem desafiadora de ser avaliada e, sobretudo, adaptada para o cenário atual. É fato que o cerne da recomendação permanece válido: CAPTCHAs consistentes em desafios explícitos baseados em percepção humana são inerentemente inacessíveis. No entanto, a temática dos CAPTCHAs invoca uma discussão bastante complexa, que vai muito além das questões de acessibilidade.
+
+Para começar, o eMAG acerta em problematizar os CAPTCHAs, pelo menos aqueles mais comuns na época de redação do documento, que eram sobretudo desafios explícitos baseados em percepção humana. Além de inacessíveis, eles são cada vez mais facilmente resolvidos por máquinas. O texto ainda apresenta uma orientação bastante válida: preferencialmente, outras estratégias — como limites de conexão, monitoramento, consistência nas políticas de segurança e uso de técnicas de desenvolvimento de serviços e formulários seguros — devem ser adotadas em detrimento dos CAPTCHAs clássicos.
+
+No entanto, a problemática não é tão simples assim de resolver. Um artigo muito bom sobre a [Inacessibilidade dos CAPTCHAs (W3C)](https://www.w3.org/TR/turingtest/) discute uma série de possíveis abordagens de segurança, com suas vantagens e desvantagens tanto em termos de acessibilidade quanto em outros termos. De maneira geral, a seguinte percepção inicial pode ser extraída dele: há dois cenários de "cobertor curto" entre abordagens que podem ser identificadas dentro de um determinado espectro:
+
+1) O primeiro cenário, num extremo, há uma abordagem de CAPTCHAs mais fáceis para humanos resolverem, porém também mais fáceis para máquinas resolverem, e no outro extremo, uma outra mais difícil para humanos, porém também mais difícil para máquinas.
+
+2) O segundo cenário, num extremo, há uma abordagem mais acessível, mas que requer maior coleta de dados pessoais, e no outro extremo, uma abordagem menos acessível, mas que requer menor ou nenhuma coleta de dados.
+
+O próprio artigo conclui que, no cenário atual, não há ainda uma alternativa única e ideal claramente melhor do que as outras.
+
+> "In other words, while some CAPTCHA approaches are better than others, and while more recent approaches offer clear advantage over older approaches, there is still no single, ideal solution. It is important to exercise care that any implemented CAPTCHA technology correctly allow people with disabilities to identify themselves as human."
+
+Isso atesta para a complexidade da discussão e de se abordar isso brevemente no checklist.
+
+Além disso, o texto em si apresenta alguns pontos importantes de defasagem e outros deixados de fora. Em razão da idade do texto, ele ainda não evidencia algumas abordagens de segurança que são consideradas CAPTCHAs, mas que não necessitam de interação direta do usuário com o mecanismo: os chamados CAPTCHAs invisíveis, exemplificados por ferramentas modernas como o reCAPTCHA v3 ou o Cloudflare Turnstile. Por isso, problematizar os CAPTCHAs de maneira geral em termos de acessibilidade pode ser considerado equivocado, mas entende-se que os autores seguiram a percepção mais comum à época de que os CAPTCHAs se delimitam aos desafios de percepção humana. Há ainda alguns outros mecanismos de segurança, como os *honey pots* e *proof-of-work*, que podem servir para contribuir na segurança do sistema sem necessidade de interação do usuário que não foram citados.
+
+Com toda essa complexa discussão, o ponto de defasagem da recomendação do eMAG se encontra numa orientação muito simples:
+
+> "Caso o uso de CAPTCHA seja estritamente necessário, o mesmo deverá ser fornecido em forma de pergunta simples de interpretação (CAPTCHA Humano) [...] Tais perguntas poderão ser respondidas apenas por um ser humano. [...] Para tal, podem ser utilizadas perguntas de senso comum, como por exemplo, “qual é a cor do céu?” ou “o fogo é quente ou frio?”. Também podem ser utilizados testes matemáticos."
+
+A sugestão de uso desses "CAPTCHAs humanos" como alternativa que **deve** ser usada quando um mecanismo do gênero for requisitado é, hoje, totalmente defasada. Além de serem facilmente quebrados, ainda mais no contexto das LLMs, o fornecimento desses CAPTCHAs e a interpretação de que eles são "suficientes" desrespeita diretamente as diretrizes de acessibilidade estabelecidas pelo WCAG, tais como o [Critério de Sucesso 3.3.8 Autenticação Acessível (Mínimo)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#accessible-authentication-minimum), o [Critério de Sucesso 3.3.9 Autenticação Acessível (Melhorado)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#accessible-authentication-enhanced) e o próprio [Critério de Sucesso 1.1.1 Conteúdo Não Textual](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#non-text-content) referenciado pela recomendação. Esse último critério estabelece que a forma de garantir a acessibilidade do CAPTCHA — ou melhor, minimizar a sua inacessibilidade — é providenciando diferentes mecanismos de CAPTCHA que utilizam modos de saída para diferentes tipos de percepção sensorial (e que sejam incluídas instruções de como acessar os mecanismos alternativos). Por essa razão, sobretudo, a defasagem da recomendação foi classificada como crítica, uma vez que há orientação que pode induzir a um erro de acessibilidade ou falsa sensação de conformidade com as diretrizes de acessibilidade mais modernas.
+
+A complexidade da discussão impede que uma descrição detalhada no item do checklist seja feita. Com isso em vista, portanto, as seguintes medidas foram adotadas:
+- Ao citar mecanismos alternativos de segurança que não requerem interações com o usuário e podem, em conjunto ou não, eventualmente substituir um CAPTCHA, foram incluídos também os filtros de spam, *honeypots*, *proof-of-work*, heurísitcas e os CAPTCHAs invisíveis (reCAPTCHA v3 ou o Cloudflare Turnstile).
+
+- A orientação de que substituir os CAPTCHAs clássicos pelos chamados "CAPTCHAs humanos" foi descartada em função da sua defasagem. No seu lugar, foi orientado que a maneira mais adequada para os casos em que é absolutamente necessário utilizar CAPTCHA é providenciar diferentes mecanismos de CAPTCHA que empregam modos de saída para diferentes tipos de percepção sensorial, e que sejam incluídas instruções de como acessar os mecanismos alternativos.
+
+- O caso especial dos processos de autenticação foi tratado na descrição do item, uma vez que o uso de CAPTCHAs sensoriais distintos nesse caso não é suficiente, conforme especificado no [Critério de Sucesso 3.3.8 Autenticação Acessível (Mínimo)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#accessible-authentication-minimum) e no [Critério de Sucesso 3.3.9 Autenticação Acessível (Melhorado)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#accessible-authentication-enhanced), do WCAG 2.2.
+
+- O exemplo do eMAG do CAPTCHA clássico com letras distorcidas foi mantido como uma má prática.
+
+- O exemplo do eMAG do CAPTCHA "humano" pedindo para escrever por extenso "quanto é dois mais três" e tratado como alternativa suficiente aos outros CAPTCHAs foi mantido, porém tratado como uma má prática, diferente do que o eMAG estabelece.
+
+- Uma referência ao artigo [Inacessibilidade dos CAPTCHAs (W3C)](https://www.w3.org/TR/turingtest/) foi adicionada. Além disso, essa referência foi mencionada no texto da própria descrição, como leitura complementar e forma de se aprofundar mais na complexidade e nuances da discussão.
+
+- Referência ao [Critério de Sucesso 3.3.8 Autenticação Acessível (Mínimo)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#accessible-authentication-minimum) e ao [Critério de Sucesso 3.3.9 Autenticação Acessível (Melhorado)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#accessible-authentication-enhanced) foi adicionada.
+
 
 <!-- ======================================================================= -->
 

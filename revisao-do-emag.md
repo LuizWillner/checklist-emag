@@ -298,17 +298,112 @@ Portanto:
 
 #### 6.1 Fornecer alternativa em texto para os botões de imagem de formulários
 
+**Defasagem do eMAG: nível moderado**
+
+Sob um certo ponto de vista, essa recomendação pode ser vista como uma redundância em relação à recomendação 3.6 "Fornecer alternativa em texto para as imagens do sítio". Seu núcleo, portanto, permanece válido, afinal é o mesmo que o da recomendação citada. Sua especificidade se justifica no eMAG em função da orientação de algumas práticas adicionais ligadas ao contexto de botões de formulário. No entanto, alguma dessas práticas hoje podem ser consideradas defasadas.
+
+O texto original do eMAG sugere formas de se fornecer texto alternativo para botões do tipo imagem. Ele corretamente orienta o uso do atributo `alt` em botões `<input type="image">`, por mais que esse tipo possa não ser tão comum atualmente. O ponto central de defasagem está quando o texto afirma:
+
+> "Já para outros tipos de botões (reset e button), é preciso substituir o botão pela imagem que se deseja utilizar através do CSS. Nesse caso, para que o botão seja acessível, ele deve possuir um value descritivo, conforme o exemplo a seguir."
+
+E em seguida fornece um exemplo de aplicação em que o texto do botão é escondido utilizando `text-indent:-20000px;` no CSS. Em primeiro lugar, a prática de se utilizar CSS para aplicar imagens de fundo a botões, embora possível, não é muito recomendada no contexto atual. Hoje em dia, é bem mais aconselhado empregar o elemento `<button>` com um elemento filho `<img>` para aplicar a imagem no botão, estilizando os elementos de acordo via CSS ([O elemento button - MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/button)). Portanto, afirmar que é "*preciso substituir o botão pela imagem que se deseja utilizar através do CSS*" não é necessariamente verdade no contexto atual de desenvolvimento.
+
+Além disso, o segundo exemplo de aplicação do texto induz à prática de esconder o conteúdo textual do botão utilizando o CSS via `text-indent` (conhecido como *Phark Method*), algo que pode ser problemático por diversas razões (uma delas é tratada em [Invisible Content - WebAIM](https://webaim.org/techniques/css/invisiblecontent/)). Há métodos mais aconselhados para alcançar esse objetivo, como discutido em [Note on Hiding Elements - Web Accessibility Initiative (WAI) - W3C](https://www.w3.org/WAI/tutorials/forms/labels/#note-on-hiding-elements).
+
+Como o uso de CSS para aplicar imagens de fundo a botões é tratado como única ou principal maneira para alcançar o objetivo, e como o exemplo ilustrando como fazer isso utiliza uma técnica que pode induzir problemas, a defasagem da recomendação foi classificada como moderada.
+
+Portanto:
+- A descrição do item foi reformulada para ficar mais enxuta e estabelecer mais claramente seu propósito: deve-se fornecer alternativas textuais que explicitem claramente a função do botão para imagens que atuam como botão. Os cenários descritos pelo eMAG são tratados como exemplos.
+
+- O cenário de utilização do CSS para aplicação da imagem ao fundo do botão foi descartado. Em seu lugar, foi citado o cenário utilizando uma imagem com texto alternativo dentro do elemento `<button>`. Os critérios de verificação e os exemplos de código correspondentes também foram substituídos.
+
+- Um exemplo demonstrando uma maneira mais apropriada de esconder o texto do botão (e elementos em geral) foi adicionado, baseado diretamente no código disponível em [Note on Hiding Elements - Web Accessibility Initiative (WAI) - W3C](https://www.w3.org/WAI/tutorials/forms/labels/#note-on-hiding-elements).
+
+- Um exemplo de má prática em que tanto o texto do botão quanto o atributo `alt` para a imagem do botão com os mesmos valores foi adicionado, citando que isso pode gerar uma redundância que faz leitores de tela repetirem a informação, podendo desorientar usuários.
+
+- Uma nova referência à [Técnica H36 do WCAG: Using `alt` attributes on images used as submit buttons](https://www.w3.org/WAI/WCAG22/Techniques/html/H36) foi adicionada.
+
 ----------------------------------------------------------------------------
 
 #### 6.2 Associar etiquetas aos seus campos
+
+**Defasagem do eMAG: nível leve**
+
+O núcleo central da recomendação de associar explicitamente `<label>` aos campos correspondentes usando os atributos `for` (no label) e `id` (no input) com o mesmo valor permanece plenamente válido. Há alguns pontos de atenção no exemplo de aplicação, entretanto, que merecem ser ressaltados.
+
+Em primeira análise, no exemplo, há um elemento `<label>Sexo:</label>` solto, sem o atributo `for` e sem encapsular nenhum controle. Por mais que visualmente seja evidente a relação com os `<input>` que se seguem logo abaixo, a falta de uma associação explícita pode fazer com que leitores de tela não relacionem adequadamente esse label com as opções em seguida. No caso mostrado, isso até pode ser facilmente inferido na escuta e leitura do usuário, mas podem haver outros casos em que essa ausência acarrete num formulário mais complexo de se entender. Além disso, argumenta-se que o próprio emprego do `<label>Sexo:</label>` não seja a maneira mais adequada de se introduzir os controles em seguida. O próprio eMAG na recomendação 6.7 "Agrupar campos de formulário" afirma que:
+
+> "É recomendado que os campos com informações relacionadas sejam agrupadas utilizando o elemento FIELDSET, principalmente em formulários longos. O agrupamento deverá ser feito de maneira lógica, associando o elemento LEGEND explicando claramente o propósito ou natureza dos agrupamentos."
+
+Em outras palavras, o elemento `<legend>` seria mais apropriado para cumprir essa função de rótulo de uma seção de formulário que estaria agrupada dentro de um elemento `<fieldset>`. 
+
+Além disso, o elemento `<textarea name="msg" id="msg">Digite sua mensagem</textarea>` possui um valor inicial pré-preenchido que estaria atuando como um placeholder. Essa abordagem viola em algum grau a recomendação 6.5 "Fornecer instruções para entrada de dados" do próprio eMAG, que  delimita os cenários em que caracteres pré-definidos podem ser utilizados:
+
+> "A utilização de caracteres pré-definidos em áreas de entrada de texto só deve ocorrer se: O texto for incluído após a entrada de dados pelo usuário (por exemplo, sugerir um novo nome de usuário caso o escolhido já exista); A semântica do documento justifique a inclusão de texto pré-definido (por exemplo, uma loja virtual que só vende para determinado país já vem com o campo país preenchido); Os caracteres tenham sido fornecidos previamente pelo usuário (por exemplo, refinamento de busca)."
+
+Como o texto da recomendação em si não possui nenhuma defasagem notável, o exemplo é tratado pela própria recomendação como ilustrativo e os problemas do exemplo não induzem a um erro grave, a defasagem da recomendação foi classificada como leve.
+
+Portanto:
+
+- Uma explicação melhor detalhada sobre os elementos que não necessitam do `<label>` foi adicionada na descrição do item, baseado no texto da [Técnica WCAG H44: Using label elements to associate text labels with form controls](https://www.w3.org/WAI/WCAG22/Techniques/html/H44).
+
+- O exemplo foi refatorado para reparar os erros citados do uso incorreto do `<label>` e valor pré-definido em `<textarea>` utilizado como placeholder.
+
+- Um exemplo de má prática foi adicionado contendo alguns erros clássicos que podem ser encontrados, como ausência de associação etiqueta-campo, associação quebrada e colisão de identificadores.
 
 ----------------------------------------------------------------------------
 
 #### 6.3 Estabelecer uma ordem lógica de navegação
 
+**Defasagem do eMAG: nível nulo.**
+
+Mais uma vez, essa recomendação é de certo modo uma redundância em relação à recomendação 1.4 "Ordenar de forma lógica e intuitiva a leitura e tabulação", apenas mais voltada para o contexto de formulários. Assim como a outra, essa recomendação permanece consistente com orientações de acessibilidade atuais, mas as seguintes adaptações foram feitas no intuito de clarificar e contextualizar mais a interpretação de certos aspectos do texto original.
+
+- Tanto na descrição do item quanto no terceiro critério de verificação foi incorporado um detalhamento maior sobre o uso do atributo `tabindex` para evitar valores maiores que 0 atribuídos e tomar cuidado caso esses valores sejam utilizados. Em outras palavras, seu uso não foi proibido (afinal, o eMAG e o WCAG não o proíbem), apenas foi melhor explicado o que seria "usar o `tabindex` com cuidado", conforme explicado pela [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Global_attributes/tabindex). Essa referência sobre o uso de `tabindex`, que ainda justifica a orientação de evitar os valores maiores que 0, também foi adicionada.
+
+- A descrição do texto também foi incrementada para conter uma explicação mais robusta sobre o que significa uma ordem de navegação possuir uma sequência lógica, da mesma forma que foi feito no item "Ordenar de forma lógica e intuitiva a leitura e tabulação" do checklist.
+
+- Foi acrescentada à descrição do item e à seção de referências uma referência para a recomendação 1.4 "Ordenar de forma lógica e intuitiva a leitura e tabulação", uma vez que ela está intimamente relacionada com esse item.
+
+- Uma referência para o [Critério de sucesso WCAG 1.3.2: Sequência com Significado](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#meaningful-sequence) foi adicionada, pois esse critério está relacionado com esse item e inclusive é citado na recomendação 1.4 "Ordenar de forma lógica e intuitiva a leitura e tabulação".
+
 ----------------------------------------------------------------------------
 
 #### 6.4 Não provocar automaticamente alteração no contexto
+
+Defasagem do eMAG: nível leve.
+
+A recomendação não está tecnicamente incorreta nem em desacordo com o WCAG 2.0 (vigente à época) ou as versões atuais. No entanto, há pontos relevantes que introduzem grau de defasagem a serem abordados, sobretudo em relação a uma confusão conceitual do texto do eMAG e à adoção de uma abordagem mais restritiva do que o necessário.
+
+Em primeiro lugar, o eMAG mistura 2 conceitos distintos na sua redação: o de "receber foco" e "modificar entrada". O texto original do eMAG afirma:
+
+> "Quando um elemento de formulário **receber o foco**, não deve ser iniciada uma mudança automática na página que confunda ou desoriente o usuário."
+
+Ele trata, portanto, mais especificamente do recebimento de foco. No entanto, tanto os exemplos de aplicação fornecidos quanto à referência ao [Critério de Sucesso WCAG 3.2.2: Em Entrada](https://www.w3.org/TR/UNDERSTANDING-WCAG20/consistent-behavior-unpredictable-change.html) envolvem o ato de modificar a entrada -- isto é -- interagir com os campos de entrada de um formulário, por exemplo. Não só isso, como o [Critério de Sucesso WCAG 3.2.1: Em Foco](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#on-focus) sequer foi referenciado, quando possivelmente deveria ter sido.
+
+Além disso, há uma discussão muito relevante em relação à seguinte restrição do eMAG:
+
+> "Assim, as mudanças devem ocorrer através do acionamento de um botão."
+
+A referência do WCAG, inclusive à versão 2.0 vigente na época de redação do eMAG, não é tão restritiva nesse sentido. Ela permite, por exemplo, a ocorrência mudanças de contexto ao modificar entradas desde que o usuário seja avisado sobre esse comportamento antes de utilizar o componente ([Critério de Sucesso WCAG 3.2.2: Em Entrada](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#on-input)). De fato, a [técnica G80 do WCAG "*Providing a submit button to initiate a change of context*"](https://www.w3.org/WAI/WCAG22/Techniques/general/G80) exemplifica uma orientação mais aderente ao que pede o eMAG, mas há outras técnicas que exemplificam a ideia de se avisar previamente sobre a mudança de contexto, como a [G13 "*Describing what will happen before a change to a form control that causes a change of context to occur is made*"](https://www.w3.org/WAI/WCAG22/Techniques/general/G13).
+
+Argumenta-se que, como essa orientação já era mais branda no WCAG 2.0, então os autores do eMAG adotaram uma postura mais restritiva de forma deliberada. A razão dessa restrição ser antiquada é que o design de interação evoluiu muito desde então, incluindo a popularização das SPAs (*Single Page Applications*). Tratar essa rigidez como a única verdade inibe o uso de padrões modernos e seguros (como atualizações assíncronas anunciadas via `aria-live`, por exemplo), que são amplamente aceitos pelo WCAG e podem oferecer, inclusive, uma experiência de usuário melhor e mais fluida hoje em dia.
+
+Assim, em razão desses fatores, a defasagem da recomendação foi classificada como leve.
+
+Portanto:
+
+- A descrição do item foi adaptada para abordar a aceitabilidade de mudanças de contexto serem desencadeadas por modificações de entrada desde que isso seja claramente e anteriormente avisado ao usuário. Ainda assim, destacou-se que é fortemente recomendável optar por comportamentos que somente desencadeiem as mudanças com o acionamento de botões, dando mais controle ao usuário de quando aplicá-las.
+
+- A proibição da mudança de contexto desencadeada por recebimento de foco de um elemento de formulário foi mantida.
+
+- Os exemplos bom e ruim do eMAG foram mantidos, mas com um aprofundamento maior na discussão. Isso foi feito especialmente para o exemplo negativo, em que foi realizada uma discussão mais ampla sobre o comportamento inconsistente do atributo `onchange` do `<select>`, tratando de como avisar antecipadamente da mudança automática de contexto, nesse caso, ainda não é suficiente para garantir uma boa acessibilidade.
+
+- O [Critério de Sucesso WCAG 3.2.1: Em Foco](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#on-focus) foi adicionado como referência.
+
+- A [Técnica WCAG G13 "*Describing what will happen before a change to a form control that causes a change of context to occur is made*"](https://www.w3.org/WAI/WCAG22/Techniques/general/G13) foi adicionada como referência.
+
+- A [Técnica WCAG G80 "*Providing a submit button to initiate a change of context*"](https://www.w3.org/WAI/WCAG22/Techniques/general/G80) foi adicionada como referência.
 
 ----------------------------------------------------------------------------
 

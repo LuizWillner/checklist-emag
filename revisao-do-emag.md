@@ -459,6 +459,36 @@ Portanto:
 
 #### 6.6 Identificar e descrever erros de entrada de dados e confirmar o envio das informações
 
+**Defasagem do eMAG: nível moderado.**
+
+A validação de formulários em HTML é uma temática que pode ser complexa por não englobar apenas uma forma de realizá-la, abrangendo diversos métodos de diferentes ferramentas e frameworks. Nesse sentido, a recomendação em si continua bastante válida e pertinente no contexto, sobretudo por não restringir apenas uma forma de cumpri-la. A orientação em si é bem clara:
+
+> "Quando um erro de entrada de dados for automaticamente detectado, o item que apresenta erro deve ser identificado e descrito ao usuário por texto."
+
+O que se segue depois são exemplos de como cumprir essa recomendação adequadamente. E é nessa seção de exemplos que alguns pontos merecem ser analisados com mais atenção.
+
+O primeiro exemplo da seção não é problemático. De fato, ele não contém nenhuma implementação de código explícita: ilustra apenas o formulário de um site que atende os requisitos de acessibilidade no que tange à identificação e descrição dos erros no formulário. Os detalhes de implementação são abstraídos, de forma que diversos métodos poderiam ser aplicados para alcançar esse resultado.
+
+O grande centro de discussão dos exemplos está quando o texto aborda a validação de formulários nativa no lado do cliente utilizando o recurso do atributo `type` do elemento `<input>`. Esse método de validação não está de todo o errado, mas a forma que o eMAG o apresenta pode levar o leitor a pensar que a forma em que o recurso é apresentado na redação é suficiente para a garantia de boa acessibilidade, o que não é verdade. O [Critério de Sucesso 3.3.1 : Identificação do Erro, do WCAG 2.2](https://www.w3.org/WAI/WCAG22/Understanding/error-identification#user-agent-native-html-form-validation) enumera uma série de problemáticas da validação de formulário nativa do HTML e navegadores, demonstrando que ela pode não ser suficiente a depender do agente de usuário utilizado. O texto falha em citar mecanismos que são de fato são centrais na certificação de acessibilidade, como o uso correto dos atributos `aria-invalid`, `aria-errormessage`, `aria-describedby`, `aria-live`, entre outros. É bastante compreensível que a gama complexa de maneiras que esses mecanismos podem ser utilizados dificulta tratar de todos eles no texto, mas como o eMAG entra no mérito de detalhes de implementação utilizando somente a validação nativa do HTML5, eles ao menos deveriam ser mencionados.
+
+Além disso, a validação de formulário nativa utilizando o atributo `type` é um tanto limitante e engessada. Há um número limitado de tipos para validação (citados no eMAG) e as indicações visuais que aparecem quando ocorre algum erro não costumam ser personalizáveis. Por isso, muitas vezes é necessário recorrer a codificação em JavaScript para fazer essa validação. Mais uma vez, como o texto entra no mérito de implementações de validação, pelo menos um exemplo de validação via linguagem de programação poderia ter sido feita. O próprio WCAG fornece alguns exemplos do tipo em algumas de suas técnicas, utilizando tanto JQuery quanto JavaScript puro, tais como [ARIA21: Using aria-invalid to Indicate An Error Field](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA21), [SCR18: Providing client-side validation and alert](https://www.w3.org/WAI/WCAG22/Techniques/client-side-script/SCR18) e o [ARIA19: Using ARIA role=alert or Live Regions to Identify Errors](https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA19). A MDN Web Docs também estabelece alguns exemplos em [ARIA: aria-invalid attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid) e [ARIA: aria-errormessage attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage).
+
+Por fim, existe um erro de digitação no documento oficial do eMAG que gera um erro técnico. O HTML5 nunca possuiu para o atributo `type` de `<input>` os valores `"datatime"` ou `"datatime-local"`. Mesmo corrigindo a grafia para `"datetime"`, esse tipo foi removido da especificação do HTML Living Standard anos atrás. Hoje, os desenvolvedores devem utilizar exclusivamente `"datetime-local"` ou separar as entradas em `"date"` e `"time"`.
+
+Em razão desses fatores, a defasagem foi classificada como moderado.
+
+Portanto:
+
+- Foi melhor esclarecido na descrição desse item que o mecanismo padrão de validação implementado puramente em HTML não é suficiente para boa garantia de acessibilidade. Estratégias extras ligadas ao ARIA foram sugeridas como possíveis abordagens para cumprir esse papel, mas não foram forçadas como regras.
+
+- A enumeração dos possíveis valores para o atributo `type` de `<input>` foi descartada.
+
+- O primeiro exemplo do eMAG mais alto nível mostrando como um determinado sistema se comportava com erros de validação de um formulário de cadastro foi mantido.
+
+- O exemplo de código do eMAG utilizando apenas o mecanismo de validação padrão, com elemento `<input type="email" required>`, foi tratado como uma má prática. Foi explicado no exemplo que o problema não está no uso do mecanismo em si, mas sim, na falta de alguma estratégia adicional para melhoria de acessibilidade.
+
+- Um exemplo extra de código foi criado demonstrando o uso de JavaScript puro e ARIA para criação de um mecanismo de validação de formulário mais robusto e acessível. Esse código foi criado baseado nos exemplos das referências citadas do WCAG e MDN Web Docs.
+
 ----------------------------------------------------------------------------
 
 #### 6.7 Agrupar campos de formulário

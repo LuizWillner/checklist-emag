@@ -542,4 +542,8 @@ A complexidade da discussão impede que uma descrição detalhada no item do che
 
 ### Elementos padronizados de acessibilidade digital no Governo Federal
 
+Para concluir a análise, em relação às orientações relacionadas aos "Elementos padronizados de acessibilidade digital no Governo Federal" do eMAG, considera-se muito difícil fazer uma avaliação adequada de defasagem. Isso porque essas diretrizes, como o próprio nome sugere, são estipuladas apenas como mecanismos de acessibilidade padronizados entre os sistemas web vinculados ao Governo Federal. Elas não são uma regra de acessibilidade em si, mas uma convenção a ser seguida pelos sistemas pertencentes a esse conjunto.
+
+Pode até ser argumentado que algumas dessas prescrições possam engessar um tanto o design de interfaces. Mas a decisão por trás delas tem muito mais relação com um aspecto político do que técnico. Eventualmente, podem até ser encontrados exemplos de sites da esfera federal que desrespeitem alguns desses elementos padronizados, mesmo eles não estando necessariamente inacessíveis. O questionamento que fica nesse ponto é se de fato o site estaria evadindo uma norma sólida estabelecida ou se tais orientações caíram por terra na prática e se tornaram meras recomendações não compulsórias. De todo modo, esse julgamento só pode ser apropriadamente estabelecido pela equipe técnica do eMAG. Por essas razões, os itens ligados aos elementos padronizados de acessibilidade digital no Governo Federal não foram considerados para a análise. 
+
 <!-- ======================================================================= -->

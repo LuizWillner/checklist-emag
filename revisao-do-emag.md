@@ -2,16 +2,16 @@
 
 ## Resumo da análise
 
-|                              | Nível Leve | Nível Moderado | Nível Crítico |
-| ---------------------------- | ---------- | -------------- | ------------- |
-| 1. Marcação                  | 0          | 0              | 0             |
-| 2. Comportamento (DOM)       | 0          | 0              | 0             |
-| 3. Conteúdo/Informação       | 0          | 0              | 0             |
-| 4. Apresentação/Design       | 0          | 0              | 0             |
-| 5. Multimídia                | 0          | 0              | 0             |
-| 6. Formulários               | 0          | 0              | 0             |
-| Padronização no Gov. Federal | 0          | 0              | 0             |
-| **TOTAL**                    | **0**      | **0**          | **0**         |
+|                              | Nível Nulo | Nível Leve | Nível Moderado | Nível Crítico |
+| ---------------------------- | ---------- | ---------- | -------------- | ------------- |
+| 1. Marcação                  | 3          | 3          | 2              | 1             |
+| 2. Comportamento (DOM)       | 6          | 0          | 0              | 1             |
+| 3. Conteúdo/Informação       | 6          | 3          | 1              | 2             |
+| 4. Apresentação/Design       | 1          | 2          | 1              | 0             |
+| 5. Multimídia                | 3          | 0          | 2              | 0             |
+| 6. Formulários               | 2          | 2          | 3              | 1             |
+| Padronização no Gov. Federal | -          | -          | -              | -             |
+| **TOTAL**                    | **21**     | **10**     | **9**          | **5**         |
 
 
 

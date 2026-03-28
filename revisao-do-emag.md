@@ -493,6 +493,15 @@ Portanto:
 
 #### 6.7 Agrupar campos de formulário
 
+**Defasagem do eMAG: nível nulo.**
+
+Não há nada de defasado na recomendação. A ideia central de agrupar campos de formulário utilizando `<fieldset>`, `<legend>` e `<optgroup>` continua válido e previsto no HTML Living Standard[https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element]. Ela permanece sendo a prática mais adequada, correta e recomendada pelos padrões atuais de acessibilidade e semântica web. A própria referência feita pelo eMAG às técnicas [H71: "Providing a description for groups of form controls using `fieldset` and `legend` elements"](https://www.w3.org/WAI/WCAG22/Techniques/html/H71)
+e [H85: "Using `optgroup` to group `option` elements inside a `select`"](https://www.w3.org/WAI/WCAG22/Techniques/html/H85) continuam reconhecidas nas versões mais recentes do WCAG. Sendo assim, a classificação da defasagem é de nível nulo.
+
+Portanto:
+- A descrição do item do checklist reflete diretamente, ainda que em outras palavras, o texto original do eMAG.
+- Os exemplos fornecidos pelo eMAG foram readaptados, acrescidos apenas de uma descrição um pouco mais elaborada para eles.
+
 ----------------------------------------------------------------------------
 
 #### 6.8 Fornecer estratégias de segurança específicas ao invés de CAPTCHA

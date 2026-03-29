@@ -1,8 +1,6 @@
 # 📋 Checklist eMAG
 > Projeto de conclusão do curso de Ciência da Computação | Universidade Federal Fluminense
 
----
-
 ## 📌 Sumário
 
 * [❓ Sobre o eMAG](#-sobre-o-emag)
@@ -10,15 +8,11 @@
 * [🚧 Limitações do eMAG e do checklist](#-limitações-do-emag-e-do-checklist)
 * [💡 Funcionalidades](#-funcionalidades)
 
----
-
 ## ❓ Sobre o eMAG
 
 O **eMAG (Modelo de Acessibilidade em Governo Eletrônico)** é um modelo brasileiro voltado a orientar a construção e avaliação de conteúdos e interfaces digitais acessíveis, com foco especial no contexto de serviços e portais. Ele consolida recomendações práticas para reduzir barreiras de uso para pessoas com deficiência e outros perfis (por exemplo, pessoas com limitações temporárias, baixo letramento digital ou uso em dispositivos e ambientes restritivos).
 
 Apesar de criado com o compromisso de nortear a adaptação e o desenvolvimento de conteúdos digitais do Governo Federal, o eMAG é fortemente relacionado às diretrizes internacionais do **WCAG (*Web Content Accessibility Guidelines*)**. Por isso, ele também serve como um guia geral aplicável à realidade brasileira e às necessidades de serviços digitais em diferentes contextos e esferas. Nesta aplicação, os itens do checklist são organizados com base no [eMAG v3.1](https://emag.governoeletronico.gov.br/), e, quando pertinente, incluem também referências associadas ao [WCAG 2.2](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/) e a outras fontes de prestígio para facilitar a rastreabilidade e o estudo.
-
----
 
 ## 🎯 Motivação do checklist
 
@@ -36,8 +30,6 @@ Com isso em mente, esta aplicação web foi construída como parte de um **proje
 
 A **análise de defasagem** das recomendações do eMAG está disponível no [repositório do GitHub](https://github.com/LuizWillner/checklist-emag/blob/main/revisao-do-emag.md). Para cada uma das recomendações, foi feita uma discussão embasando a relevância atual da orientação, expondo os eventuais pontos de defasagem e explicando as mudanças feitas no item análogo do checklist.
 
----
-
 ## 🚧 Limitações do eMAG e do checklist
 
 Apesar do eMAG ser um ótimo ponto de partida, ele foi pensado historicamente com forte aderência ao contexto de portais e serviços governamentais e a padrões mais "clássicos" de conteúdo na Web. Esse fator somado a outros traz algumas limitações práticas para ele, e consequentemente para o checklist:
@@ -54,8 +46,6 @@ Apesar do eMAG ser um ótimo ponto de partida, ele foi pensado historicamente co
 * **Referências são apoio:**
   links e referências aqui estabelecidos ajudam a entender e se aprofundar nos tópicos, mas podem mudar ao longo do tempo com atualizações do conteúdo, reorganização de páginas, versões, entre outros.
 
----
-
 ## 💡 Funcionalidades
 
 O checklist foi desenhado para você conduzir uma inspeção de forma incremental: marcar itens, registrar observações, consultar critérios e referências, abrir exemplos práticos e acompanhar o progresso.
@@ -65,8 +55,6 @@ Além disso, há três "níveis" disponíveis de salvamento de progresso:
 1. Salvamento local no navegador
 2. Salvamento local em arquivo (relatório)
 3. Salvamento no servidor (código de recuperação)
-
----
 
 ### 🧰 Barra de ferramentas
 
@@ -80,13 +68,9 @@ Além disso, há três "níveis" disponíveis de salvamento de progresso:
 | 📥 **Importar**        | Importa relatório e sobrescreve o progresso                   |
 | 🧹 **Limpar**          | Reinicia o checklist                                          |
 
----
-
 ### 💾 Salvamento automático
 
 A aplicação conta com um mecanismo de salvamento automático, em que cada alteração feita na inspeção é **salva localmente** no navegador.
-
----
 
 ### ✅ Marcando o checklist
 
@@ -97,8 +81,6 @@ A aplicação conta com um mecanismo de salvamento automático, em que cada alte
 | ❌ Não conforme  | o requisito não foi atendido                                        |
 | ➖ Não se aplica | o requisito não se aplica                                           |
 
----
-
 ### 🔍 Detalhamento dos itens
 
 * **Descrição do item:** apresenta o enunciado e o contexto
@@ -107,18 +89,12 @@ A aplicação conta com um mecanismo de salvamento automático, em que cada alte
 * **Notas da inspeção:** registro de evidências
 * **Exemplos:** casos práticos com boas e más práticas
 
----
-
 ### 📊 Barra de progresso
 
 A barra de progresso resume visualmente a inspeção com percentuais e contagens dos **itens conformes e não conformes**.
 
 Itens marcados como **"Não se aplica" são descontados do total**, evitando distorções.
 
----
-
 ## 📎 Recursos adicionais
 
 * 📄 [Análise de defasagem do eMAG](https://github.com/LuizWillner/checklist-emag/blob/main/revisao-do-emag.md)
-
----

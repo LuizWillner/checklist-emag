@@ -28,7 +28,7 @@ Diversos governos e instituições governamentais mundo afora adaptam essas dire
 
 Com isso em mente, esta aplicação web foi construída como parte de um **projeto de TCC**, com a meta de estabelecer uma proposta prática de **modernização do eMAG**, estruturada em formato de checklist. A premissa central consistiu em adaptar as recomendações originais, definir critérios de verificação e incluir novas referências quando necessário, conforme uma análise de defasagem previamente realizada. O objetivo foi trazer o eMAG para um contexto mais moderno frente às mudanças propagadas nas tecnlogias da informação e nas orientações de acessibilidade digital.
 
-A **análise de defasagem** das recomendações do eMAG está disponível no [repositório do GitHub](https://github.com/LuizWillner/checklist-emag/blob/main/revisao-do-emag.md). Para cada uma das recomendações, foi feita uma discussão embasando a relevância atual da orientação, expondo os eventuais pontos de defasagem e explicando as mudanças feitas no item análogo do checklist.
+A **análise de defasagem** das recomendações do eMAG está disponível [nesse repositório](https://github.com/LuizWillner/checklist-emag/blob/main/revisao-do-emag.md). Para cada uma das recomendações, foi feita uma discussão embasando a relevância atual da orientação, expondo os eventuais pontos de defasagem e explicando as mudanças feitas no item análogo do checklist.
 
 ## 🚧 Limitações do eMAG e do checklist
 
@@ -83,11 +83,11 @@ A aplicação conta com um mecanismo de salvamento automático, em que cada alte
 
 ### 🔍 Detalhamento dos itens
 
-* **Descrição do item:** apresenta o enunciado e o contexto
-* **Critérios de verificação:** perguntas objetivas (sim/não)
-* **Referências:** links organizados por origem
-* **Notas da inspeção:** registro de evidências
-* **Exemplos:** casos práticos com boas e más práticas
+* **Descrição do item**: Apresenta o enunciado e o contexto do que deve ser observado naquele item. Ela serve para fornecer mais detalhes sobre "*o que*" e "*como*" avaliar.
+* **Critérios de verificação**: Lista perguntas objetivas de "*sim*" ou "*não*" que permitem testar a conformidade de acorod com as condições estabelecidas na descrição do item. Respostas "*sim*" indicam conformidade com a recomendação, enquanto a resposta "*não*" indica não conformidade.
+* **Referências**: Reúne links relacionados ao item, separados por origem (eMAG, WCAG e outras referências). Ela lista tanto as referências contidas no documento original do eMAG quanto referências extras usadas na elaboração do checklist. Isso ajuda a estudar o tema, entender exceções e consultar a justificativa normativa por trás da recomendação.
+* **Notas da inspeção**: Permite registrar evidências e observações.
+* **Exemplos**: Abre exemplos práticos com boas e más práticas. A ideia é ilustrar pontos relacionados à recomendação e acelerar o entendimento do que "passa" e do que "falha" na prática.
 
 ### 📊 Barra de progresso
 

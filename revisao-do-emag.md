@@ -1,4 +1,19 @@
-# Colocar aqui o conteúdo do relatório de revisão e classificação de defasagem feita do conteúdo do eMAG
+# Revisão do eMAG
+> Documentação estruturada da análise das recomendações do Modelo de Acessibilidade em Governo Eletrônico (eMAG) v3.1
+
+## Motivação
+
+Nos últimos tempos, serviços e informações digitais estão cada vez mais presentes no dia a dia. Em diversas esferas da sociedade, muitas atividades e processos que antes eram físicos passaram a acontecer na Web. Além disso, novas automações foram criadas para facilitar nossas vidas. Nesse contexto, é fácil constatar que, se uma aplicação digital não é acessível, então parte das pessoas ficam, na prática, marginalizadas do resto da população.
+
+Pessoas com deficiência ainda enfrentam barreiras de participação em vários cenários, e isso também acontece no ambiente digital. No Brasil, a inclusão e a acessibilidade desse público são respaldadas por normas e políticas públicas no âmbito da Constituição Federal e de legislações como a Lei Brasileira de Inclusão, o que reforça a noção de que acessibilidade é um requisito necessário para o exercício da cidadania.
+
+Por outro lado, a acessibilidade não se limita somente a pessoas com deficiência. Ela também beneficia qualquer indivíduo em situações reais de uso: limitações temporárias, envelhecimento, baixa familiaridade com tecnologia, acesso por celular, conexão instável, ambientes com ruído ou baixa iluminação, entre outras condições.
+
+Por isso, as recomendações de acessibilidade na Web evoluem continuamente para acompanhar mudanças na tecnologia e nos padrões de interação. O WCAG é uma das principais referências internacionais nessa conjuntura e serve de base para várias iniciativas ao redor do mundo.
+
+Diversos governos e instituições governamentais mundo afora adaptam essas diretrizes para os contextos e necessidades específicos de cada região. No Brasil, esse papel é exercido pelo eMAG. O problema é que a última versão revisada do eMAG (v3.1, de abril de 2014) já é antiga considerando o intenso e constante desenvolvimento da tecnologia e da internet. Sendo assim, é natural que suas recomendações possam ter sofrido com o processo de defasagem, ambiguidade ou baixo alinhamento em relação a aplicações modernas.
+
+Com isso em mente, uma aplicação web foi construída como parte de um **projeto de TCC**, com a meta de estabelecer uma proposta prática de **modernização do eMAG**, estruturada em formato de checklist. A premissa central consistiu em adaptar as recomendações originais, definir critérios de verificação e incluir novas referências quando necessário, conforme a seguinte análise de defasagem. O objetivo foi trazer o eMAG para um contexto mais moderno frente às mudanças propagadas nas tecnlogias da informação e nas orientações de acessibilidade digital.
 
 ## Resumo da análise
 
@@ -16,6 +31,19 @@
 
 
 ----------------------------------------------------------------------------
+## Análise
+
+Para cada uma das recomendações, foi feita uma discussão embasando a relevância atual da orientação, expondo os eventuais pontos de defasagem e explicando as mudanças feitas no item análogo do checklist.
+
+Para manter a estrutura do eMAG, a análise de cada item está separada dentre as categorias das recomendações:
+
+1) [Marcação](#1-marcação)
+2) [Comportamento (DOM)](#2-comportamento-dom)
+3) [Conteúdo/Informação](#3-conteúdoinformação)
+4) [Apresentação/Design](#4-apresentaçãodesign)
+5) [Multimídia](#5-multimídia)
+6) [Formulários](#6-formulários)
+7) [Elementos padronizados de acessibilidade digital no Governo Federal](#elementos-padronizados-de-acessibilidade-digital-no-governo-federal)
 
 ### 1 Marcação
 

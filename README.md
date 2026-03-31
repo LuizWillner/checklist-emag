@@ -1,6 +1,10 @@
 # 📋 Checklist eMAG
 > Projeto de conclusão do curso de Ciência da Computação | Universidade Federal Fluminense
 
+## 𖦥 Repositórios dos submódulos
+- [⚛️ Front-end: React (TypeScript)](https://github.com/LuizWillner/eMag-checklist-front)
+- [🗄️ Back-end: FastAPI (Python)](https://github.com/LuizWillner/eMag-checklist-back)
+
 ## 📌 Sumário
 
 * [❓ Sobre o eMAG](#-sobre-o-emag)

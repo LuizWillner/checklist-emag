@@ -76,12 +76,12 @@ Além disso, há três "níveis" disponíveis de salvamento de progresso:
 
 A aplicação conta com um mecanismo de salvamento automático, em que cada alteração feita na inspeção é **salva localmente** no navegador.
 
-### ✅ Marcando o checklist
+### ✔️ Marcando o checklist
 
 | Estado          | Descrição                                                           |
 | --------------- | ------------------------------------------------------------------- |
 | Não marcado     | O item não foi marcado                                              |
-| ✔️ Conforme     | o requisito foi atendido (com base na evidência que você verificou) |
+| ✅ Conforme     | o requisito foi atendido (com base na evidência que você verificou) |
 | ❌ Não conforme  | o requisito não foi atendido                                        |
 | ➖ Não se aplica | o requisito não se aplica                                           |
 

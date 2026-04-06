@@ -254,7 +254,7 @@ Portanto:
 
 - Um exemplo de implementação de breadcrumbs mais completo, baseado na [técnica G65 do WCAG "Providing a breadcrumb trail"](https://www.w3.org/WAI/WCAG21/Techniques/general/G65), com uso de `<nav>`, `aria-label` e `aria-current`, foi acrescentado
 
-- A [Técnica WCAG G65: Providing a breadcrumb trai](https://www.w3.org/WAI/WCAG21/Techniques/general/G65) foi adicionada ao item como referência.
+- A [Técnica WCAG G65: Providing a breadcrumb trail](https://www.w3.org/WAI/WCAG21/Techniques/general/G65) foi adicionada ao item como referência.
 
 ----------------------------------------------------------------------------
 

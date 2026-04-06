@@ -272,6 +272,14 @@ Portanto:
 
 #### 4.2 Não utilizar apenas cor ou outras características sensoriais para diferenciar elementos
 
+**Defasagem do eMAG: nível nulo**
+
+A recomendação permanece muito relevante no contexto de acessibilidade atual, e não apresenta pontos de defasagem notáveis. Os exemplos dados são simples, mas a diferenciação dos elementos via indicação por texto feita no exemplo não é a única maneira sugerida pelo eMAG. Trata-se de um exemplo ilustrativo.
+
+Portanto:
+
+- Manteve-se a essência do texto e dos exemplos originais, com pequenas mudanças na descrição da recomendação para deixá-la mais enxuta nesse checklist, e no exemplo para deixá-lo mais didático.
+
 ----------------------------------------------------------------------------
 
 #### 4.3 Permitir redimensionamento sem perda de funcionalidade
@@ -305,6 +313,22 @@ Portanto:
 ----------------------------------------------------------------------------
 
 #### 4.4 Possibilitar que o elemento com foco seja visualmente evidente
+
+**Defasagem do eMAG: nível leve**
+
+A ideia central da recomendação de que elementos devem ter foco visível continua atual e relevante em termos de acessibilidade. No entanto, a recomendação apresenta alguns pontos de defasagem leves que valem a pena serem notados.
+
+Em primeiro lugar, o exemplo do eMAG ilustra a estilização da borda dos elementos utilizando a propriedade `border`. Atualmente, entretanto, a boa prática dita que a estilização da borda ao focar em um elemento deve ser feita utilizando a propriedade `outline`. Isso porque `outline`, ao contrário de `border`, não faz parte do cálculo do espaço do elemento. Por isso, quando `border` é utilizado com uma certa espessura, o tamanho total do elemento aumenta em e isso pode empurrar os elementos ao redor, causando o efeito desagradável de *layout shift* (veja mais em [Outline - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/outline#description) e [Border - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border#borders_vs._outlines). Esse é o ponto principal que leva a classificar defasagem como leve.
+
+Além disso, há ainda um outro pequeno ajuste no exemplo que poderia ser feito. Atualmente, em algumas situações é costumeiro desenvolvedores optarem pela pseudo-classe do CSS `:focus-visible` ao invés da classe `:focus` sugerida. Isso porque, ao utilizar `:focus` em um botão configurando a propriedade `outline`, por exemplo, o destaque para a borda não é apenas aplicado ao botão durante a navegação pelo teclado, mas também brevemente quando ele é pressionado. A pseudo-classe `:focus-visible`, por outro lado, garantiria que a borda só seria destacada pela navegação do teclado, a omitindo quando o botão fosse clicado.
+
+Portanto:
+
+- A propriedade `border` do exemplo foi substituída por `outline`
+
+- A pseudo-classe `:focus` foi substituída por `:focus-visible`
+
+- Um exemplo de má prática que retira o foco visual com `outline: none` foi adicionado, e uma explicação histórica contextualizando o porquê de alguns desenvolvedores tomarem essa decisão inacessível foi explicitada.
 
 ----------------------------------------------------------------------------
 

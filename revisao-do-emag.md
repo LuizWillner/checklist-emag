@@ -1,5 +1,5 @@
-# Revisão do eMAG
-> Documentação estruturada da análise das recomendações do Modelo de Acessibilidade em Governo Eletrônico (eMAG) v3.1
+# Proposta de revisão do eMAG para o Checklist eMAG
+> Documentação estruturada da análise das recomendações do Modelo de Acessibilidade em Governo Eletrônico (eMAG) v3.1 que serviu como suporte para a aplicação web de checklist de acessibilidade baseada no eMAG.
 
 ## Motivação
 
@@ -44,9 +44,6 @@ A seguir, segue uma tabela que resume as classificações feitas na análise par
 | Padronização no Gov. Federal | -          | -          | -              | -             |
 | **TOTAL**                    | **21**     | **10**     | **9**          | **5**         |
 
-
-
-----------------------------------------------------------------------------
 ## Análise
 
 Para cada uma das recomendações, foi feita uma discussão embasando a relevância atual da orientação, expondo os eventuais pontos de defasagem e explicando as mudanças feitas no item análogo do checklist.
@@ -60,6 +57,8 @@ Para manter a estrutura do eMAG, a análise de cada item está separada dentre a
 5) [Multimídia](#5-multimídia)
 6) [Formulários](#6-formulários)
 7) [Elementos padronizados de acessibilidade digital no Governo Federal](#elementos-padronizados-de-acessibilidade-digital-no-governo-federal)
+
+----------------------------------------------------------------------------
 
 ### 1 Marcação
 
@@ -597,6 +596,6 @@ A complexidade da discussão impede que uma descrição detalhada no item do che
 
 Para concluir a análise, em relação às orientações relacionadas aos "Elementos padronizados de acessibilidade digital no Governo Federal" do eMAG, considera-se muito difícil fazer uma avaliação adequada de defasagem. Isso porque essas diretrizes, como o próprio nome sugere, são estipuladas apenas como mecanismos de acessibilidade padronizados entre os sistemas web vinculados ao Governo Federal. Elas não são uma regra de acessibilidade em si, mas uma convenção a ser seguida pelos sistemas pertencentes a esse conjunto.
 
-Pode até ser argumentado que algumas dessas prescrições possam engessar um tanto o design de interfaces. Mas a decisão por trás delas tem muito mais relação com um aspecto político do que técnico. Eventualmente, podem até ser encontrados exemplos de sites da esfera federal que desrespeitem alguns desses elementos padronizados, mesmo eles não estando necessariamente inacessíveis. O questionamento que fica nesse ponto é se de fato o site estaria evadindo uma norma sólida estabelecida ou se tais orientações caíram por terra na prática e se tornaram meras recomendações não compulsórias. De todo modo, esse julgamento só pode ser apropriadamente estabelecido pela equipe técnica do eMAG. Por essas razões, os itens ligados aos elementos padronizados de acessibilidade digital no Governo Federal não foram considerados para a análise. 
+Pode até ser argumentado que algumas dessas prescrições possam engessar um tanto o design de interfaces. Mas a decisão por trás delas tem muito mais relação com um aspecto político do que técnico. Eventualmente, podem até ser encontrados exemplos de sites da esfera federal que desrespeitem alguns desses elementos padronizados, mesmo eles não estando necessariamente inacessíveis. O questionamento que fica nesse ponto é se de fato o site estaria evadindo uma norma sólida estabelecida ou se tais orientações caíram por terra na prática e se tornaram meras recomendações não compulsórias. De todo modo, esse julgamento só pode ser apropriadamente estabelecido por uma equipe técnica própria vinculada ao eMAG. Por essas razões, os itens ligados aos elementos padronizados de acessibilidade digital no Governo Federal não foram considerados para a análise. 
 
 <!-- ======================================================================= -->

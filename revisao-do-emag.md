@@ -312,17 +312,87 @@ Portanto:
 
 #### 5.1 Fornecer alternativa para vídeo
 
+**Defasagem do eMAG: nível moderado**
+
+Toda a ideia central da recomendação é relevante para o contexto de acessibilidade atual. Os maiores problemas se encontram no último exemplo da recomendação, em que o eMAG demonstra o uso do elemento `<video>` do HTML5. Alguns são discutidos a seguir.
+
+Em primeiro lugar, o último exemplo apresenta controle redundante no elemento `<button onclick="playPause()">Play/Pause</button>` para reger o elemento `<video>`. A questão é que o próprio elemento `<video>` possui o atributo `controls` que já faz com que o navegador renderize seu próprio player acessível nativo ([Elemento video - MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/video)). Ao inserir botões customizados logo acima de um vídeo que já possui controles nativos, cria-se uma interface duplicada que pode ser confusa, especialmente para usuários de tecnologias assistivas. Não só isso, mas o elemento redundante de controle adicionado possui acessibilidade ainda pior que o elemento padrão, uma vez que não atualiza seu texto ou atributo (como `aria-pressed` ou `aria-label`) para informar dinamicamente se a ação é reproduzir ou pausar, deixando o usuário sem feedback de estado adequado. Uma pouco dessa problemática é discutido no [Critério de Sucesso 4.1.2: Nome, Função, Valor](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html).
+
+Em segundo lugar, a abordagem de se utilizar os botões "Pequeno", "Médio" e "Grande" para alterar o tamanho do vídeo, pelo menos da forma que foi feita, não é a melhor prática. Isso porque o valor da largura do vídeo é modificado via JavaScript com valores absolutos em pixels, o que pode quebrar a responsividade. Uma possível forma de melhorar isso seria via CSS utilizando a propriedade `max-width: 100%` para o elemento do vídeo, garantindo que ele ocupe o tamanho total de seu contêiner, mas não o ultrapasse. O contêiner, por sua vez, poderia ser manipulado conforme a necessidade do desenvolvedor para garantir a responsividade e a correta disposição dos elementos da página. Há mais detalhes sobre essa discussão que pode ser visto na [MDN Web Docs - Images, media, and form elements](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Images_media_forms).
+
+Ainda na linha dos problemas, o uso de eventos inline (`onclick` diretamente no elemento HTML) é hoje considerado uma má prática arquitetônica e de segurança. A [MDN Web Docs em "Inline event handlers — don't use these"](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events#inline_event_handlers_%E2%80%94_dont_use_these) é diretamente contra essa prática, e recomenda o uso da abordagem com `addEventListener` ao invés.
+
+Há ainda uma inconsistência com o que é dito no texto da recomendação em si: se por um lado foi recomendado que legendas e descrições sejam fornecidas, por outro o exemplo dado não segue essa orientação. Isso poderia ter sido feito com o uso do elemento `<track>`, já especificado no HTML5 ([Elemento Track - MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/track) e [The track element - HTML Living Standard](https://html.spec.whatwg.org/multipage/media.html#the-track-element).
+
+O exemplo pode induzir a alguns problemas em razão da forma que foi formulado, mas não é tratado como o principal exemplo, uma vez que está numa subseção que fala do elemento `<video>` do HTML5, e não é especificado como um padrão a ser seguido, sendo portanto mais ilustrativo. Portanto, a defasagem não é crítica e foi classificada como moderada.
+
+Portanto:
+
+- Os exemplos com imagem do eMAG foram reproduzidos, com um texto mais detalhado explicando algumas nuances de cada exemplo.
+
+- No caso do exemplo 2, de vídeo com legenda, um código HTML ilustrativo que poderia refletir o que a imagem mostra foi elaborado, utilizando os elementos `<video>`, `<source>` e `<track>` do HTML5.
+
+- O último exemplo apresentando o elemento `<video>` do HTML5 citado no eMAG foi descartado por conter os problemas já citados. A apresentação desse elemento ficou a encargo do trecho de código adicionado ao exemplo 2.
+
+- Textos alternativos melhorados para as imagnes de exemplo foram elaborados.
+
 ----------------------------------------------------------------------------
 
 #### 5.2 Fornecer alternativa para áudio
+
+**Defasagem do eMAG: nível nulo**
+
+A recomendação continua relevante no contexto de acessibilidade e não apresenta defasagens notáveis.
+
+Portanto:
+
+- O exemplo fornecido pelo eMAG foi reproduzido.
+
+- As orientações gerais do eMAG foram mantidas.
+
+- Um texto alternativo melhorado para a imagem de exemplo foi elaborado.
 
 ----------------------------------------------------------------------------
 
 #### 5.3 Oferecer audiodescrição para vídeo pré-gravado
 
+**Defasagem do eMAG: nível nulo**
+
+O conceito central da Recomendação 5.3 permanece intacto e perfeitamente alinhado com as diretrizes atuais, como WCAG 2.1 e 2.2. A exigência de que conteúdos visuais cruciais sejam descritos sonoramente atende diretamente ao [Critério de Sucesso 1.2.5: Audio Description (Prerecorded)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#audio-description-prerecorded), que é um requisito de nível AA. Inclusive, a definição técnica fornecida pelo eMAG sobre como a audiodescrição deve ser sincronizada é a [definição exata adotada pelo WCAG 2.2](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-audio-descriptions).
+
+Portanto:
+
+- O exemplo fornecido pelo eMAG foi reproduzido.
+
+- As orientações gerais do eMAG foram mantidas.
+
+- Um texto alternativo melhorado para a imagem de exemplo foi elaborado.
+
 ----------------------------------------------------------------------------
 
 #### 5.4 Fornecer controle de áudio para som
+
+**Defasagem do eMAG: nível moderado**
+
+As orientações gerais dessa recomendação continuam atuais e alinhadas com diretrizes de acessibilidade. No entanto, há pontos de defasagem notáveis no exemplo de código dado, e também há uma discussão relevante acerca de áudios reproduzidos automaticamente que não foi abordada no texto original.
+
+Em primeiro lugar, o exemplo apresenta controle redundante no elemento `<button onclick="playPause()">Play/Pause</button>` para reger o elemento `<audio>`. A questão é que o próprio elemento `<audio>` possui o atributo `controls` que já faz com que o navegador renderize seu próprio player acessível nativo ([Elemento video - MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/audio)). Ao inserir um botão customizados logo acima de um áudio que já possui controles nativos, cria-se uma interface duplicada que pode ser confusa, especialmente para usuários de tecnologias assistivas. Não só isso, mas o elemento redundante de controle adicionado possui acessibilidade ainda pior que o elemento padrão, uma vez que não atualiza seu texto ou atributo (como `aria-pressed` ou `aria-label`) para informar dinamicamente se a ação é reproduzir ou pausar, deixando o usuário sem feedback de estado adequado. Uma pouco dessa problemática é discutido no [Critério de Sucesso 4.1.2: Nome, Função, Valor](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html). Aliás, é importante notar que o eMAG no texto logo antes desse afirma que o elemento `<audio>` "deve receber controles de play, pause e stop", o que pode acabar induzindo o leitor a pensar equivocadamente que os controles personalizados via HTML e JS devem ser implementados junto ou no lugar dos controles padrões definidos pelo atributo `controls`. 
+
+Em segundo lugar, o uso de eventos inline (`onclick` diretamente no elemento HTML) no exemplo é hoje considerado uma má prática arquitetônica e de segurança. A [MDN Web Docs em "Inline event handlers — don't use these"](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events#inline_event_handlers_%E2%80%94_dont_use_these) é diretamente contra essa prática, e recomenda o uso da abordagem com `addEventListener` ao invés.
+
+Saindo dos problemas do exemplo fornecido, há uma discussão relevante que não foi abordada no texto original: a de áudios que tocam automaticamente ao abrir a página. No eMAG, esse ponto sequer é mencionado (e tampouco proibido ou criticado). No WCAG (2.0, 2.1, 2.2), ele não é proibido expressamente, mas há um comentário na página [Entendendo o Critério de Sucesso 1.4.2: Controle de Áudio](https://www.w3.org/WAI/WCAG22/Understanding/audio-control.html) que afirma que essa prática é "desencorajada", especialmente se o som dura mais de 3 segundos. Essa discussão merece um destaque especial tendo em vista que o áudio que toca automaticamente numa página pode dificultar a orientação do usuário, especialmente dos que usam tecnologias assistivas, uma vez que ele pode conflitar e abafar a voz dos leitores de tela, além de poder ser inconveniente. O WCAG vai um pouco mais além e ainda fornece técnicas em que [um som reproduzido automaticamente é parado dentro de 3 segundos (G171)](https://www.w3.org/WAI/WCAG22/Techniques/general/G171) e em que [um controle próximo ao início da página para parar o som automático é providenciado (G170)](https://www.w3.org/WAI/WCAG22/Techniques/general/G170).
+
+Pelas razões acima, a defasagem foi classificada como moderada.
+
+Portanto:
+
+- Uma discussão breve acerca de áudios que são reproduzidos automaticamente foi adicionada à descrição do item e aos critérios de verificação. Assim como o eMAG e o WCAG, essa prática não foi expressamente proibida, mas desencorajada. Reforçou-se que, caso adotada, controles para tal áudio fáceis de serem encontrados, como no início da página, devem ser providenciados.
+
+- Um reforço de que "Silenciar o áudio no sistema não é suficiente para atender essa recomendação", conforme diz também o WCAG no critério 1.4.2.
+
+- O exemplo de código do eMAG foi reformulado para utilizar somente os controles padrões fornecidos pelo atributo `controls`. Uma descrição mais completa para o exemplo também foi feita.
+
+- Um novo exemplo de código com um áudio que toca automaticamente e apresenta controle para parar o som logo no início da página foi adicionado. Esse controle não é nativo do atributo `controls`, e é manipulado via JavaScript para informar dinamicamente se a ação é reproduzir ou pausar, fornecendo feedback adequado ao usuário. Além disso, o uso de `onclick` diretamente no elemento HTML foi evitado, optando pelo uso de `addEventListener`. Por fim, esse exemplo não foi marcado como boa prática, e sim como prática neutra, para não induzir o leitor a pensar que o autoplay do áudio seja uma prática recomendada. Essa constatação também está presente na descrição do exemplo.
 
 ----------------------------------------------------------------------------
 

@@ -263,9 +263,13 @@ Essas decisões provavelmente refletem uma estratégia de padronização e simpl
 É válido ainda notar que o WCAG na versão 2.1, posterior ao eMAG 3.1, apresentou em seu texto, por sua vez, um novo [Critério de Sucesso 1.4.11 Contraste Não textual](https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/#non-text-contrast) que estabelece a proporção mínima de 3:1 para contraste entre alguns elementos não textuais, quase como um outro cenário excepcional à regra do contraste 4,5:1. Não só isso, como no WCAG 2.2 foi adicionado ainda um outro [Critério de Sucesso 2.4.13 Aparência do Foco](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#focus-appearance) que também estabelece contraste mínimo de 3:1 para a borda dos elementos focáveis. No entanto, como os outros casos especiais de 3:1 não foram abordados no eMAG, provavelmente pelas razões já citadas, e também decidiu-se não atualizá-los neste checklist, extrapolou-se que também não faria sentido portar essas novas exeções dos critérios de sucesso.
 
 Portanto:
+
 - As orientações bases não foram alteradas, mesmo teoricamente com elas configurando uma leve defasagem.
+
 - Os exemplos foram melhorados para demonstrar a aplicação das cores de fundo e primeiro plano com CSS.
+
 - Foi deixado mais claro na descrição do item o mínimo recomendado para o contraste numa folha de alto contraste, já que isso só estava sendo especificado no exemplo de aplicação.
+
 - Um exemplo de má prática de foco com contraste insuficiente foi adicionado para que os inspetores também se atentem a esse aspecto. Esse exemplo conversa diretamente com a recomendação "Possibilitar que o elemento com foco seja visualmente evidente" e seus respectivos exemplos.
 
 ----------------------------------------------------------------------------
@@ -303,11 +307,17 @@ Por exemplo:
 O cumprimento à recomendação do eMAG hoje, na forma que está, pode garantir a aderência ao critério 1.4.4 do WCAG e até contribuir para fornecer boa acessibilidade para a página, mas pode falhar no critério 1.4.10. Por isso, a defasagem foi classificada como de nível moderado.
 
 Portanto:
-- O limite superior para manutenção da compreensibilidade e funcionalidade da página foi aumentado de 200% para 400%, vide o novo critério 1.4.10 do WCAG 2.1.
+
+- O limite superior para manutenção da compreensibilidade e funcionalidade da página foi aumentado de 200% para 400%, vide o novo critério 1.4.10 do WCAG 2.1. No entanto, o limite original de 200% estabelecido pelo eMAG ainda é citado no texto, para fins de rastreabilidade e entendimento.
+
 - Exceções para a validez do aparecimento da barra horizontal ao fazer o zoom foram estabelecidas, vide o novo critério 1.4.10 do WCAG 2.1.
+
 - Além do emprego de diferentes folhas de estilo, o uso de *media queries* do CSS foi citado como possível abordagem para garantir a responsividade da página em diferentes resoluções de tela ou zooms.
+
 - O primeiro exemplo com imagens de um site em redimensionamento de 200% foi descartado, visto que o novo limite é 400%.
-- O outro exemplo com imagem de layout responsivo foi mantido
+
+- O outro exemplo com imagem de layout responsivo foi mantido.
+
 - Uma nova referência ao critério de sucesso 1.4.10 foi adicionada.
 
 ----------------------------------------------------------------------------
@@ -340,7 +350,7 @@ Portanto:
 
 Toda a ideia central da recomendação é relevante para o contexto de acessibilidade atual. Os maiores problemas se encontram no último exemplo da recomendação, em que o eMAG demonstra o uso do elemento `<video>` do HTML5. Alguns são discutidos a seguir.
 
-Em primeiro lugar, o último exemplo apresenta controle redundante no elemento `<button onclick="playPause()">Play/Pause</button>` para reger o elemento `<video>`. A questão é que o próprio elemento `<video>` possui o atributo `controls` que já faz com que o navegador renderize seu próprio player acessível nativo ([Elemento video - MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/video)). Ao inserir botões customizados logo acima de um vídeo que já possui controles nativos, cria-se uma interface duplicada que pode ser confusa, especialmente para usuários de tecnologias assistivas. Não só isso, mas o elemento redundante de controle adicionado possui acessibilidade ainda pior que o elemento padrão, uma vez que não atualiza seu texto ou atributo (como `aria-pressed` ou `aria-label`) para informar dinamicamente se a ação é reproduzir ou pausar, deixando o usuário sem feedback de estado adequado. Uma pouco dessa problemática é discutido no [Critério de Sucesso 4.1.2: Nome, Função, Valor](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html).
+Em primeiro lugar, o último exemplo apresenta controle redundante no elemento `<button onclick="playPause()"> Play/Pause </button>` para reger o elemento `<video>`. A questão é que o próprio elemento `<video>` possui o atributo `controls` que já faz com que o navegador renderize seu próprio player acessível nativo ([Elemento video - MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/video)). Ao inserir botões customizados logo acima de um vídeo que já possui controles nativos, cria-se uma interface duplicada que pode ser confusa, especialmente para usuários de tecnologias assistivas. Não só isso, mas o elemento redundante de controle adicionado possui acessibilidade ainda pior que o elemento padrão, uma vez que não atualiza seu texto ou atributo (como `aria-pressed` ou `aria-label`) para informar dinamicamente se a ação é reproduzir ou pausar, deixando o usuário sem feedback de estado adequado. Uma pouco dessa problemática é discutido no [Critério de Sucesso 4.1.2: Nome, Função, Valor](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html).
 
 Em segundo lugar, a abordagem de se utilizar os botões "Pequeno", "Médio" e "Grande" para alterar o tamanho do vídeo, pelo menos da forma que foi feita, não é a melhor prática. Isso porque o valor da largura do vídeo é modificado via JavaScript com valores absolutos em pixels, o que pode quebrar a responsividade. Uma possível forma de melhorar isso seria via CSS utilizando a propriedade `max-width: 100%` para o elemento do vídeo, garantindo que ele ocupe o tamanho total de seu contêiner, mas não o ultrapasse. O contêiner, por sua vez, poderia ser manipulado conforme a necessidade do desenvolvedor para garantir a responsividade e a correta disposição dos elementos da página. Há mais detalhes sobre essa discussão que pode ser visto na [MDN Web Docs - Images, media, and form elements](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Images_media_forms).
 

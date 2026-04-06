@@ -62,15 +62,15 @@ Além disso, há três "níveis" disponíveis de salvamento de progresso:
 
 ### 🧰 Barra de ferramentas
 
-| Ação                   | Descrição                                                     |
-| ---------------------- | ------------------------------------------------------------- |
-| 🔄 **Gerar código**    | Salva o progresso no servidor e gera um código de recuperação |
-| 🔄 **Sincronizar**     | Atualiza o progresso salvo no servidor                        |
-| 📋 **Código (copiar)** | Permite copiar o código vinculado                             |
-| ⬇️ **Recuperar**       | Carrega progresso salvo                                       |
-| 📤 **Exportar**        | Gera relatório (.xlsx ou .ods)                                |
-| 📥 **Importar**        | Importa relatório e sobrescreve o progresso                   |
-| 🧹 **Limpar**          | Reinicia o checklist                                          |
+| Ação                   | Descrição                                                      |
+| ---------------------- | -------------------------------------------------------------- |
+| 🔄 **Gerar código**    | Salva o progresso no servidor e gera um código de recuperação  |
+| 🔄 **Sincronizar**     | Atualiza o progresso salvo no servidor                         |
+| 🔢 **Código (copiar)** | Indica a existência de um código vincultado e permite copiá-lo |
+| ⬇️ **Recuperar**       | Carrega progresso salvo                                        |
+| 📤 **Exportar**        | Gera relatório (.xlsx ou .ods)                                 |
+| 📥 **Importar**        | Importa relatório e sobrescreve o progresso                    |
+| 🧹 **Limpar**          | Reinicia o checklist                                           |
 
 ### 💾 Salvamento automático
 

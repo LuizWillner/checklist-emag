@@ -234,17 +234,107 @@ Portanto:
 
 #### 3.9 Em tabelas, utilizar títulos e resumos de forma apropriada
 
+**Defasagem do eMAG: nível crítico**
+
+A base conceitual da recomendação de que é importante fornecer informações adicionais que ajudem na compreensão da tabela permanece sólida. A orientação para o uso do `<caption>` como o primeiro elemento filho de um `<table>` retratando o título para a tabela cujo o valor descreve sucintamente o seu propósito permanece válida, vide o [HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#the-caption-element).
+
+O problema da orientação existe quando ela afirma que "deve ser fornecido um resumo de seus dados através do atributo `summary` que deve ser declarado no elemento `<table>`". O atributo `summary` dentro do elemento `<table>` é hoje considerado **obsoleto** e não deve ser utilizado, segundo o [HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#attr-table-summary) mais uma vez. A própria técnica [H73 do WCAG 2.0 "Using the summary attribute of the table element to give an overview of data tables"](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H73), marcada pelo eMAG como uma referência, é marcada como obsoleta pelo próprio WCAG e sinaliza essa defasagem. Em vista disso, o uso do `summary` dentro de `<table>` no cenário atual é potencialmente perigoso pois pode gerar uma falsa sensação de conformidade com critérios de acessibilidade, uma vez que tal obsolescência não garante que o atributo será corretamente interpretado por diferentes tecnologias.
+
+Nesse sentido, outras [práticas substitutas são sugeridas pelo próprio HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques), tais como utilizar um parágrafo (`<p>`) descrevendo a tabela  antes do elemento `<table>`, ou até mesmo colocar o parágrafo dentro do elemento `<caption>`, de forma que o título da tabela em si seja delimitado por outro elemento dentro de `<caption>`, como o `<strong>`. O [W3C WAI Tutorials: Caption & Summary](https://www.w3.org/WAI/tutorials/tables/caption-summary/#using-aria-describedby-to-provide-a-table-summary) vai um pouco mais além e sugere que, na técnica de utilizar um parágrafo anterior para descrever a tabela, o atributo `aria-describedby` em `<table>` pode ser empregado para estabelecer uma relação mais direta entre `<p>` e `<table>`.
+
+Como essa recomendação sugere o uso de um atributo obsoleto segundo a especificação do HTML5, sem especificar alternativas e potencialmente podendo gerar problemas de falsa sensação de conformidade, sua defasagem foi classificada de nível crítico.
+
+Há ainda uma discussão se o eMAG obriga que todas as tabelas tenham um título como o elemento `<caption>`. A redação da recomendação é um pouco dúbia em relação a esse ponto. A princípio, e em acordo com o que é estabelecido no WCAG, interpretou-se que títulos não são obrigatórios para todas as tabelas, e sim que, quando utilizados, devem ser definidos com o `<caption>`.
+
+Portanto:
+
+- A descrição da recomendação foi refeita para excluir a orientação do uso do `summary` como meio de providenciar resumo/explicação para os dados da tabela. Os critérios de verificação também foram adaptados de acordo.
+
+- Também foi adicionado à descrição o termo "Para tabelas de dados que necessitarem de títulos para clarificar seus propósitos", esclarecendo a interpretação de que o uso do `<caption>` é obrigatório quando títulos são utilizados, e não que `<caption>` com título deve ser sempre empregado.
+
+- O exemplo dado pelo eMAG foi incorporado como má prática, em função do uso do `summary` dentro de `<table>`.
+
+- Um exemplo atualizado de como providenciar uma descrição adicional para uma tabela sem usar o `summary` mostrando 2 possibilidades foi adicionado. Os códigos foram baseados nas [Técnicas de descrição de tabelas do HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques) e na página [Caption & Summary da Web Accessibility Initiative (WAI) Tutorials](https://www.w3.org/WAI/tutorials/tables/caption-summary/).
+
+- Um exemplo extra demonstrando o uso de `<caption>` fornecendo título à tabela foi adicionado. O código foi baseado [nessa página da MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#adding_a_caption_to_your_table_with_caption).
+
+- A referência à técnica H73 do WCAG 2.0 "Using the summary attribute of the table element to give an overview of data tables" (obsoleta) foi removida.
+
+- Uma referência adicional sobre [adicionar uma legenda à sua tabela com `<caption>`, da MDN Web Docs,](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#adding_a_caption_to_your_table_with_caption) foi acrescentada.
+
+- Uma referência adicional sobre [Técnicas de descrição de tabelas do HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques) foi adicionada.
+
+- Uma referência adicional sobre [Caption & Summary da Web Accessibility Initiative (WAI) Tutorials](https://www.w3.org/WAI/tutorials/tables/caption-summary/) foi adicionada.
+
 ----------------------------------------------------------------------------
 
 #### 3.10 Associar células de dados às células de cabeçalho
+
+**Defasagem do eMAG: nível crítico**
+
+O princípio central de separar, nas tabelas, o cabeçalho dos dados utilizando os elementos `<th>` e `<td>` e de associar programaticamente cabeçalhos e células de dados, especialmente em tabelas complexas, continua válido e essencial no contexto de acessibilidade atual. No entanto, há pontos de defasagem muito significativos espalhados pelo texto do eMAG e pelos exemplos fornecidos.
+
+Em primeiro lugar, a orientação de se utilizar `<tfoot>` antes de `<tbody>`, característica do HTML4, caiu por terra. Não só isso, mas no HTML5, há [evidências que apontam que o emprego dessa prática atualmente, na verdade, é prejudicial em termos de acessibilidade](https://github.com/whatwg/html/commit/94d55af9cda601ce675d15f6a0e52c9bb9c6afa9), sobretudo por potencialmente bagunçar a ordem dos objetos de acessibilidade e do foco do teclado. O [HTML Living Standard ao tratar do elemento `<table>`](https://html.spec.whatwg.org/multipage/tables.html#the-table-element), inclusive, cita o `<tfoot>` na ordem dos conteúdos filhos de `<table>` como o último elemento. Como essa orientação pode gerar problemas de acessibilidade junto a uma falsa sensação de conformidade, a defasagem é classificada como crítica. 
+
+Em segundo lugar, os exemplos dados pelo eMAG apresentam uma série de erros estruturais na especificação dos códigos. Em primeiro lugar `axis` utilizado no elemento `<td>` no último exemplo hoje está obsoleto ([HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#attr-tdth-axis) e [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/th#axis)), sendo recomendado o uso do atributo `scope` no elemento `<th>` adequado ao invés.
+
+Além disso, no exemplo 3, o uso do atributo `scope` em elementos `<td>` também é considerado obsoleto ([HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#attr-td-scope) e [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/td#scope). Atualmente, esse atributo é estritamente restrito ao elemento `<th>`. Quando uma célula atua como cabeçalho para outras (como parece ser a intenção de "Maçã" e "Banana" no exemplo), ela deveria ser marcada semanticamente como `<th>`, vide a própria recomendação do eMAG.
+
+Há ainda o uso inadequado do atributo `summary` em `<table>`, que também é considerado obsoleto, algo já discutido no item "Em tabelas, utilizar títulos e resumos de forma apropriada" anterior.
+
+Com isso, a defasagem da recomendação do eMAG foi classificada como crítica.
+
+Portanto:
+
+- A essência da recomendação de separar, nas tabelas, o cabeçalho dos dados utilizando os elementos `<th>` e `<td>` e de associar programaticamente cabeçalhos e células de dados foi mantida na descrição desse item. Além disso, a orientação de separação subdivisão da tabela em `<thead>`, `<tbody>` e `<tfoot>` também foi mantida.
+
+-  A orientação de se implementar `<tfoot>` antes de `<tbody>` foi removida.
+
+- Uma descrição mais adequada sobre o atributo `scope` foi elaborada. São especificados na descrição todos os valores possíveis para `scope`, além de indicar que se trata de um atributo do elemento `<th>`.
+
+- Uma distinção mais clara sobre os casos de uso das estratégias com `scope` e `headers` foi acrescentada. Enquanto o `scope` é opcional para tabelas simples, tabelas complexas exigem que uma das estratégias citadas sejam abordadas. No caso específico de algumas tabelas muito complexas, pode ser que somente a estratégia do `headers` consiga garantir acessibilidade adequada.
+
+- O exemplo 1, que posiciona `<tfoot>` em cima de `<tbody>` foi redefinido como uma má-prática.
+
+- Os exemplos 2 a 4 originais do eMAG foram removidos, por serem confusos ou possuírem vários pontos de defasagem.
+
+- Novos exemplos para ilustrar os mecanismos de associação programática e o agrupamento das células em `<thead>`, `<tbody>` e `<tfoot>` foram acrescentados, inspirados nos exemplos da [MDN Web Docs: Acessibilidade de Tabelas](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility), [MDN Web Docs: Adicionar título a tabela com caption](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#adding_a_caption_to_your_table_with_caption) e da [Técnica H43 do WCAG](https://www.w3.org/WAI/WCAG22/Techniques/html/H43).
+
+- Uma nova referência à [Acessibilidade de tabelas HTML - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#tables_for_visually_impaired_users) foi adicionada.
 
 ----------------------------------------------------------------------------
 
 #### 3.11 Garantir a leitura e compreensão das informações
 
+**Defasagem do eMAG: nível nulo**
+
+A recomendação continua alinhada aos padrões de acessibilidade vigentes, e não possui defasagem técnica ou conceitual. O único ponto de atenção dela é que pode ser subjetivo avaliar a clareza e a compreensibilidade de um texto, mas o eMAG sugere algumas técnicas que podem auxiliar nisso. Pode ser discutível também até que ponto é possível clarificar o conteúdo de um texto quando ele pode abordar um assunto inerentemente complexo e de difícil entendimento, mesmo com os mecanismos de explicações suplementares. Entretanto, em casos de sistemas de informação para a população (por exemplo, assuntos de saúde ou justiça), os textos podem passar a informação sem o necessariamente usar o jargão técnico.
+
+Além disso, o WCAG trata essa orientação como nível AAA ([Critério de sucesso 3.1.5: Nível de Leitura](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#reading-level)), ou seja, ela não é obrigatória para conformidade básica. Por outro lado, o eMAG descartou essa classificação deliberadamente na sua versão 3.0, como explicado no próprio documento, optando por estabelecer um nível igualitário de prioridade para suas recomendações. Logo, a defasagem é nula.
+
+A princípio, portanto:
+
+- Manteve-se a recomendação basicamente como ela está.
+
 ----------------------------------------------------------------------------
 
 #### 3.12 Disponibilizar uma explicação para siglas, abreviaturas e palavras incomuns
+
+**Defasagem do eMAG: nível moderado**
+
+A a ideia central da recomendação em si é adequada e permanece atual em termos de acessibilidade. O problema está quando o eMAG sugere a utilização do elemento `<abbr title="...">` para explicar uma abreviação como suficiente para a conformidade da recomendação. 
+
+Tanto o [WCAG na técnica H28](https://www.w3.org/WAI/WCAG21/Techniques/html/H28) quanto o [HTML Living Standard](https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute) alertam que contar com o uso do atributo `title` no elemento `<abbr>` sozinho para a explicação do termo é desencorajado, pois muitos agentes de usuário não expõem esse atributo de maneira acessível, requirindo a utilização de um mouse para fazer o valor do `title` aparecer como um tooltip, excluindo usuários que usam somente o teclado ou mesmo dispositivos touchscreen. Apesar de ser recomendado utilizar o `<abbr>` para abreviações, pois é justamente esse seu papel semântico, depender somente do atributo `title` da explicação é um potencial problema de acessibilidade, mesmo sendo recomendado pelo eMAG. 
+
+Utilizar somente esse atributo pode trazer uma falsa sensação de conformidade com diretrizes de acessibilidade mais atuais, pois ela, em tese, cumpre a recomendação do eMAG. Entretanto, o nível de defasagem é classificado como moderado, uma vez que o eMAG não obriga o uso desse atributo e fornece algumas outras maneiras adequadas em termos de acessibilidade para cumprir a recomendação. 
+
+Portanto:
+
+- A descrição do item foi alterada para excluir o uso do `<abbr title="">` como mecanismo suficiente para prover a explicação de um termo. Um critério de verificação alertando para isso também foi adicionado.
+
+- Os exemplos do eMAG foram reaproveitados, mas o exemplo utilizando `<abbr title="">`  foi tratado como uma má prática.
+
+- O exemplo com explicação de texto inline foi levemente aprimorado semanticamente para envolver a sigla "ONU" num elemento `<abbr>` sem `title`, para não ficar redundante. É razoável usar `<abbr>` sem `title`, como explicitado na [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/abbr).
 
 ----------------------------------------------------------------------------
 

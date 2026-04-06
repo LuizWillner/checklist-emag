@@ -200,9 +200,35 @@ Portanto:
 
 #### 3.6 Fornecer alternativa em texto para as imagens do sítio
 
+**Defasagem do eMAG: nível leve**
+
+A recomendação permanece absolutamente atual. O fornecimento de alternativas textuais para imagem é de extrema importância para a acessibilidade. O único ponto que pode ser considerado como defasagem é quanto à orientação sobre as "imagens decorativas" que, segundo o eMAG, "devem ser inseridas por CSS". Apesar de não estar errada, essa é uma abordagem muito restritiva, sendo que há alternativas a ela atualmente. Uma possível forma é inserir a imagem com atributo `alt` vazio (`alt=""`) ou com atributo `aria-hidden="true"`, indicando que a imagem deve ser ignorada por tecnologias assistivas, como discutido no [W3C WAI Tutorials: Decorative Images](https://www.w3.org/WAI/tutorials/images/decorative/). Seguir essa recomendação do eMAG não traz nenhum prejuízo de acessibilidade, mas marginaliza uma prática muito mais comum, mais simples e mais adequada na atualidade. Por isso, a defasagem foi classificada como leve.
+
+Portanto:
+
+- A descrição da recomendação foi adaptada para incluir a estratégia `alt=""` ou  `aria-hidden="true"` como válida para imagem decorativas, ao invés de somente a inserção via CSS. Um exemplo do tipo também foi acrescentado.
+
 ----------------------------------------------------------------------------
 
 #### 3.7 Utilizar mapas de imagem de forma acessível
+
+**Defasagem do eMAG: nível leve**
+
+A recomendação em si como ideia geral continua válida. Acontece que o recurso de mapas de imagem, no cenário de desenvolvimento de interfaces atual, é algo raro de se encontrar, sendo um mecanismo em bastante desuso. No entanto, o próprio eMAG reconhece esse fato, e apresenta um cenário que ele poderia ser usado ("*acessibilidade de infográficos*"). Esse reconhecimento é importante pois evita que a recomendação possa ser interpretada em algum nível como um estímulo ao uso de mapas de imagem. Ainda assim, a recomendação falha em dar justificativas mais claras do *porquê* os mapas estão em desuso e são evitados. E uma das possíveis justificativas para isso é importante no contexto de acessibilidade, pois trata do fato dos mapas de imagem usarem coordenadas fixas em CSS pixels ([MDN Web Docs: The Image Map Area Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/area)), o que dificulta o seu uso em layouts responsivos. Por isso, a defasagem é classificado como leve.
+
+Além disso, há um problema de implementação no exemplo de mapas do lado do servidor, um recurso ainda mais legado que o mapa do lado do cliente. Antes dele, o eMAG afirma corretamente que esse tipo de mapa de imagem deve ser evitado, pois não é possível torná-lo por si só acessível. Ele segue dizendo que, caso utilizados, links redundantes relativos a cada região ativa do mapa devem ser fornecidos logo após, e mostra o exemplo. O problema é que o exemplo **não apresenta uma implementação correta** de um mapa de imagem do lado do servidor. Isso porque a imagem referente ao mapa aplica o atributo `usemap="#Map"`, que é utilizado para referenciar o hash-name (`name`) de um elemento `<map>` presente no código HTML ([HTML Living Standard: The map element](https://html.spec.whatwg.org/multipage/image-maps.html)). Em outras palavras, é um atributo para mapas do lado do *cliente*. Para mapas do lado do servidor, o atributo booleano `ismap` é utilizado para indicar que o elemento provê acesso a um mapa desse tipo ([HTML Living Standard: The ismap attribute](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-ismap)). Apesar de um erro HTML, como se trata de um erro em um exemplo ilustrativo de um recurso legado, que não necessariamente induz ao uso dele, não foi considerado forte o suficiente para classificar como um nível de defasagem maior.
+
+Portanto:
+
+- Acrescentou-se na descrição uma justificativa mais clara do porquê mapas de imagem são um recurso em desuso ("dificultam a implementação de um design responsivo").
+
+- Há ênfase de que a expectativa de encontrar esse recurso concentra-se em sistemas mais antigos.
+
+- O erro do exemplo de mapa do lado do servidor foi corrigido. O exemplo também foi melhorado para agrupar os links numa lista, ao invés de texto.
+
+- Os exemplos foram marcados como "neutros", para não dar a entender que o uso de mapas de imagem está sendo incentivado, uma vez que se trata de um recurso um tanto ultrapassado.
+
+*OBS: Não há também citação do uso de SVG como uma alternativa moderna para mapas de imagem, provavelmente por ainda não ser um recurso consolidado suficiente na época de redação. Tratar disso, no entanto, provavelmente teria que gerar uma ou mais recomendações de acessibilidade novas específicas para a aplicação de SVG nesse sentido.*
 
 ----------------------------------------------------------------------------
 

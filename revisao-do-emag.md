@@ -180,21 +180,97 @@ Portanto:
 
 #### 3.1 Identificar o idioma principal da página
 
+**Defasagem do eMAG: nível nulo**
+
+A recomendação continua atual. O único ponto que poderia ser considerado mais "antiquado" é o exemplo de uso com XHTML, que é um padrão muito incomum hoje em dia. No entanto, caso seja empregado, a orientação não está equivocada. Por isso, o nível de defasagem foi classificado como nulo.
+
+Portanto:
+
+- O exemplo prático de XHTML foi descartado, uma vez que é um padrão bastante incomum, e o exemplo em HTML já ilustra adequadamente a ideia da recomendação.
+
+- Foi incluído um exemplo de "má prática" com trechos de códigos em que os atributos de idioma possuem valores ausentes, incorretos e inválidos.
+
+- Foi incluído um exemplo listando alguns dos possíveis códigos de idioma válidos segundo a [norma BCP 47](https://www.rfc-editor.org/info/bcp47), a qual estabelece a validez e formação desses códigos.
+
+- Foi acrescentado tanto aos critérios de verificação quanto ao exemplo errado uma chamada de atenção para um erro comum quando o idioma do conteúdo da página é alterado por um seletor de idioma, mas o atributo `lang` não é alterado.
+
+- Uma nova referência à [Técnica WCAG H57: Usar o atributo de idioma em elementos HTML (em inglês)](https://www.w3.org/WAI/WCAG22/Techniques/html/H58) foi acrescentada.
+
+- Uma nova referência à [Norma BCP 47 para códigos de idiomas (em inglês)](https://www.rfc-editor.org/info/bcp47) foi acrescentada, que estabelece os códigos de idioma válidos (inclusive, essa mesma referência é citada na técnica WCAG anterior adicionada).
+
 ----------------------------------------------------------------------------
 
 #### 3.2 Informar mudança de idioma no conteúdo
+
+**Defasagem do eMAG: nível nulo**
+
+A recomendação continua atual. Assim como o item anterior, o único ponto que poderia ser considerado mais "antiquado" é o exemplo utilizando XHTML, que é um padrão muito incomum hoje em dia. No entanto, caso seja usado, a orientação não está equivocada. Por isso, o nível de defasagem foi classificado como nulo.
+
+Portanto:
+
+- O exemplo prático de XHTML foi descartado, uma vez que é um padrão bastante incomum, e o exemplo em HTML já ilustra adequadamente a ideia da recomendação.
+
+- Foi incluído um [exemplo do WCAG](https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html) de boa prática com um seletor de idioma cujos nome dos idiomas são corretamente identificados pelos respectivos idiomas. Analogamente, um exemplo de má prática foi incluído nessa mesma linha com os atributos de idioma com valores ausentes, incorretos e inválidos.
+
+- Foi incluído um exemplo listando alguns dos possíveis códigos de idioma válidos segundo a [norma BCP 47](https://www.rfc-editor.org/info/bcp47), a qual estabelece a validez e formação desses códigos.
+
+- Uma nova referência à [Técnica WCAG H58: Uso do atributo de idioma para identificar mudanças de idioma (em inglês)](https://www.w3.org/WAI/WCAG22/Techniques/html/H58) foi acrescentada.
+
+- Uma nova referência à [Norma BCP 47 para códigos de idiomas (em inglês)](https://www.rfc-editor.org/info/bcp47) foi acrescentada, que estabelece os códigos de idioma válidos (inclusive, essa mesma referência é citada na técnica WCAG anterior adicionada).
+
 
 ----------------------------------------------------------------------------
 
 #### 3.3 Oferecer um título descritivo e informativo à página
 
+**Defasagem do eMAG: nível nulo**
+
+A recomendação continua atual. A única questão é que há uma observação relevante não citada pelo eMAG, mas existente no WCAG no [Critério de Sucesso 2.4.2: Página com Título](https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html): ter atenção para que o título das páginas sejam alterados conforme o usuário navega pelo sistema, algo que pode não acontecer no contexto atual das SPAs (Single Page Applications).
+
+A princípio, portanto:
+
+- Um novo critério de verificação foi adicionado para que se atente às mudanças dinâmicas de título ao navegar pelo sistema, sobretudo em SPAs. Uma chamada de atenção para isso também foi incluída no exemplo.
+
+- Uma nova referência à [Técnica WCAG H25: Fornecer um títuto à página usando o elemento <title> (em inglês)](https://www.w3.org/WAI/WCAG22/Techniques/html/H25) foi adicionada.
+
 ----------------------------------------------------------------------------
 
 #### 3.4 Informar o usuário sobre sua localização na página
 
+**Defasagem do eMAG: nível nulo**
+
+A recomendação continua atual. É de fato importante que o usuário tenha informações sobre sua localização dentro de um conjunto de páginas.
+
+A sugestão de uso dos breadcrumbs para esse fim é válida, mas o eMAG parece sugerir esse recurso como o mecanismo principal para atingir esse objetivo, quando na verdade, atualmente, existem inúmeras alternativas. Apesar do eMAG não chega a restringir essa abordagem como a única aceitável, pode ser discutível se ele não acaba induzindo equivocadamente o leitor a focar somente no uso dos breadcrumbs como mecanismo de localização, como dito em:
+
+> "Assim, poderá ser utilizado o recurso de “migalha de pão” (breadcrumbs), que são links navegáveis em forma de lista hierárquica os quais...". 
+
+Como não é algo restritivo propriamente, e ainda é um recurso bem usado, esse cenário não foi considerado suficiente para elevar o nível de defasagem.
+
+Além disso, um exemplo de mecanismo de breadcrumbs é citado, mas não há muitos detalhes quanto a sua implementação. Somente é citado que os links devem estar em "forma de lista hierárquica". Um exemplo mais completo seria bem vindo à recomendação.
+
+Portanto:
+- A nova descrição do item foi redigida com cuidado para não tratar o mecanismo de breadcrumbs como principal abordagem, e sim como um "possível exemplo".
+
+- Um exemplo de implementação de breadcrumbs mais completo, baseado na [técnica G65 do WCAG "Providing a breadcrumb trail"](https://www.w3.org/WAI/WCAG21/Techniques/general/G65), com uso de `<nav>`, `aria-label` e `aria-current`, foi acrescentado
+
+- A [Técnica WCAG G65: Providing a breadcrumb trai](https://www.w3.org/WAI/WCAG21/Techniques/general/G65) foi adicionada ao item como referência.
+
 ----------------------------------------------------------------------------
 
 #### 3.5 Descrever links clara e sucintamente
+
+**Defasagem do eMAG: nível nulo**
+
+A recomendação continua atual e alinhada com práticas modernas. Sua ideia central de garantir que o texto do link indique claramente o destino é muito relevante. No eMAG, entretanto, é válido notar que ela tende a ser mais restritiva do que o estabelecido em outras diretrizes de acessibilidade.
+
+A orientação do eMAG de que "Não se deve fazer a utilização de links do tipo “clique aqui”, “leia mais”,..." é mais rígida do que permite o WCAG em um de seus níveis. Para o nível A, o WCAG afirma que é suficiente também que os links sejam compreendidos pelo contexto, possibilitando o uso desse tipo de texto mais genérico nos links desde que fique claro seu destino pelo contexto ([Critério de sucesso 2.4.4: Finalidade do Link (Em contexto)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#link-purpose-in-context)). No entanto, essa orientação mais rígida do eMAG parece ter sido feita intencionalmente pelos seus autores, pois além do WCAG 2.0 (o vigente quando o eMAG 3.1 foi elaborado) já possuir esse caráter mais permissivo na época, os autores apresentam um argumento sólido para essa conduta mais rigorosa de que "*muitos usuários de leitores de tela navegam por links*", e portanto necessitam de uma descrição mais clara por nem sempre terem acesso ao contexto. Esse argumento é mais consonante ao [Critério de sucesso 2.4.9: Finalidade do Link (Apenas o Link)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#link-purpose-link-only), de nível AAA. Por isso, a defasagem foi classificada como nula.
+
+Portanto:
+
+- Foi acrescentada ao texto da descrição e aos critérios de verificação a possibilidade do link possuir uma imagem como conteúdo (ao invés de um texto), citando que, nesse caso, o texto do link considerado por tecnologias assistivas será aquele definido no atributo `alt` da imagem. Um exemplo de boa prática e má prática disso também foi acrescentado.
+
+- Novos exemplos de boas e más práticas mais detalhados foram incluídos para ilustrar a recomendação. Dentre eles, é válido destacar o exemplo 2, reaproveitado da recomendação 1.9 "Não abrir novas instâncias sem a solicitação do usuário" da seção "Marcação" , que acaba se relacionando também com essa recomendação. Além disso, outros exemplos de uso inapropriado do atributo `title` foram incluídos.
 
 ----------------------------------------------------------------------------
 

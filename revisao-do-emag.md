@@ -15,6 +15,22 @@ Diversos governos e instituições governamentais mundo afora adaptam essas dire
 
 Com isso em mente, uma aplicação web foi construída como parte de um **projeto de TCC**, com a meta de estabelecer uma proposta prática de **modernização do eMAG**, estruturada em formato de checklist. A premissa central consistiu em adaptar as recomendações originais, definir critérios de verificação e incluir novas referências quando necessário, conforme a seguinte análise de defasagem. O objetivo foi trazer o eMAG para um contexto mais moderno frente às mudanças propagadas nas tecnlogias da informação e nas orientações de acessibilidade digital.
 
+## Metodologia da análise
+
+No intuito de se compreender melhor o estado do eMAG perante às práticas e recomendações de acessibilidade web modernas, cada recomendação original foi classificada qualitativamente de acordo com **quatro níveis de defasagem**. Essa classificação foi orientada, de maneira geral, pelos seguintes critérios estabelecidos para cada nível:
+
+- **Nível nulo**: A recomendação do eMAG está bem adequada e não possui nada que indique alguma orientação com defasagem significativa. Em outras palavras, elas podem ser seguidas como critérios adequados de acessibilidade sem maiores modificações.
+
+- **Nível leve**: Há na recomendação do eMAG algum ponto que estabelece uma orientação de uma maneira antiga ou antiquada, mas que não está proprimante errada, e sim, que existem alternativas mais modernas que podem ser empregadas. Portanto, há a presença de fatores mais antigos, que eventualmente até podem trazer alguma leve melhora técnica caso fossem modernizados, mas que não há impacto relevante direto na acessibilidade ou em conformidade com padrões de linguagem.
+
+- **Nível moderado**: Há na recomendação do eMAG um orientação antiquada que pode potencialmente introduzir algum problema para a aplicação, mesmo que não crítico, havendo uma alternativa objetivamente melhor que seria adequada ser empregada no lugar. Essa orientação original pode até não estar todo errada, mas as alternativas modernas poderiam minimizar as chances de impactos negativos ocorrerem.
+
+- **Nível crítico**: Uma parte da recomendação do eMAG ou ela por completo orienta algo de uma maneira equivocada, em que o emprego desse método hoje induz a algum erro técnico mais grave, como não conformidade com o padrão sintático ou semântico de alguma linguagem ou a um prejuízo direto e relevante de acessibilidade. Portanto, a orientação estaria bastante ultrapassada, e alternativas mais adequadas deveriam ser empregadas no lugar.
+
+Mesmo com esses critérios definidos, é necessário ainda compreender que a classificação de defasagem de uma recomendação em um nível maior ou menor pode ainda em muitos casos depender de um viés bastante interpretativo. Por exemplo, há uma série de recomendações que não possuíam defasagem aparente em seu texto em si, mas que os exemplos fornecidos relativos a ela muitas vezes demonstravam pontos antiquados. Classificar o nível de defasagem dessas recomendações dependia frequentemente da interpretação de se o exemplo era estabelecido como um modelo a ser seguido ou somente como uma simplificação proposital para melhorar a didática e ilustrar alguma ideia. No primeiro caso, a defasagem do exemplo tende a elevar a classificação, enquanto no segundo o nível tende a ser mais baixo. De todo modo, o ponto é que identificar em qual dos casos o exemplo se encontra pode ser algo subjetivo e requerir uma extrapolação da intenção original dos autores do documento. Esse é somente um dos casos que demonstram como a classificação é fundamentada a partir de uma análise qualitativa da recomendação original.
+
+A seguir, segue uma tabela que resume as classificações feitas na análise para as recomendações por categoria.
+
 ## Resumo da análise
 
 |                              | Nível Nulo | Nível Leve | Nível Moderado | Nível Crítico |

@@ -146,9 +146,29 @@ Portanto, as seguintes refatorações foram feitas:
 
 #### 2.5 Fornecer alternativa para modificar limite de tempo
 
+**Defasagem do eMAG: nível nulo**
+
+A recomendação continua alinhada às recomendações modernas. O único ponto de melhoria ausente no eMAG que vale destacar é que, no [Critério de sucesso  2.2.1 do WCAG: Ajustável por Temporização](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#timing-adjustable), os "*eventos em tempo real*" e atividades em que a modificação do limite de tempo a invalidaria são estabelecidos como exemplos que tornam mais claro o que seriam as "*situações em que o limite de tempo é absolutamente necessário*".
+
+Portanto:
+
+- O texto da recomendação foi adaptado ao checklist para incluir que "*essa recomendação não se aplica a eventos em que o limite de tempo é absolutamente necessário para a validez da atividade, como por exemplo quando ele é parte de um evento em tempo real*", tornando mais evidente o que seriam os chamados "*eventos em que o limite de tempo é absolutamente necessário*". A mesma especificação também é tratada nos critérios de verificação.
+
 ----------------------------------------------------------------------------
 
 #### 2.6 Não incluir situações com intermitência de tela
+
+**Defasagem do eMAG: nível nulo**
+
+Essa recomendação gera uma discussão interessante ao tentar classificar sua defasagem. Nela, o eMAG *proíbe* efeitos piscantes, intermitentes ou cintilantes. Não há uma definição clara e técnica sobre o que seriam esses flashes, nem estabelece um limite onde eles poderiam ser aceitáveis. O WCAG, por outro lado, no [Critério de Sucesso 2.3.1: Três Flashes ou Abaixo do Limite](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#three-flashes-or-below-threshold) é mais *permissivo* e traz uma definição mais técnica. Ele estabelece um limite aceitável para os flashes, tratando-os como:
+
+> "conteúdo que pisque mais de três vezes no período de um segundo, ou o flash encontra-se abaixo dos limites de flash universal e flash vermelho."
+
+À primeira vista, isso poderia ser considerado como um fator preponderante para elevar a classificação de defasagem dessa recomendação do eMAG perante às diretrizes atuais. No entanto, é válido notar que essa divergência parece mais uma decisão deliberada dos autores do eMAG para simplificar a recomendação do que uma orientação ultrapassada propriamente, especialmente tendo em vista que o WCAG 2.0, documento em que o eMAG se baseou, já estabelecia essas diretrizes mais permissivas e mesmo assim o eMAG adotou um caminho mais restritivo. Em vista disso, como o cumprimento do eMAG não leva a um desacordo com as diretrizes modernas do WCAG, e parece de fato simplificar a orientação, a defasagem foi classificada como nula.
+
+Portanto:
+
+- Manteve-se a ideia geral da recomendação sem alterações drásticas.
 
 ----------------------------------------------------------------------------
 

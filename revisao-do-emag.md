@@ -21,7 +21,7 @@ No intuito de se compreender melhor o estado do eMAG perante às práticas e rec
 
 - **Nível nulo**: A recomendação do eMAG está bem adequada e não possui nada que indique alguma orientação com defasagem significativa. Em outras palavras, elas podem ser seguidas como critérios adequados de acessibilidade sem maiores modificações.
 
-- **Nível leve**: Há na recomendação do eMAG algum ponto que estabelece uma orientação de uma maneira antiga ou antiquada, mas que não está proprimante errada, e sim, que existem alternativas mais modernas que podem ser empregadas. Portanto, há a presença de fatores mais antigos, que eventualmente até podem trazer alguma leve melhora técnica caso fossem modernizados, mas que não há impacto relevante direto na acessibilidade ou em conformidade com padrões de linguagem.
+- **Nível leve**: Há na recomendação do eMAG algum ponto que estabelece uma orientação de uma maneira antiga ou antiquada, mas que não está proprimante errada, e sim, que existem alternativas mais modernas que podem ser empregadas. Portanto, há a presença de fatores mais antigos, que eventualmente até podem trazer alguma leve melhora técnica caso fossem modernizados, mas que não há impacto grande e direto na acessibilidade ou em conformidade com padrões de linguagem.
 
 - **Nível moderado**: Há na recomendação do eMAG um orientação antiquada que pode potencialmente introduzir algum problema para a aplicação, mesmo que não crítico, havendo uma alternativa objetivamente melhor que seria adequada ser empregada no lugar. Essa orientação original pode até não estar todo errada, mas as alternativas modernas poderiam minimizar as chances de impactos negativos ocorrerem.
 
@@ -42,13 +42,13 @@ A seguir, segue uma tabela que resume as classificações feitas na análise par
 |                              | Nível Nulo | Nível Leve | Nível Moderado | Nível Crítico |
 | ---------------------------- | ---------- | ---------- | -------------- | ------------- |
 | 1. Marcação                  | 3          | 3          | 2              | 1             |
-| 2. Comportamento (DOM)       | 6          | 0          | 0              | 1             |
+| 2. Comportamento (DOM)       | 4          | 2          | 0              | 1             |
 | 3. Conteúdo/Informação       | 6          | 3          | 1              | 2             |
 | 4. Apresentação/Design       | 1          | 2          | 1              | 0             |
 | 5. Multimídia                | 3          | 0          | 2              | 0             |
 | 6. Formulários               | 2          | 2          | 3              | 1             |
 | Padronização no Gov. Federal | -          | -          | -              | -             |
-| **TOTAL**                    | **21**     | **10**     | **9**          | **5**         |
+| **TOTAL**                    | **19**     | **12**     | **9**          | **5**         |
 
 ## Análise
 
@@ -136,17 +136,83 @@ Portanto, as seguintes refatorações foram feitas:
 
 #### 2.1 Disponibilizar todas as funções da página via teclado
 
+**Defasagem do eMAG: nível crítico**
+
+A ideia central da recomendação, de que todas as funcionalidades do sistema sejam operáveis via teclado sem prisão do foco, até continua atual. O que leva a classificação como crítico é a existência de orientações explícitas e exemplos de como seguir em conformidade com a recomendação muito defasados, com códigos legados, que podem induzir a uma implementação problemática. Alguns pontos são:
+
+- O evento `keypress` e a propriedade `onkeypress` estão obsoletos (*deprecated*), vide o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Element/keypress_event) e o [W3 Schools](https://www.w3schools.com/jsref/event_onkeypress.asp)
+
+- A propriedade `keyCode` está obsoleta (*deprecated*), vide o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
+
+- `window.event` é um recurso não padronizado e do Internet Explorer, já inexistente. O [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/event) explicitamente não recomenda o uso de recursos não padronizados.
+
+- Na recomendação, há código específico para o Internet Explorer, um navegador já inexistente.
+
+- A comparação da tecla com seu valor numérico, como feito em `pressedkey == "13"`, não é considerada uma boa prática. Atualmente, recomendaria-se adotar uma estratégia na linha de `event.key === "Enter"`.
+
+Portanto:
+
+- Toda a parte falando dos manipuladores de evento `onkeypress`, `onmousedown`, `onkeydown`, etc foi removida, tanto da descrição quanto dos critérios de verificação. Era um trecho que, além de confuso, possuía elementos legados, assim como exemplos de implementação defasados. Navegadores modernos já implementam equivalência de vários eventos do mouse para o teclado por padrão.
+
+- Acrescentou-se um trecho na descrição sobre a importância de menus com subitens (*dropdown*) serem operáveis via teclado, algo que não era abordado na recomendação original.
+
+- Os exemplos do eMAG foram descartados. Como o item ficou mais simplificado após a limpa de defasagens do eMAG, foi interpretado que os exemplos de aplicação do código tornaram-se mais irrelevantes. Afinal de contas, é um item cuja validação depende mais de uma inspeção manual de uso do sistema do que uma análise de código.
+
 ----------------------------------------------------------------------------
 
 #### 2.2 Garantir que os objetos programáveis sejam acessíveis
+
+**Defasagem do eMAG: nível nulo**
+
+A recomendação apresenta fundamento conceitual correto e ainda plenamente válido, sem erro técnico grave nem orientação que induza diretamente a não conformidade com algum padrão técnico ou de acessibilidade. A única ressalva está para o exemplo tido como correto, na parte do JavaScript, que adota um estilo de codificação antiquado com o uso de `element.onclick = pop;`. O código, no entanto, ainda funciona nos navegadores modernos e não viola nenhum padrão em si da linguagem. Por isso, e como se trata de um detalhe pontual num exemplo, a classificação da defasagem foi nula.
+
+Portanto:
+
+- O exemplo correto foi refatorado para um exemplo simbólico e ilustrativo um pouco mais próximo de um desenvolvimento moderno utilizando JavaScript puro.
 
 ----------------------------------------------------------------------------
 
 #### 2.3 Não criar páginas com atualização automática periódica
 
+**Defasagem do eMAG: nível leve**
+
+A recomendação continua atual. Evitar o recarregamento periódico da página por inteiro, denotado pelo eMAG através do uso de `<meta http-equiv="refresh" content="30" />`, continua sendo o padrão de acessibilidade.
+
+A discussão atualmente só é um pouco mais complexa, pois com o surgimento de novos tipos de aplicações web, como as Single Page Applications, as maneiras em que é possível atualizar o conteúdo da página aumentaram. É possível, inclusive, que a página não seja recarregada por inteira, e que somente uma parte de seu conteúdo seja atualizado dinamicamente, uma opção mais comumente empregada do que a técnica de recarregamento automático utilizando `<meta http-equiv="refresh" content="30" />`. Nesses casos, o emprego adequado do *ARIA Live Regions* torna-se muito importante ([MDN Web Docs: ARIA live regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)).
+
+O eMAG traz muito mais um foco nos recarregamentos automáticos totais da página, e isso não está errado. No contexto atual, entretanto, é importante reconhecer as outras maneiras que "atualizações automáticas" podem ocorrer numa página da web. Por isso, a defasagem foi classificada como leve.
+
+Portanto:
+
+- O enfoque no uso do `<meta http-equiv="refresh" content="30" />` para atualização automática foi retirado da descrição do item. Essa abordagem é citada apenas num dos critérios de verificação e num exemplo.
+
+- Além dos recarregamentos automáticos, "mudanças automáticas periódicas inesperadas de contexto" foi incluído como ponto restritivo a ser evitado, na tentativa de generalizar um pouco mais à recomendação, em acordo com o [Critério de Sucesso 3.2.5 "Mudança Mediante Solicitação" correspondente do WCAG](https://www.w3.org/WAI/WCAG21/Understanding/change-on-request.html). 
+
+- Uma orientação sobre a importância do uso do *ARIA Live Regions* para os componentes dinâmicos foi acrescentada. No entanto, devido a abrangência do tópico e complexidade do tópico, discussão adicionais foram deixadas para as referências fornecidas.
+
+- Uma referência para ([MDN Web Docs: ARIA live regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)) foi acrescentada.
+
 ----------------------------------------------------------------------------
 
 #### 2.4 Não utilizar redirecionamento automático de páginas
+
+**Defasagem do eMAG: nível leve**
+
+A recomendação denota um ponto de restrição excessiva que pode impactar no desenvolvimento de sistemas web. Da maneira que está escrito no eMAG:
+
+> "Não devem ser utilizadas marcações para redirecionar a uma nova página, como o uso do atributo http-equiv com conteúdo “refresh” do elemento META"
+
+Em primeiro lugar, não fica claro se o problema está somente em utilizar essas marcações para redirecionamento de páginas ou se qualquer redirecionamento é problemático, como o título sugere. De qualquer maneira, o WCAG reconhece na [técnica SVR1: "Implementing automatic redirects on the server side instead of on the client side"](https://www.w3.org/WAI/WCAG22/Techniques/server-side-script/SVR1) e na [técnica H76: "Using meta refresh to create an instant client-side redirect"](https://www.w3.org/WAI/WCAG22/Techniques/html/H76) formas aceitáveis de se implementar redirecionamento de páginas do ponto de vista da acessibilidade. Inclusive, uma dessas formas passa pelo redirecionamento automático via servidor. O eMAG chega a citar o redirecionamento pelo servidor fornecendo o ePWG como fonte de consulta para tal, mas essa referência parece equivocada pois aparentemente não há nada nesse documento que trate disso (pelo menos não de maneira completa). Acaba que algo o eMAG centraliza mais a discussão no uso de `<meta http-equiv="refresh">`.
+
+O grande centro dessa argumentação é que o WCAG foca no problema dos redirecionamentos que acontecem **após** a página ser carregada, e não qualquer um. O eMAG até pode ter tido essa intenção, mas isso não fica claro na redação. É fato que restringir negativamente qualquer redirecionamento traz uma limitação para o desenvolvimento de sistemas em que essa técnica pode ser importante, sobretudo em validações de segurança antes do carregamento da página. Por isso, a defasagem foi classificada como leve.
+
+Portanto:
+
+- A descrição do item foi simplificada e o enfoque no uso do `<meta http-equiv="refresh" />` para redirecionamento automático foi retirado. Essa abordagem é citada apenas num dos critérios de verificação e num exemplo.
+
+- Foi especificado para evitar "*qualquer mecanismo que faça a página, **após carregada**, navegar automaticamente para outra URL*", pois redirecionamentos antes da página ser carregada não trazem problemas (afinal, é isso que é sugerido indiretamente ao citar o uso de redirecionamento via servidor).
+
+- A referência para a Cartilha de Codificação dos Padrões Web em Governo Eletrônico (ePWG) foi retirada.
 
 ----------------------------------------------------------------------------
 

@@ -118,17 +118,91 @@ Portanto, as seguintes refatorações foram feitas:
 
 #### 1.6 Não utilizar tabelas para diagramação
 
+**Defasagem do eMAG: nível nulo**
+
+A recomendação ainda é plenamente válida e aderente às diretrizes atuais. A unica adaptação feita foi no exemplo bom, em que elementos semânticos `<header>`,  `<nav>` e `<main>` foram colocados no lugar de `<div role="banner">` `<div role="navigation">` e `<div role="main">`.
+
 ----------------------------------------------------------------------------
 
 #### 1.7 Separar links adjacentes
+
+**Defasagem do eMAG: nível leve**
+
+O conceito principal dessa recomendação não está defasado. A única parte mais problemática é quando, no texto original do eMAG, são abordados os ARIA roles `"navigation"`, `"menu"` e `"menubar"`. 
+
+Em primeiro lugar, a forma descrita pelo eMAG sobre o uso de `"menu"` e `"menubar"` não parece ser muito acurada. A descrição do eMAG é um tanto abrangente, e pode levar a uma interpretação errada sobre o uso quando comparada com a [explicação oficial do W3C para o menu](https://w3c.github.io/aria/#menu) e [para o menubar](https://w3c.github.io/aria/#menubar). Apesar das explicações oficiais ainda serem um tanto genéricas, elas parecem atribuir uma função mais específica de "*menus de aplicação*" a esses roles, e não "*menus que não são o principal da página*", como diz o eMAG.
+
+Além disso, apesar da role `"navigation"` ser explicada de maneira adequada, seu uso no exemplo 4 é redundante em `<nav id="menu" role="navigation">`, um problema mais discutido na [recomendação 1.8 "Dividir as áreas de informação"](#18-dividir-as-áreas-de-informação).
+
+Portanto:
+
+- A menção aos roles "navigation", "menu" e "menubar" foi suprimida na descrição do item nem nos critérios de verificação para simplificar o item. No fim das contas, abordar o uso desses roles não combina muito com a orientação central da recomendação em si, soando meio deslocado. Os exemplos que utilizavam essas roles também foram descartados.
+
+- Um exemplo extra de má prática em que elementos `<a>` estão adjacentes dentro de uma `<div>` sem separação adequada foi acrescentado.
 
 ----------------------------------------------------------------------------
 
 #### 1.8 Dividir as áreas de informação
 
+**Defasagem do eMAG: nível moderado**
+
+O conceito principal da recomendação sobre organização em regiões, consistência de navegação e uso de landmarks continua válido. Entretando, há alguns pontos de defasagem que necessitam ser aboradaos.
+
+Em primeira análise, a orientação **obrigatória** de usar os roles do ARIA de maneira duplicada/redundante com elementos que já possuem semântica apropriada, como em `<nav role="navigation">` e `<main role="main">`, vai completamente em oposição à primeira regra do ARIA (https://w3c.github.io/using-aria/#rule1) (https://www.w3.org/TR/html-aria/), que diz que:
+
+> "Se você puder usar um elemento HTML nativo ou um atributo com a semântica e o comportamento necessários já incorporados, em vez de reaproveitar um elemento e adicionar uma função, estado ou propriedade ARIA para torná-lo acessível, faça isso."
+
+O uso dessa redundância não necessariamente traz problemas de acessibilidade em si, mas pode trazer problemas de manutenção e consistência no código fonte, em que o desenvolvedort pode acabar modificando o elemento sem alterar seu role. Por isso, não é recomendado.
+
+Em segundo plano, no último exemplo, o uso do role `"section"` duas vezes em `<section role="section">` é equivocado. O texto, inclusive, chega a dizer: 
+
+> "O ARIA role que contém o mesmo papel do elemento possui o valor section".
+
+O role `"section"` é um role abstrato para componentes de contenção estrutural renderizáveis, de acordo com o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role). Em outras palavras, ele não deve ser usado ("instanciado") por desenvolvedores em páginas Web. O role correto correspondente ao elemento `<section>` seria o "region", também segundo o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/landmark_role).
+
+Além disso, no último e penúltimo exemplos, o uso do role "*heading*" 2 vezes em `<header role="heading">` está conceitualmente equivocado. Isso porque o papel do "*heading*" é, ao ser usado junto com o atributo `aria-level`, definir o elemento como um cabeçalho da mesma forma que os elementos de `<h1>` até `<h6>` ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role)). Em outras palavras, uma `<div role="heading" aria-level="2">` seria o mesmo semanticamente que um `<h2>`.
+
+Mais além, durante o texto, é dito que:
+
+> "O conteúdo principal do site não possui um elemento específico no HTML5 como os demais, então a sua identificação é feita com o valor main no role",
+
+Essa afirmação está equivocada. No HTML5, o elemento `<main>` cumpre esse exato papel ((MDN Web Docs)[https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/main]).
+
+Por fim, o uso do atributo `accesskey` para estabelecer atalhos de teclado pode ser problemático, como já discutido na [recomendação 1.5 "Fornecer âncoras para ir direto a um bloco de conteúdo"](#15-fornecer-âncoras-para-ir-direto-a-um-bloco-de-conteúdo).
+
+Diante dos fatores expostos, a defasagem da recomendação foi classificada como moderada.
+
+Portanto:
+
+- A orientação de usar os roles do ARIA de forma redundante foi removida. O uso deles foi trocado para situações em que "determinado bloco estrutural relevante não estiver representado por um elemento HTML semanticamente apropriado ou quando for necessário promover explicitamente uma área significativa a uma região navegável por tecnologias assistivas". A descrição do item e os critérios de verificação foram alterados de acordo. No entanto, não foi estabelecido que o uso redundante é um problema propriamente, pois a princípio, se usado de forma correta, não causa problema de acessibilidade. Ele só é desnecessário e perigoso em termos de manutenção/alterações futuras, em que o desenvolvedor pode acabar modificando o elemento sem alterar seu role.
+
+- Uso dos roles redundantes e dos roles errados `"section"` e `"heading"` no exemplo foram suprimidos.
+
+- O exemplo foi refatorado para utilizar elementos HTML semânticos, ao invés de depender dos landamark roles.
+
+- Uso do `role` com `"heading"` em `<header role="heading">` nos exemplos foi suprimido.
+
+- Uso do atributo `accesskey` nos exemplos foi suprimido.
+
+- O quarto critério de recomendação que falava sobre o uso de `<section>` no lugar de `<div>` foi descartado e movido para a recomendação 1.2 "Organizar o código HTML de forma lógica e semântica", pois se adequa melhor no contexto dela.
+
 ----------------------------------------------------------------------------
 
 #### 1.9 Não abrir novas instâncias sem a solicitação do usuário
+
+**Defasagem do eMAG: nível leve**
+
+Nessa recomendação, o eMAG é um pouco restritivo em excesso em alguns pontos, como abrir novas abas, utilizar janelas modais e mudar o controle de foco do teclado. Ele inclusive chega a soar um pouco contraditório na própria recomendação: em um dado momento, fala pra não adotar essas estratégias, mas depois cita maneiras de adotá-las de maneira acessível. Seria importante clarificar a descrição do item, estabelecendo que essas ações são permitidas quando expressas de maneira explícitas pelo usuário, e quando os mecanismos que realizam essas ações as indicam de maneira clara, o que era possivelmente a intenção do eMAG.
+
+Além disso, o exemplo da janela modal está um pouco desatualizado, pois não utiliza o elemento semanticamente correto `<dialog>` (ou `role="dialog"`), ativado por JavaScript com `showModal()` (ou ao menos com `atributo aria-modal="true"`), por exemplo. Além disso, no exemplo dado, não há gerenciamento de foco adequado, com o foco podendo ficar preso atrás do modal, algo citado como muito problemático pelo próprio eMAG. Como possivelmente o exemplo cumpre mais um caráter ilustrativo (e não um modelo a ser seguido propriamente), como o eMAG sugere ao referi-lo como um "exemplo simples", considerou-se que ele não foi o suficiente para deixar o grau de defasagem em níveis mais altos.
+
+Portanto:
+
+- Foi clarificado na descrição do item que as ações tratadas pela recomendação são aceitáveis desde que os usuários as expressem de maneira explícita e quando os mecanismos que realizam essas ações as indicam de maneira clara.
+
+- Foi proposto um novo exemplo simples de janela modal, utilizando HTML, CSS e JS puro. O uso de JS puro aqui é uma liberdade adotada para fins de simplificação e padronização. No mundo real, a aplicação de comportamentos similares varia entre linguagens, frameworks e ferramentas distintas.
+
+- Uma nova referência a [Técnica H83 do WCAG: "Using the target attribute to open a new window on user request and indicating this in link text"](https://www.w3.org/WAI/WCAG22/Techniques/html/H83) foi adicionada também.
 
 ----------------------------------------------------------------------------
 

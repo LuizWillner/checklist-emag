@@ -70,13 +70,65 @@ Para manter a estrutura do eMAG, a análise de cada item está separada dentre a
 
 #### 1.1 Respeitar os Padrões Web
 
+**Defasagem do eMAG: nível moderado**
+
+Esse é uma das recomendações mais desafiadoras de ser analisado, principalmente pelo fato dela ser muito genérica. A princípio, a recomendação não orienta uma prática propriamente incorreta, não induz a erro de acessibilidade, não contraria o HTML5 e não gera não conformidade WCAG por si só. Mas há alguns pontos importantes a serem debatidos.
+
+Em primeira análise, a recomendação enfatiza um modelo rígido de separação de camadas utilizando HTML para conteúdo, CSS para apresentação e JavaScript para comportamento. Isso não está de todo errado, mas a Web moderna evoluiu e outras ferramentas, frameworks e tecnlogogias também podem ser utilizadas. Essa separação ainda é válida se for entendida sob a ótica do princípio de separação de responsabilidades, e o texto poderia ser adaptado para algo nessa linha. Ainda assim, questiona-se até que ponto essa separação, tratadada de maneira pura e sem contexto, é relevante para o contexto de acessibilidade, sobretudo numa adaptação para um checklist, que tem o intuito de tentar se ater mais ao necessário. Traz-se uma ênfase muito arquitetural, que inclusive só pode ser avaliada sabendo dos detalhes estruturais da aplicação e possivelmente tendo acesso ao código fonte.
+
+Além disso, há duas referências indicadas pelo eMAG que estão desatualizadas: o [Critério de sucesso WCAG 4.1.1: "Análise"](https://www.w3.org/TR/WCAG22/#parsing), que foi retirado da versão 2.2 do WCAG; e a [Cartilha de Codificação dos Padrões Web em Governo Eletrônico (ePWG)](https://epwg.governoeletronico.gov.br/cartilha-codificacao.html), que necessitaria de uma análise de defasagem para ela própria. Além disso, ao menos em termos de padrões de design de sistemas, o ePWG parece ter sido substituído, [conforme esse aviso do Governo digital](https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/padroes-web-em-governo-eletronico), pela nova página de [Design Systems e Padrão Digital do Gov](https://www.gov.br/ds/home).
+
+Portanto:
+
+- O tratamento da separação em camadas foi retirada da descrição e dos critérios de verificação, afim de simplificar o item e ater ele a orientações mais concretas e impactantes para acessibiliade web.
+
+- A referência ao [Critério de sucesso WCAG 4.1.1: Análise](https://www.w3.org/TR/WCAG22/#parsing) foi retirada.
+
+- A referência ao [ePWG](https://epwg.governoeletronico.gov.br/cartilha-codificacao.html) foi substituída pela [Design Systems e Padrão Digital do Gov](https://epwg.governoeletronico.gov.br/cartilha-codificacao.html).
+
+- Uma nova referência do [MDN Web Docs: A Web e seus padrões](https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Getting_started/Web_standards/The_web_standards_model) foi adicionada para complementar as outras.
+
 ----------------------------------------------------------------------------
 
 #### 1.2 Organizar o código HTML de forma lógica e semântica
 
+**Defasagem do eMAG: nível leve**
+
+A recomendação na fonte original do eMAG em si não está defasada. Mas há alguns pontos de atenção cuja abordagem é necessária nessa análise.
+
+No exemplo 1, constata-se que o elemento `<cite>` é usado de maneira indevida. Segundo a [especificação do HTML Living Standard](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element), o elemento `<cite>` não deve ser usado para o nome de uma pessoa. 
+
+No exemplo 3, o uso do ARIA role `"banner"` junto do elemento `<header>` em `<header role='banner'> ` é redundante ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/banner_role#description)), entrando em conflito com a [primeira regra do ARIA](https://w3c.github.io/using-aria/#rule1) que afirma que:
+
+> "Se você puder usar um elemento HTML nativo ou um atributo com a semântica e o comportamento necessários já incorporados, em vez de reaproveitar um elemento e adicionar uma função, estado ou propriedade ARIA para torná-lo acessível, faça isso."
+
+Nos exemplos 1 e 3, o uso do prefixo `xml` antes do atributo `lang` em `<cite xml:lang='en'>Tim Berners-Lee</cite>` é desnecessário. De fato, a [especificação do HTML Living Standard](https://html.spec.whatwg.org/multipage/dom.html#attr-lang), inclusive, chega mencionar não recomendar seu uso em documentos HTML. Não só isso, como o próprio atributo `lang` nos exemplos 1 e 3 sendo utilizado para o nome próprio "Tim Berners-Lee" é desnecessário, conforme a própria [recomendação 3.2 do eMAG "Informar mudança de idioma no conteúdo" da seção "Conteúdo/Informação"](https://emag.governoeletronico.gov.br/#r3.2).
+
+Portanto:
+
+- O exemplo 1 foi reestruturado eliminando a utilização do `<cite>` e do atributo `lang`.
+
+- O exemplo 3 não foi utilizado.
+
+- O quarto critério de recomendação que tratava sobre o uso de `<section>` no lugar de `<div>` foi movido da recomendação 1.8 "Dividir as áreas de informação" e incluído na atual recomendação, pois ele se adequa melhor aqui.
+
+- Adicionou-se um trecho orientando sobre o uso responsável e correto dos atributos ARIA, como o `role`, tanto na descrição quanto nos critérios de verificação.
+
 ----------------------------------------------------------------------------
 
 #### 1.3 Utilizar corretamente os níveis de cabeçalho
+
+**Defasagem do eMAG: nível nulo**
+
+A recomendação é extremamente álida e aderente às diretrizes atuais. O único ponto de disussão é sobre o uso de somente um elemento `<h1>` por página, que pelo que foi apurado, não é citado nos critérios de sucesso [1.3.1: "Informações e Relações"](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#info-and-relationships) e [2.4.10: "Cabeçalhos da Sessão"](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#section-headings) referenciados do WCAG.
+
+No [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements#avoid_using_multiple_h1_elements_on_one_page), por outro lado, de fato é dito que essa prática não é a melhor e deve ser evitada, apesar de problemas relacionados a acessibilidade não serem citados.
+
+Como tanto o eMAG quanto o MDN Web Docs estabelecem esse requisito, resolveu-se manter o uso de um único `<h1>` por página na descrição e nos critérios de verificação do item.
+
+Portanto:
+
+- A orientação central da recomendação foi mantida no item do checklist, adaptando somente o texto para melhor legibilidade e simplicidade.
 
 ----------------------------------------------------------------------------
 

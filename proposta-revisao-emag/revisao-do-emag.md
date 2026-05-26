@@ -200,11 +200,7 @@ Portanto:
 
 O conceito principal da recomendação sobre organização em regiões, consistência de navegação e uso de landmarks continua válido. Entretando, há alguns pontos de defasagem que necessitam ser aboradaos.
 
-Em primeira análise, a orientação **obrigatória** de usar os roles do ARIA de maneira duplicada/redundante com elementos que já possuem semântica apropriada, como em `<nav role="navigation">` e `<main role="main">`, vai completamente em oposição à primeira regra do ARIA (https://w3c.github.io/using-aria/#rule1) (https://www.w3.org/TR/html-aria/), que diz que:
-
-> "Se você puder usar um elemento HTML nativo ou um atributo com a semântica e o comportamento necessários já incorporados, em vez de reaproveitar um elemento e adicionar uma função, estado ou propriedade ARIA para torná-lo acessível, faça isso."
-
-O uso dessa redundância não necessariamente traz problemas de acessibilidade em si, mas pode trazer problemas de manutenção e consistência no código fonte, em que o desenvolvedort pode acabar modificando o elemento sem alterar seu role. Por isso, não é recomendado.
+Em primeira análise, a orientação **obrigatória** de usar os roles do ARIA de maneira duplicada/redundante com elementos que já possuem semântica apropriada, como em `<nav role="navigation">` e `<main role="main">`, vai completamente em oposição a uma das premissas centrais do ARIA de [evitar o uso de roles redundantes](https://www.w3.org/TR/html-aria/#avoid-specifying-redundant-roles). O uso dessa redundância não necessariamente traz problemas de acessibilidade em si, mas pode trazer problemas de manutenção e consistência no código fonte, em que o desenvolvedort pode acabar modificando o elemento sem alterar seu role. Por isso, não é recomendado.
 
 Em segundo plano, no último exemplo, o uso do role `"section"` duas vezes em `<section role="section">` é equivocado. O texto, inclusive, chega a dizer: 
 

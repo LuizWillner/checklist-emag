@@ -198,19 +198,19 @@ Portanto:
 
 **Defasagem do eMAG: nível moderado**
 
-O conceito principal da recomendação sobre organização em regiões, consistência de navegação e uso de landmarks continua válido. Entretando, há alguns pontos de defasagem que necessitam ser aboradaos.
+O conceito principal da recomendação sobre organização em regiões, consistência de navegação e uso de *landmarks* continua válido. Entretanto, há alguns pontos de defasagem que necessitam ser abordados.
 
-Em primeira análise, a orientação **obrigatória** de usar os roles do ARIA de maneira duplicada/redundante com elementos que já possuem semântica apropriada, como em `<nav role="navigation">` e `<main role="main">`, vai completamente em oposição a uma das premissas centrais do ARIA de [evitar o uso de roles redundantes](https://www.w3.org/TR/html-aria/#avoid-specifying-redundant-roles). O uso dessa redundância não necessariamente traz problemas de acessibilidade em si, mas pode trazer problemas de manutenção e consistência no código fonte, em que o desenvolvedort pode acabar modificando o elemento sem alterar seu role. Por isso, não é recomendado.
+Em primeira análise, a orientação **obrigatória** de usar os *roles* do ARIA de maneira duplicada e redundante com elementos que já possuem semântica apropriada, como em `<nav role="navigation">` e `<main role="main">`, vai completamente em oposição a uma das premissas centrais do ARIA de [evitar o uso de roles redundantes](https://www.w3.org/TR/html-aria/#avoid-specifying-redundant-roles). O uso dessa redundância não necessariamente traz problemas de acessibilidade em si, mas pode trazer problemas de manutenção e consistência no código fonte, em que o desenvolvedor pode acabar modificando o elemento sem alterar seu role. Por isso, não é recomendado.
 
-Em segundo plano, no último exemplo, o uso do role `"section"` duas vezes em `<section role="section">` é equivocado. O texto, inclusive, chega a dizer: 
+Em segundo plano, no último exemplo, o uso do *role* `"section"` em `<section role="section">` é equivocado. O texto, inclusive, chega a dizer: 
 
 > "O ARIA role que contém o mesmo papel do elemento possui o valor section".
 
-O role `"section"` é um role abstrato para componentes de contenção estrutural renderizáveis, de acordo com o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role). Em outras palavras, ele não deve ser usado ("instanciado") por desenvolvedores em páginas Web. O role correto correspondente ao elemento `<section>` seria o "region", também segundo o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/landmark_role).
+O `"section"` é um *role* abstrato para componentes de contenção estrutural renderizáveis, de acordo com o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role). Em outras palavras, ele não deve ser usado (instanciado) por desenvolvedores em páginas Web. O *role* correto correspondente ao elemento `<section>` seria o `"region"`, também segundo o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/landmark_role).
 
-Além disso, no último e penúltimo exemplos, o uso do role "*heading*" 2 vezes em `<header role="heading">` está conceitualmente equivocado. Isso porque o papel do "*heading*" é, ao ser usado junto com o atributo `aria-level`, definir o elemento como um cabeçalho da mesma forma que os elementos de `<h1>` até `<h6>` ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role)). Em outras palavras, uma `<div role="heading" aria-level="2">` seria o mesmo semanticamente que um `<h2>`.
+Além disso, no último e penúltimo exemplos, o uso do *role* "*heading*" duas vezes em `<header role="heading">` está conceitualmente equivocado. Isso porque o papel do "*heading*" é, ao ser usado junto com o atributo `aria-level`, definir o elemento como um cabeçalho da mesma forma que os elementos de `<h1>` até `<h6>` ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role)). Em outras palavras, uma `<div role="heading" aria-level="2">` seria o mesmo em termos semânticos que um `<h2>`.
 
-Mais além, durante o texto, é dito que:
+Adicionalmente, durante o texto, é dito que:
 
 > "O conteúdo principal do site não possui um elemento específico no HTML5 como os demais, então a sua identificação é feita com o valor main no role",
 
@@ -222,17 +222,17 @@ Diante dos fatores expostos, a defasagem da recomendação foi classificada como
 
 Portanto:
 
-- A orientação de usar os roles do ARIA de forma redundante foi removida. O uso deles foi trocado para situações em que "determinado bloco estrutural relevante não estiver representado por um elemento HTML semanticamente apropriado ou quando for necessário promover explicitamente uma área significativa a uma região navegável por tecnologias assistivas". A descrição do item e os critérios de verificação foram alterados de acordo. No entanto, não foi estabelecido que o uso redundante é um problema propriamente, pois a princípio, se usado de forma correta, não causa problema de acessibilidade. Ele só é desnecessário e perigoso em termos de manutenção/alterações futuras, em que o desenvolvedor pode acabar modificando o elemento sem alterar seu role.
+- A orientação de usar os *roles* do ARIA de forma redundante foi removida. O uso deles foi trocado para situações em que "determinado bloco estrutural relevante não estiver representado por um elemento HTML semanticamente apropriado ou quando for necessário promover explicitamente uma área significativa a uma região navegável por tecnologias assistivas". A descrição do item e os critérios de verificação foram alterados de acordo. No entanto, não foi estabelecido que o uso redundante é um problema propriamente, pois a princípio, se usado de forma correta, não causa problema de acessibilidade. Ele só é desnecessário e perigoso em termos de manutenção e alterações futuras, em que o desenvolvedor pode acabar modificando o elemento sem alterar seu *role*.
 
-- Uso dos roles redundantes e dos roles errados `"section"` e `"heading"` no exemplo foram suprimidos.
+- Uso dos *roles* redundantes e dos *roles* errados `"section"` e `"heading"` no exemplo foram suprimidos.
 
-- O exemplo foi refatorado para utilizar elementos HTML semânticos, ao invés de depender dos landamark roles.
+- O exemplo foi refatorado para utilizar elementos HTML semânticos, em vez de depender dos *landamark roles*.
 
-- Uso do `role` com `"heading"` em `<header role="heading">` nos exemplos foi suprimido.
+- Uso do *role* `"heading"` em `<header role="heading">` nos exemplos foi suprimido.
 
 - Uso do atributo `accesskey` nos exemplos foi suprimido.
 
-- O quarto critério de recomendação que falava sobre o uso de `<section>` no lugar de `<div>` foi descartado e movido para a recomendação 1.2 "Organizar o código HTML de forma lógica e semântica", pois se adequa melhor no contexto dela.
+- O quarto critério de recomendação que falava sobre o uso de `<section>` no lugar de `<div>` foi descartado e movido para a recomendação 1.2 "Organizar o código HTML de forma lógica e semântica", pois é mais adequada no contexto dela.
 
 ----------------------------------------------------------------------------
 
@@ -354,11 +354,11 @@ Portanto:
 
 **Defasagem do eMAG: nível nulo**
 
-Essa recomendação gera uma discussão interessante ao tentar classificar sua defasagem. Nela, o eMAG *proíbe* efeitos piscantes, intermitentes ou cintilantes. Não há uma definição clara e técnica sobre o que seriam esses flashes, nem estabelece um limite onde eles poderiam ser aceitáveis. O WCAG, por outro lado, no [Critério de Sucesso 2.3.1: Três Flashes ou Abaixo do Limite](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#three-flashes-or-below-threshold) é mais *permissivo* e traz uma definição mais técnica. Ele estabelece um limite aceitável para os flashes, tratando-os como:
+Essa recomendação gera uma discussão interessante ao tentar classificar sua defasagem. Nela, o eMAG **proíbe** efeitos piscantes, intermitentes ou cintilantes. Não há uma definição clara e técnica sobre o que seriam esses flashes, nem se estabelece um limite onde eles poderiam ser aceitáveis. O WCAG, por outro lado, no [Critério de Sucesso 2.3.1: Três Flashes ou Abaixo do Limite](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#three-flashes-or-below-threshold) é **mais permissivo** e traz uma definição mais técnica. Ele estabelece um limite aceitável para os flashes, tratando-os como:
 
 > "conteúdo que pisque mais de três vezes no período de um segundo, ou o flash encontra-se abaixo dos limites de flash universal e flash vermelho."
 
-À primeira vista, isso poderia ser considerado como um fator preponderante para elevar a classificação de defasagem dessa recomendação do eMAG perante às diretrizes atuais. No entanto, é válido notar que essa divergência parece mais uma decisão deliberada dos autores do eMAG para simplificar a recomendação do que uma orientação ultrapassada propriamente, especialmente tendo em vista que o WCAG 2.0, documento em que o eMAG se baseou, já estabelecia essas diretrizes mais permissivas e mesmo assim o eMAG adotou um caminho mais restritivo. Em vista disso, como o cumprimento do eMAG não leva a um desacordo com as diretrizes modernas do WCAG, e parece de fato simplificar a orientação, a defasagem foi classificada como nula.
+À primeira vista, isso poderia ser considerado como um fator preponderante para elevar a classificação de defasagem dessa recomendação do eMAG perante às diretrizes atuais. No entanto, é válido notar que essa divergência parece mais uma decisão deliberada dos autores do eMAG para simplificar a recomendação do que uma orientação ultrapassada propriamente, especialmente tendo em vista que o WCAG 2.0, documento em que o eMAG se baseou, já estabelecia essas diretrizes mais permissivas. Mesmo assim, o eMAG adotou um caminho mais restritivo. Em vista disso, como o cumprimento do eMAG não leva a um desacordo com as diretrizes modernas do WCAG e parece de fato simplificar a orientação, a defasagem foi classificada como nula.
 
 Portanto:
 
@@ -552,11 +552,11 @@ Portanto:
 
 **Defasagem do eMAG: nível crítico**
 
-A base conceitual da recomendação de que é importante fornecer informações adicionais que ajudem na compreensão da tabela permanece sólida. A orientação para o uso do `<caption>` como o primeiro elemento filho de um `<table>` retratando o título para a tabela cujo o valor descreve sucintamente o seu propósito permanece válida, vide o [HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#the-caption-element).
+A base conceitual da recomendação de que é importante fornecer informações adicionais que ajudem na compreensão da tabela permanece sólida. A orientação para o uso do `<caption>` como o primeiro elemento filho de um `<table>` retratando o título para a tabela, cujo o valor descreve sucintamente o seu propósito, permanece válida, vide o [HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#the-caption-element).
 
-O problema da orientação existe quando ela afirma que "deve ser fornecido um resumo de seus dados através do atributo `summary` que deve ser declarado no elemento `<table>`". O atributo `summary` dentro do elemento `<table>` é hoje considerado **obsoleto** e não deve ser utilizado, segundo o [HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#attr-table-summary) mais uma vez. A própria técnica [H73 do WCAG 2.0 "Using the summary attribute of the table element to give an overview of data tables"](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H73), marcada pelo eMAG como uma referência, é marcada como obsoleta pelo próprio WCAG e sinaliza essa defasagem. Em vista disso, o uso do `summary` dentro de `<table>` no cenário atual é potencialmente perigoso pois pode gerar uma falsa sensação de conformidade com critérios de acessibilidade, uma vez que tal obsolescência não garante que o atributo será corretamente interpretado por diferentes tecnologias.
+O problema da orientação existe quando ela afirma que "deve ser fornecido um resumo de seus dados através do atributo `summary` que deve ser declarado no elemento `<table>`". O atributo `summary` dentro do elemento `<table>` é hoje considerado **obsoleto** e não deve ser utilizado, segundo o [HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#attr-table-summary) mais uma vez. A própria técnica [H73 do WCAG 2.0 "Using the summary attribute of the table element to give an overview of data tables"](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H73), marcada pelo eMAG como uma referência, é considerada obsoleta pelo próprio WCAG e sinaliza essa defasagem. Em vista disso, o uso do `summary` dentro de `<table>` no cenário atual é potencialmente perigoso, pois pode gerar uma falsa sensação de conformidade com critérios de acessibilidade, uma vez que tal obsolescência não garante que o atributo será corretamente interpretado por diferentes tecnologias.
 
-Nesse sentido, outras [práticas substitutas são sugeridas pelo próprio HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques), tais como utilizar um parágrafo (`<p>`) descrevendo a tabela  antes do elemento `<table>`, ou até mesmo colocar o parágrafo dentro do elemento `<caption>`, de forma que o título da tabela em si seja delimitado por outro elemento dentro de `<caption>`, como o `<strong>`. O [W3C WAI Tutorials: Caption & Summary](https://www.w3.org/WAI/tutorials/tables/caption-summary/#using-aria-describedby-to-provide-a-table-summary) vai um pouco mais além e sugere que, na técnica de utilizar um parágrafo anterior para descrever a tabela, o atributo `aria-describedby` em `<table>` pode ser empregado para estabelecer uma relação mais direta entre `<p>` e `<table>`.
+Nesse sentido, [outras práticas substitutas são sugeridas pelo próprio HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques), tais como utilizar um parágrafo `<p>` descrevendo a tabela antes do elemento `<table>`, ou até mesmo colocar o parágrafo dentro do elemento `<caption>`, de forma que o título da tabela em si seja delimitado por outro elemento dentro de `<caption>`, como o `<strong>`. O [W3C WAI Tutorials: Caption & Summary](https://www.w3.org/WAI/tutorials/tables/caption-summary/#using-aria-describedby-to-provide-a-table-summary) vai um pouco mais além e sugere que, na técnica de utilizar um parágrafo anterior para descrever a tabela, o atributo `aria-describedby` em `<table>` pode ser empregado para estabelecer uma relação mais direta entre `<p>` e `<table>`.
 
 Como essa recomendação sugere o uso de um atributo obsoleto segundo a especificação do HTML5, sem especificar alternativas e potencialmente podendo gerar problemas de falsa sensação de conformidade, sua defasagem foi classificada de nível crítico.
 
@@ -566,17 +566,17 @@ Portanto:
 
 - A descrição da recomendação foi refeita para excluir a orientação do uso do `summary` como meio de providenciar resumo/explicação para os dados da tabela. Os critérios de verificação também foram adaptados de acordo.
 
-- Também foi adicionado à descrição o termo "Para tabelas de dados que necessitarem de títulos para clarificar seus propósitos", esclarecendo a interpretação de que o uso do `<caption>` é obrigatório quando títulos são utilizados, e não que `<caption>` com título deve ser sempre empregado.
+- Também foi adicionado à descrição o termo "Para tabelas de dados que necessitarem de títulos para clarificar seus propósitos", esclarecendo a interpretação de que o uso do `<caption>` é obrigatório quando títulos são utilizados, e não que `<caption>` com título deve ser empregado sempre.
 
 - O exemplo dado pelo eMAG foi incorporado como má prática, em função do uso do `summary` dentro de `<table>`.
 
-- Um exemplo atualizado de como providenciar uma descrição adicional para uma tabela sem usar o `summary` mostrando 2 possibilidades foi adicionado. Os códigos foram baseados nas [Técnicas de descrição de tabelas do HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques) e na página [Caption & Summary da Web Accessibility Initiative (WAI) Tutorials](https://www.w3.org/WAI/tutorials/tables/caption-summary/).
+- Um exemplo atualizado de como fornecer uma descrição adicional para uma tabela sem usar o `summary`, mostrando duas possibilidades, foi adicionado. Os códigos foram baseados nas [Técnicas de descrição de tabelas do HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques) e na página [Caption & Summary da Web Accessibility Initiative (WAI) Tutorials](https://www.w3.org/WAI/tutorials/tables/caption-summary/).
 
-- Um exemplo extra demonstrando o uso de `<caption>` fornecendo título à tabela foi adicionado. O código foi baseado [nessa página da MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#adding_a_caption_to_your_table_with_caption).
+- Um exemplo extra demonstrando o uso de `<caption>` fornecendo título à tabela foi adicionado. O código foi baseado [nesse conteúdo do MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#adding_a_caption_to_your_table_with_caption).
 
 - A referência à técnica H73 do WCAG 2.0 "Using the summary attribute of the table element to give an overview of data tables" (obsoleta) foi removida.
 
-- Uma referência adicional sobre [adicionar uma legenda à sua tabela com `<caption>`, da MDN Web Docs,](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#adding_a_caption_to_your_table_with_caption) foi acrescentada.
+- Uma referência adicional sobre [adicionar uma legenda à sua tabela com `<caption>`, da MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#adding_a_caption_to_your_table_with_caption), foi acrescentada.
 
 - Uma referência adicional sobre [Técnicas de descrição de tabelas do HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques) foi adicionada.
 
@@ -662,21 +662,21 @@ Portanto:
 
 A recomendação permanece tecnicamente válida e alinhada ao critério 1.4.3 do WCAG. Contudo, o eMAG adota uma abordagem que parece ser deliberadamente simplificada ao exigir contraste mínimo de 4,5:1 para todos os casos e ao desaconselhar o uso de imagens de fundo atrás do texto.
 
-O WCAG 2.0 da época, por exemplo, flexibiliza o contraste mínimo para 3:1 em alguns cenários especiais no [Critério de sucesso 1.4.3: Contraste Mínimo](https://www.w3.org/TR/WCAG20/#visual-audio-contrast). Além disso, também não proibi o uso de imagens como fundo, apenas orienta que o fundo (seja uma imagem ou não) atenda o contraste mínimo ([Técnica G18](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G18)). Ele inclusive chega a citar que o fundo pode ser sombreado para atender o contraste mínimo, sugerindo indiretamente o uso de CSS para esse objetivo.
+O WCAG 2.0 da época, por exemplo, flexibiliza o contraste mínimo para 3:1 em alguns cenários especiais no [Critério de sucesso 1.4.3: Contraste Mínimo](https://www.w3.org/TR/WCAG20/#visual-audio-contrast). Além disso, também não proíbe o uso de imagens como fundo; apenas orienta que o fundo (seja uma imagem ou não) atenda ao contraste mínimo ([Técnica G18](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G18)). Ele inclusive chega a citar que o fundo pode ser sombreado para atender ao contraste mínimo, sugerindo indiretamente o uso de CSS para esse objetivo.
 
 Essas decisões provavelmente refletem uma estratégia de padronização e simplificação da auditoria de acessibilidade em portais governamentais. Embora atualmente existam técnicas consolidadas que permitem garantir contraste adequado mesmo com imagens de fundo, a orientação do eMAG não induz a erros técnicos, apenas restringe possibilidades de design. Assim, caracteriza-se uma defasagem leve, mas adotou-se uma abordagem conservadora de não alterar as recomendações originais do eMAG.
 
-É válido ainda notar que o WCAG na versão 2.1, posterior ao eMAG 3.1, apresentou em seu texto, por sua vez, um novo [Critério de Sucesso 1.4.11 Contraste Não textual](https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/#non-text-contrast) que estabelece a proporção mínima de 3:1 para contraste entre alguns elementos não textuais, quase como um outro cenário excepcional à regra do contraste 4,5:1. Não só isso, como no WCAG 2.2 foi adicionado ainda um outro [Critério de Sucesso 2.4.13 Aparência do Foco](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#focus-appearance) que também estabelece contraste mínimo de 3:1 para a borda dos elementos focáveis. No entanto, como os outros casos especiais de 3:1 não foram abordados no eMAG, provavelmente pelas razões já citadas, e também decidiu-se não atualizá-los neste checklist, extrapolou-se que também não faria sentido portar essas novas exeções dos critérios de sucesso.
+É válido ainda notar que o WCAG na versão 2.1, posterior ao eMAG 3.1, apresentou em seu texto, por sua vez, um novo [Critério de Sucesso 1.4.11 Contraste Não textual](https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/#non-text-contrast) que estabelece a proporção mínima de 3:1 para contraste entre alguns elementos não textuais, quase como um outro cenário excepcional à regra do contraste 4,5:1. Não só isso, como no WCAG 2.2 foi adicionado ainda um outro [Critério de Sucesso 2.4.13 Aparência do Foco](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#focus-appearance) que também estabelece contraste mínimo de 3:1 para a borda dos elementos focáveis. No entanto, como os outros casos especiais de 3:1 não foram abordados no eMAG, provavelmente pelas razões já citadas, e também decidiu-se não atualizá-los neste checklist, extrapolou-se que também não faria sentido portar essas novas exceções dos critérios de sucesso.
 
 Portanto:
 
-- As orientações bases não foram alteradas, mesmo teoricamente com elas configurando uma leve defasagem.
+- As orientações bases não foram alteradas, mesmo que teoricamente elas configurem uma leve defasagem.
 
-- Os exemplos foram melhorados para demonstrar a aplicação das cores de fundo e primeiro plano com CSS.
+- Os exemplos foram melhorados para demonstrar a aplicação das cores de fundo e de primeiro plano com CSS.
 
 - Foi deixado mais claro na descrição do item o mínimo recomendado para o contraste numa folha de alto contraste, já que isso só estava sendo especificado no exemplo de aplicação.
 
-- Um exemplo de má prática de foco com contraste insuficiente foi adicionado para que os inspetores também se atentem a esse aspecto. Esse exemplo conversa diretamente com a recomendação "Possibilitar que o elemento com foco seja visualmente evidente" e seus respectivos exemplos.
+- Um exemplo de má prática de foco com contraste insuficiente foi adicionado para que os inspetores também se atentem a esse aspecto. Esse exemplo dialoga diretamente com a recomendação "Possibilitar que o elemento com foco seja visualmente evidente" e seus respectivos exemplos.
 
 ----------------------------------------------------------------------------
 

@@ -96,13 +96,13 @@ Portanto:
 
 A recomendação na fonte original do eMAG em si não está defasada. Mas há alguns pontos de atenção cuja abordagem é necessária nesta análise.
 
-No exemplo 1, constata-se que o elemento `<cite>` é usado de maneira indevida. Segundo a [especificação do *HTML Living Standard*](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element), o elemento `<cite>` não deve ser usado para o nome de uma pessoa.
+No exemplo 1, constata-se que o elemento `<cite>` é usado de maneira indevida. Segundo a [especificação do HTML Living Standard](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element), o elemento `<cite>` não deve ser usado para o nome de uma pessoa.
 
 No exemplo 3, o uso do *role* ARIA `"banner"` junto ao elemento `<header>` em `<header role='banner'>` é redundante ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/banner_role#description)), entrando em conflito com a [primeira regra do ARIA](https://w3c.github.io/using-aria/#rule1) que afirma que:
 
 > "Se você puder usar um elemento HTML nativo ou um atributo com a semântica e o comportamento necessários já incorporados, em vez de reaproveitar um elemento e adicionar uma função, estado ou propriedade ARIA para torná-lo acessível, faça isso."
 
-Nos exemplos 1 e 3, o uso do prefixo `xml` antes do atributo `lang` em `<cite xml:lang='en'>Tim Berners-Lee</cite>` é desnecessário. De fato, a [especificação do *HTML Living Standard](https://html.spec.whatwg.org/multipage/dom.html#attr-lang)*, inclusive, chega a mencionar não recomendar seu uso em documentos HTML. Além disso, a própria utilização do atributo `lang`, nos exemplos 1 e 3, para o nome próprio "Tim Berners-Lee" é desnecessária, conforme a própria [recomendação 3.2 do eMAG "Informar mudança de idioma no conteúdo" da seção "Conteúdo/Informação"](https://emag.governoeletronico.gov.br/#r3.2).
+Nos exemplos 1 e 3, o uso do prefixo `xml` antes do atributo `lang` em `<cite xml:lang='en'>Tim Berners-Lee</cite>` é desnecessário. De fato, a [especificação do HTML Living Standard](https://html.spec.whatwg.org/multipage/dom.html#attr-lang), inclusive, chega a mencionar não recomendar seu uso em documentos HTML. Além disso, a própria utilização do atributo `lang`, nos exemplos 1 e 3, para o nome próprio "Tim Berners-Lee" é desnecessária, conforme a própria [recomendação 3.2 do eMAG "Informar mudança de idioma no conteúdo" da seção "Conteúdo/Informação"](https://emag.governoeletronico.gov.br/#r3.2).
 
 Portanto:
 
@@ -136,11 +136,11 @@ Portanto:
 
 **Defasagem do eMAG: nível nulo.**
 
-A recomendação permanece consistente com orientações de acessibilidade atuais. Porém, algumas adaptações foram feitas, no intuito de clarificar e contextualizar mais a interpretação dos seguintes aspectos do texto original:
+A recomendação permanece consistente com as orientações de acessibilidade atuais. Porém, algumas adaptações foram feitas no intuito de clarificar e contextualizar melhor a interpretação dos seguintes aspectos do texto original:
 
-- No quarto critério de verificação, foi incorporado mais detalhes sobre o uso do atributo `tabindex` para evitar valores maiores que 0 atribuídos, e tomar cuidado caso esses valores sejam utilizados. Em outras palavras, seu uso não foi proibido (afinal, o eMAG e o WCAG não o proíbem), apenas foi melhor explicado o que seria usar o `tabindex` com cuidado, conforme explicado pela [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Global_attributes/tabindex). Essa referência sobre o uso de `tabindex`, que ainda justifica a orientação de evitar os valores maiores que 0, também foi adicionada.
+- No quarto critério de verificação, foram incorporados mais detalhes sobre o uso do atributo `tabindex` para evitar a atribuição de valores maiores que 0, além de orientar cautela caso esses valores sejam utilizados. Em outras palavras, seu uso não foi proibido (afinal, o eMAG e o WCAG não o proíbem), apenas explicou-se melhor o que seria usar o `tabindex` com cuidado, conforme indicado pelo [MDN Web Docs](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Global_attributes/tabindex). Essa referência, que justifica a orientação de evitar valores maiores que 0, também foi adicionada.
 
-- O 3º critério de recomendação, sobre colocar no código-fonte o menu depois do conteúdo principal, foi removido. Isso porque o termo "é recomendável" antes de mencionar isso no eMAG sugere isso como algo opcional, apesar de haver uma justificativa plausível para isso. Uma discussão sobre essa questão foi movida para o exemplo de aplicação.
+- O terceiro critério de recomendação, sobre colocar no código-fonte o menu depois do conteúdo principal, foi removido. Isso ocorre porque a expressão "é recomendável" no eMAG sugere a prática como algo opcional, apesar de haver uma justificativa plausível para ela. A discussão sobre essa questão foi movida para o exemplo de aplicação.
 
 - Além disso, o exemplo de aplicação do eMAG foi modernizado para usar elementos HTML semanticamente mais adequados.
 
@@ -150,21 +150,21 @@ A recomendação permanece consistente com orientações de acessibilidade atuai
 
 **Defasagem do eMAG: nível crítico.**
 
-Apesar da ideia central da orientação ser válida, o eMAG está bem defasado em relação a essa recomendação, conforme discutido a seguir.
+Apesar da ideia central da orientação ser válida, o eMAG está bastante defasado em relação a essa recomendação, conforme discutido a seguir.
 
-Em primeiro lugar, a recomendação do uso do atributo `name` junto ao `id` no elemento `<a>` não é válido no padrão do HTML. Isso porque o atributo `name` é obsoleto nesse elemento e seu uso é desencorajado, conforme a [especificação do HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#obsolete-but-conforming-features).
+Em primeiro lugar, a recomendação do uso do atributo `name` junto ao `id` no elemento `<a>` não é válida no padrão HTML. Isso ocorre porque o atributo `name` é obsoleto nesse elemento e seu uso é desencorajado, conforme a [especificação do HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#obsolete-but-conforming-features).
 
-Em segundo lugar, o uso do elemento `<a>` como pontos alvo de ancoragem também é prática defasada. Tanto o [WCAG na técnica G23](https://www.w3.org/WAI/WCAG22/Techniques/general/G123#:~:text=Example%204%3A%20HTML%20page%20with%20several%20blocks%20of%20navigation) quanto o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#skip_links) sugerem exemplos em que o link aponta diretamente para um outro elemento com o id especificado, e não para uma outra âncora `<a>`.
+Em segundo lugar, o uso do elemento `<a>` como ponto-alvo de ancoragem também é uma prática defasada. Tanto o [WCAG, na técnica G23](https://www.w3.org/WAI/WCAG22/Techniques/general/G123#:~:text=Example%204%3A%20HTML%20page%20with%20several%20blocks%20of%20navigation), quanto o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#skip_links) sugerem exemplos em que o *link* aponta diretamente para outro elemento com o `id` especificado, e não para outra âncora `<a>`.
 
-Além disso, o uso do atributo `accesskey` para atalhos de teclado é potencialmente problemático. No eMAG, ele é mencionado apenas como sugestão, mas há fontes atuais que até mesmo o desencoraja por ser capaz de conflitar com outros atalhos do sistema operacional e de tecnologias assistivas, como dito no [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/accesskey#accessibility_concerns). O WCAG, principal referência de acessibilidade, nada fala sobre o uso ou não do `accesskey`.
+Além disso, o uso do atributo `accesskey` para atalhos de teclado é potencialmente problemático. No eMAG, ele é mencionado apenas como sugestão, mas há fontes atuais que até mesmo o desencorajam por ser capaz de conflitar com outros atalhos do sistema operacional e de tecnologias assistivas, como relatado no *[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/accesskey#accessibility_concerns)*. O WCAG, principal referência de acessibilidade, não faz menção ao uso ou não do `accesskey`.
 
 Portanto, as seguintes refatorações foram feitas:
 
-- Desconsiderar uso do atributo `name` no elemento `<a>`, pois ele não é mais suportado nesse elemento. O exemplo em que `name` e `id` são usados serã colocado como uma má prática a ser evitada.
+- Desconsiderar o uso do atributo `name` no elemento `<a>`, pois ele não é mais suportado nesse elemento. O exemplo em que `name` e `id` são usados será colocado como uma má prática a ser evitada.
 
-- Desconsiderar o uso do elemento `<a>` como pontos alvo de ancoragem (e portanto, também as técnicas citadas para esconder esses pontos de ancoragem). Seu uso só aparecerá na má prática usada para ilustrar o uso de `name` e `id`.
+- Desconsiderar o uso do elemento `<a>` como ponto-alvo de ancoragem (e, portanto, também as técnicas citadas para esconder esses pontos de ancoragem). Seu uso só aparecerá na má prática utilizada para ilustrar o uso simultâneo de `name` e `id`.
 
-- A sugestão de uso do `accesskey` feita no eMAG não foi portada para o checklist, por se tratar de apenas uma sugestão e que ainda por cima é capaz de trazer problemas de acessibilidade, a depender da implementação.
+- A sugestão de uso do `accesskey` feita no eMAG não foi portada para o *checklist*, por se tratar apenas de uma sugestão que, ainda por cima, é capaz de trazer problemas de acessibilidade, a depender da implementação.
 
 ----------------------------------------------------------------------------
 
@@ -172,7 +172,7 @@ Portanto, as seguintes refatorações foram feitas:
 
 **Defasagem do eMAG: nível nulo**
 
-A recomendação ainda é plenamente válida e aderente às diretrizes atuais. A unica adaptação feita foi no exemplo bom, em que elementos semânticos `<header>`,  `<nav>` e `<main>` foram colocados no lugar de `<div role="banner">` `<div role="navigation">` e `<div role="main">`.
+A recomendação ainda é plenamente válida e aderente às diretrizes atuais. A única adaptação feita foi no exemplo positivo, no qual os elementos semânticos `<header>`, `<nav>` e `<main>` foram adotados no lugar de `<div role="banner">`, `<div role="navigation">` e `<div role="main">`.
 
 ----------------------------------------------------------------------------
 
@@ -180,17 +180,17 @@ A recomendação ainda é plenamente válida e aderente às diretrizes atuais. A
 
 **Defasagem do eMAG: nível leve**
 
-O conceito principal dessa recomendação não está defasado. A única parte mais problemática é quando, no texto original do eMAG, são abordados os ARIA roles `"navigation"`, `"menu"` e `"menubar"`. 
+O conceito principal dessa recomendação não está defasado. A única parte mais problemática é quando, no texto original do eMAG, são abordadas os *roles* ARIA `"navigation"`, `"menu"` e `"menubar"`.
 
-Em primeiro lugar, a forma descrita pelo eMAG sobre o uso de `"menu"` e `"menubar"` não parece ser muito acurada. A descrição do eMAG é um tanto abrangente, e pode levar a uma interpretação errada sobre o uso quando comparada com a [explicação oficial do W3C para o menu](https://w3c.github.io/aria/#menu) e [para o menubar](https://w3c.github.io/aria/#menubar). Apesar das explicações oficiais ainda serem um tanto genéricas, elas parecem atribuir uma função mais específica de "*menus de aplicação*" a esses roles, e não "*menus que não são o principal da página*", como diz o eMAG.
+Em primeiro lugar, a forma descrita pelo eMAG sobre o uso de `"menu"` e `"menubar"` não parece ser muito precisa. A descrição do eMAG é um tanto abrangente e pode levar a uma interpretação errada sobre o uso quando comparada com a [explicação oficial do W3C para o *menu*](https://w3c.github.io/aria/#menu) e [para a *menubar*](https://w3c.github.io/aria/#menubar). Apesar das explicações oficiais ainda serem um tanto genéricas, elas parecem atribuir uma função mais específica de "menus de aplicação" a esses *roles*, e não "menus que não são o principal da página", como diz o eMAG.
 
-Além disso, apesar da role `"navigation"` ser explicada de maneira adequada, seu uso no exemplo 4 é redundante em `<nav id="menu" role="navigation">`, um problema mais discutido na [recomendação 1.8 "Dividir as áreas de informação"](#18-dividir-as-áreas-de-informação).
+Além disso, apesar do *role* `"navigation"` ser explicado de maneira adequada, seu uso no exemplo 4 é redundante em `<nav id="menu" role="navigation">`, um problema discutido mais a fundo na [recomendação 1.8 "Dividir as áreas de informação"](#18-dividir-as-áreas-de-informação).
 
 Portanto:
 
-- A menção aos roles "navigation", "menu" e "menubar" foi suprimida na descrição do item nem nos critérios de verificação para simplificar o item. No fim das contas, abordar o uso desses roles não combina muito com a orientação central da recomendação em si, soando meio deslocado. Os exemplos que utilizavam essas roles também foram descartados.
+- A menção aos *roles* `"navigation"`, `"menu"` e `"menubar"` foi suprimida da descrição do item e dos critérios de verificação para simplificá-lo. No fim das contas, abordar o uso desses *roles* não combina muito com a orientação central da recomendação em si, soando um tanto deslocada. Os exemplos que utilizavam esses *roles* também foram descartados.
 
-- Um exemplo extra de má prática em que elementos `<a>` estão adjacentes dentro de uma `<div>` sem separação adequada foi acrescentado.
+- Um exemplo extra de má prática, em que elementos `<a>` estão adjacentes dentro de uma `<div>` sem a separação adequada, foi acrescentado.
 
 ----------------------------------------------------------------------------
 
@@ -200,21 +200,21 @@ Portanto:
 
 O conceito principal da recomendação sobre organização em regiões, consistência de navegação e uso de *landmarks* continua válido. Entretanto, há alguns pontos de defasagem que necessitam ser abordados.
 
-Em primeira análise, a orientação **obrigatória** de usar os *roles* do ARIA de maneira duplicada e redundante com elementos que já possuem semântica apropriada, como em `<nav role="navigation">` e `<main role="main">`, vai completamente em oposição a uma das premissas centrais do ARIA de [evitar o uso de roles redundantes](https://www.w3.org/TR/html-aria/#avoid-specifying-redundant-roles). O uso dessa redundância não necessariamente traz problemas de acessibilidade em si, mas pode trazer problemas de manutenção e consistência no código fonte, em que o desenvolvedor pode acabar modificando o elemento sem alterar seu role. Por isso, não é recomendado.
+Em primeira análise, a orientação **obrigatória** de usar os *roles* do ARIA de maneira duplicada e redundante com elementos que já possuem semântica apropriada, como em `<nav role="navigation">` e `<main role="main">`, opõe-se completamente a uma das premissas centrais do ARIA de [evitar o uso de *roles* redundantes](https://www.w3.org/TR/html-aria/#avoid-specifying-redundant-roles). O uso dessa redundância não traz necessariamente problemas de acessibilidade em si, mas pode gerar problemas de manutenção e de consistência no código-fonte, uma vez que o desenvolvedor pode acabar modificando o elemento sem alterar o seu *role*. Por isso, não é recomendado.
 
-Em segundo plano, no último exemplo, o uso do *role* `"section"` em `<section role="section">` é equivocado. O texto, inclusive, chega a dizer: 
+Em segundo plano, no último exemplo, o uso do *role* `"section"` em `<section role="section">` é equivocado. O texto, inclusive, chega a dizer:
 
-> "O ARIA role que contém o mesmo papel do elemento possui o valor section".
+> "O ARIA *role* que contém o mesmo papel do elemento possui o valor *section*".
 
-O `"section"` é um *role* abstrato para componentes de contenção estrutural renderizáveis, de acordo com o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role). Em outras palavras, ele não deve ser usado (instanciado) por desenvolvedores em páginas Web. O *role* correto correspondente ao elemento `<section>` seria o `"region"`, também segundo o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/landmark_role).
+O valor `"section"` é um *role* abstrato para componentes de contenção estrutural renderizáveis, de acordo com o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role). Em outras palavras, ele não deve ser usado (instanciado) por desenvolvedores em páginas *web*. O *role* correto correspondente ao elemento `<section>` seria `"region"`, também segundo o [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/landmark_role).
 
-Além disso, no último e penúltimo exemplos, o uso do *role* "*heading*" duas vezes em `<header role="heading">` está conceitualmente equivocado. Isso porque o papel do "*heading*" é, ao ser usado junto com o atributo `aria-level`, definir o elemento como um cabeçalho da mesma forma que os elementos de `<h1>` até `<h6>` ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role)). Em outras palavras, uma `<div role="heading" aria-level="2">` seria o mesmo em termos semânticos que um `<h2>`.
+Além disso, no penúltimo e no último exemplos, o uso do *role* `"heading"` duas vezes em `<header role="heading">` está conceitualmente equivocado. Isso ocorre porque o papel do `"heading"`, ao ser usado junto com o atributo `aria-level`, é definir o elemento como um cabeçalho da mesma forma que os elementos de `<h1>` a `<h6>` ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role)). Em outras palavras, uma `<div role="heading" aria-level="2">` seria o mesmo, em termos semânticos, que um `<h2>`.
 
-Adicionalmente, durante o texto, é dito que:
+Adicionalmente, ao longo do texto, é dito que:
 
-> "O conteúdo principal do site não possui um elemento específico no HTML5 como os demais, então a sua identificação é feita com o valor main no role",
+> "O conteúdo principal do *site* não possui um elemento específico no HTML5 como os demais, então a sua identificação é feita com o valor main no *role*",
 
-Essa afirmação está equivocada. No HTML5, o elemento `<main>` cumpre esse exato papel ((MDN Web Docs)[https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/main]).
+Essa afirmação está equivocada. No HTML5, o elemento `<main>` cumpre esse exato papel ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/main)).
 
 Por fim, o uso do atributo `accesskey` para estabelecer atalhos de teclado pode ser problemático, como já discutido na [recomendação 1.5 "Fornecer âncoras para ir direto a um bloco de conteúdo"](#15-fornecer-âncoras-para-ir-direto-a-um-bloco-de-conteúdo).
 
@@ -222,35 +222,33 @@ Diante dos fatores expostos, a defasagem da recomendação foi classificada como
 
 Portanto:
 
-- A orientação de usar os *roles* do ARIA de forma redundante foi removida. O uso deles foi trocado para situações em que "determinado bloco estrutural relevante não estiver representado por um elemento HTML semanticamente apropriado ou quando for necessário promover explicitamente uma área significativa a uma região navegável por tecnologias assistivas". A descrição do item e os critérios de verificação foram alterados de acordo. No entanto, não foi estabelecido que o uso redundante é um problema propriamente, pois a princípio, se usado de forma correta, não causa problema de acessibilidade. Ele só é desnecessário e perigoso em termos de manutenção e alterações futuras, em que o desenvolvedor pode acabar modificando o elemento sem alterar seu *role*.
+- A orientação de usar os *roles* do ARIA de forma redundante foi removida. O seu uso foi restrito a situações em que "determinado bloco estrutural relevante não estiver representado por um elemento HTML semanticamente apropriado ou quando for necessário promover explicitamente uma área significativa a uma região navegável por tecnologias assistivas". A descrição do item e os critérios de verificação foram alterados de acordo. No entanto, não foi estabelecido que o uso redundante é propriamente um problema, pois, a princípio, se for executado de forma correta, não causa problemas de acessibilidade. Ele apenas é desnecessário e perigoso em termos de manutenção e de alterações futuras, nas quais o desenvolvedor pode acabar modificando o elemento sem alterar o seu *role*.
 
-- Uso dos *roles* redundantes e dos *roles* errados `"section"` e `"heading"` no exemplo foram suprimidos.
+- O uso dos *roles* redundantes e dos *roles* errados `"section"` e `"heading"` no exemplo foi suprimido.
 
-- O exemplo foi refatorado para utilizar elementos HTML semânticos, em vez de depender dos *landamark roles*.
+- O exemplo foi refatorado para utilizar elementos HTML semânticos, em vez de depender dos *landmark roles*.
 
-- Uso do *role* `"heading"` em `<header role="heading">` nos exemplos foi suprimido.
+- O uso do *role* `"heading"` em `<header role="heading">` nos exemplos foi suprimido.
 
-- Uso do atributo `accesskey` nos exemplos foi suprimido.
+- O uso do atributo `accesskey` nos exemplos foi suprimido.
 
-- O quarto critério de recomendação que falava sobre o uso de `<section>` no lugar de `<div>` foi descartado e movido para a recomendação 1.2 "Organizar o código HTML de forma lógica e semântica", pois é mais adequada no contexto dela.
-
-----------------------------------------------------------------------------
+- O quarto critério de recomendação, que tratava sobre o uso de `<section>` no lugar de `<div>`, foi descartado e movido para a recomendação 1.2 "Organizar o código HTML de forma lógica e semântica", pois se adequa melhor ao contexto dela.
 
 #### 1.9 Não abrir novas instâncias sem a solicitação do usuário
 
 **Defasagem do eMAG: nível leve**
 
-Nessa recomendação, o eMAG é um pouco restritivo em excesso em alguns pontos, como abrir novas abas, utilizar janelas modais e mudar o controle de foco do teclado. Ele inclusive chega a soar um pouco contraditório na própria recomendação: em um dado momento, fala pra não adotar essas estratégias, mas depois cita maneiras de adotá-las de maneira acessível. Seria importante clarificar a descrição do item, estabelecendo que essas ações são permitidas quando expressas de maneira explícitas pelo usuário, e quando os mecanismos que realizam essas ações as indicam de maneira clara, o que era possivelmente a intenção do eMAG.
+Nesta recomendação, o eMAG é excessivamente restritivo em alguns pontos, como abrir novas abas, utilizar janelas modais e mudar o controle de foco do teclado. Ele inclusive chega a soar um tanto contraditório na própria recomendação: em um dado momento, orienta a não adoção dessas estratégias, mas depois cita maneiras de adotá-las de forma acessível. Seria importante clarificar a descrição do item, estabelecendo que essas ações são permitidas quando expressas de maneira explícita pelo usuário, e quando os mecanismos que realizam essas ações as indicam de maneira clara, o que, possivelmente, era a intenção do eMAG.
 
-Além disso, o exemplo da janela modal está um pouco desatualizado, pois não utiliza o elemento semanticamente correto `<dialog>` (ou `role="dialog"`), ativado por JavaScript com `showModal()` (ou ao menos com `atributo aria-modal="true"`), por exemplo. Além disso, no exemplo dado, não há gerenciamento de foco adequado, com o foco podendo ficar preso atrás do modal, algo citado como muito problemático pelo próprio eMAG. Como possivelmente o exemplo cumpre mais um caráter ilustrativo (e não um modelo a ser seguido propriamente), como o eMAG sugere ao referi-lo como um "exemplo simples", considerou-se que ele não foi o suficiente para deixar o grau de defasagem em níveis mais altos.
+Além disso, o exemplo da janela modal está um pouco desatualizado, pois não utiliza o elemento semanticamente correto `<dialog>` (ou o *role* `"dialog"`), ativado por JavaScript com `showModal()` (ou, ao menos, com o atributo `aria-modal="true"`), por exemplo. Ademais, no exemplo dado, não há um gerenciamento de foco adequado, uma vez que o foco pode ficar preso atrás do modal, algo citado como muito problemático pelo próprio eMAG. Como, possivelmente, o exemplo cumpre mais um caráter ilustrativo (e não um modelo a ser seguido propriamente), o que o eMAG sugere ao se referir a ele como um "exemplo simples", considerou-se que esse fator não foi suficiente para elevar o grau de defasagem a níveis mais altos.
 
 Portanto:
 
-- Foi clarificado na descrição do item que as ações tratadas pela recomendação são aceitáveis desde que os usuários as expressem de maneira explícita e quando os mecanismos que realizam essas ações as indicam de maneira clara.
+- Foi clarificado na descrição do item que as ações tratadas pela recomendação são aceitáveis, desde que os usuários as expressem de maneira explícita e que os mecanismos que realizam essas ações as indiquem de maneira clara.
 
-- Foi proposto um novo exemplo simples de janela modal, utilizando HTML, CSS e JS puro. O uso de JS puro aqui é uma liberdade adotada para fins de simplificação e padronização. No mundo real, a aplicação de comportamentos similares varia entre linguagens, frameworks e ferramentas distintas.
+- Foi proposto um novo exemplo simples de janela modal, utilizando HTML, CSS e JS puro. O uso de JS puro aqui é uma liberdade adotada para fins de simplificação e padronização. No mundo real, a aplicação de comportamentos similares varia entre linguagens, *frameworks* e ferramentas distintas.
 
-- Uma nova referência a [Técnica H83 do WCAG: "Using the target attribute to open a new window on user request and indicating this in link text"](https://www.w3.org/WAI/WCAG22/Techniques/html/H83) foi adicionada também.
+- Uma nova referência à [Técnica H83 do WCAG: "*Using the target attribute to open a new window on user request and indicating this in link text*"](https://www.w3.org/WAI/WCAG22/Techniques/html/H83) também foi adicionada.
 
 ----------------------------------------------------------------------------
 

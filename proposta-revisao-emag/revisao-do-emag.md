@@ -352,11 +352,11 @@ Portanto:
 
 **Defasagem do eMAG: nível nulo**
 
-Essa recomendação gera uma discussão interessante ao tentar classificar sua defasagem. Nela, o eMAG **proíbe** efeitos piscantes, intermitentes ou cintilantes. Não há uma definição clara e técnica sobre o que seriam esses flashes, nem se estabelece um limite onde eles poderiam ser aceitáveis. O WCAG, por outro lado, no [Critério de Sucesso 2.3.1: Três Flashes ou Abaixo do Limite](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#three-flashes-or-below-threshold) é **mais permissivo** e traz uma definição mais técnica. Ele estabelece um limite aceitável para os flashes, tratando-os como:
+Essa recomendação gera uma discussão interessante ao tentar classificar sua defasagem. Nela, o eMAG **proíbe** efeitos piscantes, intermitentes ou cintilantes. Não há uma definição clara e técnica sobre o que seriam esses *flashes*, nem se estabelece um limite em que eles poderiam ser aceitáveis. O WCAG, por outro lado, no [Critério de Sucesso 2.3.1: Três Flashes ou Abaixo do Limite](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#three-flashes-or-below-threshold) é **mais permissivo** e traz uma definição mais técnica. Ele estabelece um limite aceitável para os *flashes*, tratando-os como:
 
 > "conteúdo que pisque mais de três vezes no período de um segundo, ou o flash encontra-se abaixo dos limites de flash universal e flash vermelho."
 
-À primeira vista, isso poderia ser considerado como um fator preponderante para elevar a classificação de defasagem dessa recomendação do eMAG perante às diretrizes atuais. No entanto, é válido notar que essa divergência parece mais uma decisão deliberada dos autores do eMAG para simplificar a recomendação do que uma orientação ultrapassada propriamente, especialmente tendo em vista que o WCAG 2.0, documento em que o eMAG se baseou, já estabelecia essas diretrizes mais permissivas. Mesmo assim, o eMAG adotou um caminho mais restritivo. Em vista disso, como o cumprimento do eMAG não leva a um desacordo com as diretrizes modernas do WCAG e parece de fato simplificar a orientação, a defasagem foi classificada como nula.
+À primeira vista, isso poderia ser considerado um fator preponderante para elevar a classificação de defasagem dessa recomendação do eMAG em relação às diretrizes atuais. No entanto, é válido notar que essa divergência parece mais uma decisão deliberada dos autores do eMAG para simplificar a recomendação do que uma orientação ultrapassada propriamente, especialmente tendo em vista que o WCAG 2.0, documento em que o eMAG se baseou, já estabelecia essas diretrizes mais permissivas. Mesmo assim, o eMAG adotou um caminho mais restritivo. Em vista disso, como o cumprimento do eMAG não leva a um desacordo com as diretrizes modernas do WCAG e parece de fato simplificar a orientação, a defasagem foi classificada como nula.
 
 Portanto:
 
@@ -550,35 +550,35 @@ Portanto:
 
 **Defasagem do eMAG: nível crítico**
 
-A base conceitual da recomendação de que é importante fornecer informações adicionais que ajudem na compreensão da tabela permanece sólida. A orientação para o uso do `<caption>` como o primeiro elemento filho de um `<table>` retratando o título para a tabela, cujo o valor descreve sucintamente o seu propósito, permanece válida, vide o [HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#the-caption-element).
+A base conceitual da recomendação de que é importante fornecer informações adicionais que ajudem na compreensão da tabela permanece sólida. A orientação para o uso do `<caption>` como o primeiro elemento filho de um `<table>` retratando o título da tabela, cujo valor descreve sucintamente o seu propósito, permanece válida, vide o [HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#the-caption-element).
 
-O problema da orientação existe quando ela afirma que "deve ser fornecido um resumo de seus dados através do atributo `summary` que deve ser declarado no elemento `<table>`". O atributo `summary` dentro do elemento `<table>` é hoje considerado **obsoleto** e não deve ser utilizado, segundo o [HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#attr-table-summary) mais uma vez. A própria técnica [H73 do WCAG 2.0 "Using the summary attribute of the table element to give an overview of data tables"](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H73), marcada pelo eMAG como uma referência, é considerada obsoleta pelo próprio WCAG e sinaliza essa defasagem. Em vista disso, o uso do `summary` dentro de `<table>` no cenário atual é potencialmente perigoso, pois pode gerar uma falsa sensação de conformidade com critérios de acessibilidade, uma vez que tal obsolescência não garante que o atributo será corretamente interpretado por diferentes tecnologias.
+O problema da orientação existe quando ela afirma que "deve ser fornecido um resumo de seus dados através do atributo `summary` que deve ser declarado no elemento `<table>`". O atributo `summary` dentro do elemento `<table>` é hoje considerado **obsoleto** e não deve ser utilizado, segundo o [HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#attr-table-summary) mais uma vez. A própria técnica [H73 do WCAG 2.0 "*Using the summary attribute of the table element to give an overview of data tables*"](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H73), marcada pelo eMAG como uma referência, é considerada obsoleta pelo próprio WCAG e sinaliza essa defasagem. Em vista disso, o uso do `summary` dentro de `<table>` no cenário atual é potencialmente perigoso, pois pode gerar uma falsa sensação de conformidade com critérios de acessibilidade, uma vez que tal obsolescência não garante que o atributo será corretamente interpretado por diferentes tecnologias.
 
-Nesse sentido, [outras práticas substitutas são sugeridas pelo próprio HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques), tais como utilizar um parágrafo `<p>` descrevendo a tabela antes do elemento `<table>`, ou até mesmo colocar o parágrafo dentro do elemento `<caption>`, de forma que o título da tabela em si seja delimitado por outro elemento dentro de `<caption>`, como o `<strong>`. O [W3C WAI Tutorials: Caption & Summary](https://www.w3.org/WAI/tutorials/tables/caption-summary/#using-aria-describedby-to-provide-a-table-summary) vai um pouco mais além e sugere que, na técnica de utilizar um parágrafo anterior para descrever a tabela, o atributo `aria-describedby` em `<table>` pode ser empregado para estabelecer uma relação mais direta entre `<p>` e `<table>`.
+Nesse sentido, [outras práticas substitutas são sugeridas pelo próprio HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques), tais como utilizar um parágrafo `<p>` descrevendo a tabela antes do elemento `<table>`, ou até mesmo colocar o parágrafo dentro do elemento `<caption>`, de forma que o título da tabela em si seja delimitado por outro elemento dentro de `<caption>`, como o `<strong>`. O [*W3C WAI Tutorials: Caption & Summary*](https://www.w3.org/WAI/tutorials/tables/caption-summary/#using-aria-describedby-to-provide-a-table-summary) vai um pouco além e sugere que, na técnica de utilizar um parágrafo anterior para descrever a tabela, o atributo `aria-describedby` em `<table>` pode ser empregado para estabelecer uma relação mais direta entre `<p>` e `<table>`.
 
-Como essa recomendação sugere o uso de um atributo obsoleto segundo a especificação do HTML5, sem especificar alternativas e potencialmente podendo gerar problemas de falsa sensação de conformidade, sua defasagem foi classificada de nível crítico.
+Como essa recomendação sugere o uso de um atributo obsoleto segundo a especificação do HTML5, sem especificar alternativas e podendo gerar problemas de falsa sensação de conformidade, sua defasagem foi classificada de nível crítico.
 
-Há ainda uma discussão se o eMAG obriga que todas as tabelas tenham um título como o elemento `<caption>`. A redação da recomendação é um pouco dúbia em relação a esse ponto. A princípio, e em acordo com o que é estabelecido no WCAG, interpretou-se que títulos não são obrigatórios para todas as tabelas, e sim que, quando utilizados, devem ser definidos com o `<caption>`.
+Há ainda uma discussão sobre se o eMAG obriga que todas as tabelas tenham um título como o elemento `<caption>`. A redação da recomendação é um pouco dúbia em relação a esse ponto. A princípio, e de acordo com o que é estabelecido no WCAG, interpretou-se que títulos não são obrigatórios para todas as tabelas, e sim que, quando utilizados, devem ser definidos com o `<caption>`.
 
 Portanto:
 
-- A descrição da recomendação foi refeita para excluir a orientação do uso do `summary` como meio de providenciar resumo/explicação para os dados da tabela. Os critérios de verificação também foram adaptados de acordo.
+- A descrição da recomendação foi refeita para excluir a orientação do uso do `summary` como meio de fornecer resumo ou explicação para os dados da tabela. Os critérios de verificação também foram adaptados de acordo.
 
 - Também foi adicionado à descrição o termo "Para tabelas de dados que necessitarem de títulos para clarificar seus propósitos", esclarecendo a interpretação de que o uso do `<caption>` é obrigatório quando títulos são utilizados, e não que `<caption>` com título deve ser empregado sempre.
 
 - O exemplo dado pelo eMAG foi incorporado como má prática, em função do uso do `summary` dentro de `<table>`.
 
-- Um exemplo atualizado de como fornecer uma descrição adicional para uma tabela sem usar o `summary`, mostrando duas possibilidades, foi adicionado. Os códigos foram baseados nas [Técnicas de descrição de tabelas do HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques) e na página [Caption & Summary da Web Accessibility Initiative (WAI) Tutorials](https://www.w3.org/WAI/tutorials/tables/caption-summary/).
+- Um exemplo atualizado de como fornecer uma descrição adicional para uma tabela sem usar o `summary`, mostrando duas possibilidades, foi adicionado. Os códigos foram baseados nas [Técnicas de descrição de tabelas do HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques) e na página [*Caption & Summary* da WAI *Tutorials*](https://www.w3.org/WAI/tutorials/tables/caption-summary/).
 
 - Um exemplo extra demonstrando o uso de `<caption>` fornecendo título à tabela foi adicionado. O código foi baseado [nesse conteúdo do MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#adding_a_caption_to_your_table_with_caption).
 
-- A referência à técnica H73 do WCAG 2.0 "Using the summary attribute of the table element to give an overview of data tables" (obsoleta) foi removida.
+- A referência à técnica H73 do WCAG 2.0 "*Using the summary attribute of the table element to give an overview of data tables*" (obsoleta) foi removida.
 
 - Uma referência adicional sobre [adicionar uma legenda à sua tabela com `<caption>`, da MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#adding_a_caption_to_your_table_with_caption), foi acrescentada.
 
 - Uma referência adicional sobre [Técnicas de descrição de tabelas do HTML Living Standard](https://html.spec.whatwg.org/multipage/tables.html#table-descriptions-techniques) foi adicionada.
 
-- Uma referência adicional sobre [Caption & Summary da Web Accessibility Initiative (WAI) Tutorials](https://www.w3.org/WAI/tutorials/tables/caption-summary/) foi adicionada.
+- Uma referência adicional sobre [*Caption & Summary* da *Web Accessibility Initiative* (WAI) *Tutorials](https://www.w3.org/WAI/tutorials/tables/caption-summary/)* foi adicionada.
 
 ----------------------------------------------------------------------------
 
@@ -656,25 +656,27 @@ Portanto:
 
 #### 4.1 Oferecer contraste mínimo entre plano de fundo e primeiro plano
 
+#### 4.1 Oferecer contraste mínimo entre plano de fundo e primeiro plano
+
 **Defasagem do eMAG: nível leve**
 
-A recomendação permanece tecnicamente válida e alinhada ao critério 1.4.3 do WCAG. Contudo, o eMAG adota uma abordagem que parece ser deliberadamente simplificada ao exigir contraste mínimo de 4,5:1 para todos os casos e ao desaconselhar o uso de imagens de fundo atrás do texto.
+A recomendação permanece tecnicamente válida e alinhada ao critério 1.4.3 do WCAG. Contudo, o eMAG adota uma abordagem que parece ser deliberadamente simplificada ao exigir um contraste mínimo de 4,5:1 para todos os casos e ao desaconselhar o uso de imagens de fundo atrás do texto.
 
 O WCAG 2.0 da época, por exemplo, flexibiliza o contraste mínimo para 3:1 em alguns cenários especiais no [Critério de sucesso 1.4.3: Contraste Mínimo](https://www.w3.org/TR/WCAG20/#visual-audio-contrast). Além disso, também não proíbe o uso de imagens como fundo; apenas orienta que o fundo (seja uma imagem ou não) atenda ao contraste mínimo ([Técnica G18](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G18)). Ele inclusive chega a citar que o fundo pode ser sombreado para atender ao contraste mínimo, sugerindo indiretamente o uso de CSS para esse objetivo.
 
-Essas decisões provavelmente refletem uma estratégia de padronização e simplificação da auditoria de acessibilidade em portais governamentais. Embora atualmente existam técnicas consolidadas que permitem garantir contraste adequado mesmo com imagens de fundo, a orientação do eMAG não induz a erros técnicos, apenas restringe possibilidades de design. Assim, caracteriza-se uma defasagem leve, mas adotou-se uma abordagem conservadora de não alterar as recomendações originais do eMAG.
+Essas decisões provavelmente refletem uma estratégia de padronização e simplificação da auditoria de acessibilidade em portais governamentais. Embora atualmente existam técnicas consolidadas que permitem garantir contraste adequado mesmo com imagens de fundo, a orientação do eMAG não induz a erros técnicos, apenas restringe as possibilidades de *design*. Assim, caracteriza-se uma defasagem leve, mas adotou-se uma abordagem conservadora de não alterar as recomendações originais do eMAG.
 
-É válido ainda notar que o WCAG na versão 2.1, posterior ao eMAG 3.1, apresentou em seu texto, por sua vez, um novo [Critério de Sucesso 1.4.11 Contraste Não textual](https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/#non-text-contrast) que estabelece a proporção mínima de 3:1 para contraste entre alguns elementos não textuais, quase como um outro cenário excepcional à regra do contraste 4,5:1. Não só isso, como no WCAG 2.2 foi adicionado ainda um outro [Critério de Sucesso 2.4.13 Aparência do Foco](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#focus-appearance) que também estabelece contraste mínimo de 3:1 para a borda dos elementos focáveis. No entanto, como os outros casos especiais de 3:1 não foram abordados no eMAG, provavelmente pelas razões já citadas, e também decidiu-se não atualizá-los neste checklist, extrapolou-se que também não faria sentido portar essas novas exceções dos critérios de sucesso.
+É válido ainda notar que o WCAG na versão 2.1, posterior ao eMAG 3.1, apresentou em seu texto, por sua vez, um novo [Critério de Sucesso 1.4.11 Contraste Não textual](https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/#non-text-contrast) que estabelece a proporção mínima de 3:1 para contraste entre alguns elementos não textuais, quase como um outro cenário excepcional à regra do contraste 4,5:1. Não só isso, mas também no WCAG 2.2 foi adicionado ainda um outro [Critério de Sucesso 2.4.13 Aparência do Foco](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#focus-appearance) que também estabelece contraste mínimo de 3:1 para a borda dos elementos focáveis. No entanto, como os outros casos especiais de 3:1 não foram abordados no eMAG, provavelmente pelas razões já citadas, e como também se decidiu não os atualizar neste *checklist*, extrapolou-se que também não faria sentido portar essas novas exceções dos critérios de sucesso.
 
 Portanto:
 
-- As orientações bases não foram alteradas, mesmo que teoricamente elas configurem uma leve defasagem.
+- As orientações-base não foram alteradas, mesmo que teoricamente elas configurem uma leve defasagem.
 
 - Os exemplos foram melhorados para demonstrar a aplicação das cores de fundo e de primeiro plano com CSS.
 
 - Foi deixado mais claro na descrição do item o mínimo recomendado para o contraste numa folha de alto contraste, já que isso só estava sendo especificado no exemplo de aplicação.
 
-- Um exemplo de má prática de foco com contraste insuficiente foi adicionado para que os inspetores também se atentem a esse aspecto. Esse exemplo dialoga diretamente com a recomendação "Possibilitar que o elemento com foco seja visualmente evidente" e seus respectivos exemplos.
+- Um exemplo de má prática de foco com contraste insuficiente foi adicionado para que os inspetores também atentem para esse aspecto. Esse exemplo dialoga diretamente com a recomendação "Possibilitar que o elemento com foco seja visualmente evidente" e seus respectivos exemplos.
 
 ----------------------------------------------------------------------------
 

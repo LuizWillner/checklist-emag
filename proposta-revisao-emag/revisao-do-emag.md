@@ -401,15 +401,15 @@ Portanto:
 
 - O exemplo prático de XHTML foi descartado, uma vez que é um padrão bastante incomum, e o exemplo em HTML já ilustra adequadamente a ideia da recomendação.
 
-- Foi incluído um exemplo de "má prática" com trechos de códigos em que os atributos de idioma possuem valores ausentes, incorretos e inválidos.
+- Foi incluído um exemplo de "má prática" com trechos de código em que os atributos de idioma possuem valores ausentes, incorretos ou inválidos.
 
-- Foi incluído um exemplo listando alguns dos possíveis códigos de idioma válidos segundo a [norma BCP 47](https://www.rfc-editor.org/info/bcp47), a qual estabelece a validez e formação desses códigos.
+- Foi incluído um exemplo listando alguns dos possíveis códigos de idioma válidos segundo a [norma BCP 47](https://www.rfc-editor.org/info/bcp47), a qual estabelece a validade e a formação desses códigos.
 
-- Foi acrescentado tanto aos critérios de verificação quanto ao exemplo errado uma chamada de atenção para um erro comum quando o idioma do conteúdo da página é alterado por um seletor de idioma, mas o atributo `lang` não é alterado.
+- Foi acrescentada, tanto aos critérios de verificação quanto ao exemplo errado, uma chamada de atenção para um erro comum quando o idioma do conteúdo da página é alterado por um seletor de idioma, mas o atributo `lang` não é alterado.
 
 - Uma nova referência à [Técnica WCAG H57: Usar o atributo de idioma em elementos HTML (em inglês)](https://www.w3.org/WAI/WCAG22/Techniques/html/H58) foi acrescentada.
 
-- Uma nova referência à [Norma BCP 47 para códigos de idiomas (em inglês)](https://www.rfc-editor.org/info/bcp47) foi acrescentada, que estabelece os códigos de idioma válidos (inclusive, essa mesma referência é citada na técnica WCAG anterior adicionada).
+- Uma nova referência à [Norma BCP 47 para códigos de idiomas (em inglês)](https://www.rfc-editor.org/info/bcp47) foi acrescentada, a qual estabelece os códigos de idioma válidos (inclusive, essa mesma referência é citada na técnica WCAG adicionada anteriormente).
 
 ----------------------------------------------------------------------------
 
@@ -423,13 +423,13 @@ Portanto:
 
 - O exemplo prático de XHTML foi descartado, uma vez que é um padrão bastante incomum, e o exemplo em HTML já ilustra adequadamente a ideia da recomendação.
 
-- Foi incluído um [exemplo do WCAG](https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html) de boa prática com um seletor de idioma cujos nome dos idiomas são corretamente identificados pelos respectivos idiomas. Analogamente, um exemplo de má prática foi incluído nessa mesma linha com os atributos de idioma com valores ausentes, incorretos e inválidos.
+- Foi incluído um [exemplo do WCAG](https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html) de boa prática com um seletor de idioma cujos nomes são corretamente identificados pelos respectivos idiomas. Analogamente, um exemplo de má prática foi incluído nessa mesma linha com os atributos de idioma com valores ausentes, incorretos ou inválidos.
 
-- Foi incluído um exemplo listando alguns dos possíveis códigos de idioma válidos segundo a [norma BCP 47](https://www.rfc-editor.org/info/bcp47), a qual estabelece a validez e formação desses códigos.
+- Foi incluído um exemplo listando alguns dos possíveis códigos de idioma válidos segundo a [norma BCP 47](https://www.rfc-editor.org/info/bcp47), a qual estabelece a validade e a formação desses códigos.
 
 - Uma nova referência à [Técnica WCAG H58: Uso do atributo de idioma para identificar mudanças de idioma (em inglês)](https://www.w3.org/WAI/WCAG22/Techniques/html/H58) foi acrescentada.
 
-- Uma nova referência à [Norma BCP 47 para códigos de idiomas (em inglês)](https://www.rfc-editor.org/info/bcp47) foi acrescentada, que estabelece os códigos de idioma válidos (inclusive, essa mesma referência é citada na técnica WCAG anterior adicionada).
+- Uma nova referência à [Norma BCP 47 para códigos de idiomas (em inglês)](https://www.rfc-editor.org/info/bcp47) foi acrescentada, a qual estabelece os códigos de idioma válidos (inclusive, essa mesma referência é citada na técnica WCAG adicionada anteriormente).
 
 
 ----------------------------------------------------------------------------
@@ -438,13 +438,13 @@ Portanto:
 
 **Defasagem do eMAG: nível nulo**
 
-A recomendação continua atual. A única questão é que há uma observação relevante não citada pelo eMAG, mas existente no WCAG no [Critério de Sucesso 2.4.2: Página com Título](https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html): ter atenção para que o título das páginas sejam alterados conforme o usuário navega pelo sistema, algo que pode não acontecer no contexto atual das SPAs (Single Page Applications).
+A recomendação continua atual. A única questão é que há uma observação relevante não citada pelo eMAG, mas existente no WCAG no [Critério de Sucesso 2.4.2: Página com Título](https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html): ter atenção para que os títulos das páginas sejam alterados conforme o usuário navega pelo sistema, algo que pode não acontecer no contexto atual das SPAs (*Single Page Applications*).
 
 A princípio, portanto:
 
 - Um novo critério de verificação foi adicionado para que se atente às mudanças dinâmicas de título ao navegar pelo sistema, sobretudo em SPAs. Uma chamada de atenção para isso também foi incluída no exemplo.
 
-- Uma nova referência à [Técnica WCAG H25: Fornecer um títuto à página usando o elemento <title> (em inglês)](https://www.w3.org/WAI/WCAG22/Techniques/html/H25) foi adicionada.
+- Uma nova referência à [Técnica WCAG H25: Fornecer um título à página usando o elemento <title> (em inglês)](https://www.w3.org/WAI/WCAG22/Techniques/html/H25) foi adicionada.
 
 ----------------------------------------------------------------------------
 
@@ -454,20 +454,20 @@ A princípio, portanto:
 
 A recomendação continua atual. É de fato importante que o usuário tenha informações sobre sua localização dentro de um conjunto de páginas.
 
-A sugestão de uso dos breadcrumbs para esse fim é válida, mas o eMAG parece sugerir esse recurso como o mecanismo principal para atingir esse objetivo, quando na verdade, atualmente, existem inúmeras alternativas. Apesar do eMAG não chega a restringir essa abordagem como a única aceitável, pode ser discutível se ele não acaba induzindo equivocadamente o leitor a focar somente no uso dos breadcrumbs como mecanismo de localização, como dito em:
+A sugestão de uso dos *breadcrumbs* para esse fim é válida, mas o eMAG parece sugerir esse recurso como o mecanismo principal para atingir esse objetivo, quando, na verdade, atualmente existem inúmeras alternativas. Apesar do eMAG não chegar a restringir essa abordagem como a única aceitável, pode ser discutível se ele não acaba induzindo equivocadamente o leitor a focar somente no uso dos *breadcrumbs* como mecanismo de localização, como dito em:
 
-> "Assim, poderá ser utilizado o recurso de “migalha de pão” (breadcrumbs), que são links navegáveis em forma de lista hierárquica os quais...". 
+> "Assim, poderá ser utilizado o recurso de “migalha de pão” (breadcrumbs), que são links navegáveis em forma de lista hierárquica os quais...".
 
 Como não é algo restritivo propriamente, e ainda é um recurso bem usado, esse cenário não foi considerado suficiente para elevar o nível de defasagem.
 
-Além disso, um exemplo de mecanismo de breadcrumbs é citado, mas não há muitos detalhes quanto a sua implementação. Somente é citado que os links devem estar em "forma de lista hierárquica". Um exemplo mais completo seria bem vindo à recomendação.
+Além disso, um exemplo de mecanismo de *breadcrumbs* é citado, mas não há muitos detalhes quanto à sua implementação. Somente é citado que os *links* devem estar em "forma de lista hierárquica". Um exemplo mais completo seria bem-vindo à recomendação.
 
 Portanto:
-- A nova descrição do item foi redigida com cuidado para não tratar o mecanismo de breadcrumbs como principal abordagem, e sim como um "possível exemplo".
+- A nova descrição do item foi redigida com cuidado para não tratar o mecanismo de *breadcrumbs* como principal abordagem, e sim como um "possível exemplo".
 
-- Um exemplo de implementação de breadcrumbs mais completo, baseado na [técnica G65 do WCAG "Providing a breadcrumb trail"](https://www.w3.org/WAI/WCAG21/Techniques/general/G65), com uso de `<nav>`, `aria-label` e `aria-current`, foi acrescentado
+- Um exemplo de implementação de *breadcrumbs* mais completo, baseado na [técnica G65 do WCAG "*Providing a breadcrumb trail*"](https://www.w3.org/WAI/WCAG21/Techniques/general/G65), com uso de `<nav>`, `aria-label` e `aria-current`, foi acrescentado.
 
-- A [Técnica WCAG G65: Providing a breadcrumb trail](https://www.w3.org/WAI/WCAG21/Techniques/general/G65) foi adicionada ao item como referência.
+- A [Técnica WCAG G65: *Providing a breadcrumb trail*](https://www.w3.org/WAI/WCAG21/Techniques/general/G65) foi adicionada ao item como referência.
 
 ----------------------------------------------------------------------------
 
@@ -475,15 +475,15 @@ Portanto:
 
 **Defasagem do eMAG: nível nulo**
 
-A recomendação continua atual e alinhada com práticas modernas. Sua ideia central de garantir que o texto do link indique claramente o destino é muito relevante. No eMAG, entretanto, é válido notar que ela tende a ser mais restritiva do que o estabelecido em outras diretrizes de acessibilidade.
+A recomendação continua atual e alinhada com práticas modernas. Sua ideia central de garantir que o texto do *link* indique claramente o destino é muito relevante. No eMAG, entretanto, é válido notar que ela tende a ser mais restritiva do que o estabelecido em outras diretrizes de acessibilidade.
 
-A orientação do eMAG de que "Não se deve fazer a utilização de links do tipo “clique aqui”, “leia mais”,..." é mais rígida do que permite o WCAG em um de seus níveis. Para o nível A, o WCAG afirma que é suficiente também que os links sejam compreendidos pelo contexto, possibilitando o uso desse tipo de texto mais genérico nos links desde que fique claro seu destino pelo contexto ([Critério de sucesso 2.4.4: Finalidade do Link (Em contexto)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#link-purpose-in-context)). No entanto, essa orientação mais rígida do eMAG parece ter sido feita intencionalmente pelos seus autores, pois além do WCAG 2.0 (o vigente quando o eMAG 3.1 foi elaborado) já possuir esse caráter mais permissivo na época, os autores apresentam um argumento sólido para essa conduta mais rigorosa de que "*muitos usuários de leitores de tela navegam por links*", e portanto necessitam de uma descrição mais clara por nem sempre terem acesso ao contexto. Esse argumento é mais consonante ao [Critério de sucesso 2.4.9: Finalidade do Link (Apenas o Link)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#link-purpose-link-only), de nível AAA. Por isso, a defasagem foi classificada como nula.
+A orientação do eMAG de que "Não se deve fazer a utilização de links do tipo “clique aqui”, “leia mais”,..." é mais rígida do que permite o WCAG em um de seus níveis. Para o nível A, o WCAG afirma que é suficiente também que os *links* sejam compreendidos pelo contexto, possibilitando o uso desse tipo de texto mais genérico nos *links* desde que fique claro seu destino pelo contexto ([Critério de sucesso 2.4.4: Finalidade do Link (Em contexto)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#link-purpose-in-context)). No entanto, essa orientação mais rígida do eMAG parece ter sido feita intencionalmente pelos seus autores, pois além de o WCAG 2.0 (o vigente quando o eMAG 3.1 foi elaborado) já possuir esse caráter mais permissivo na época, os autores apresentam um argumento sólido para essa conduta mais rigorosa de que "*muitos usuários de leitores de tela navegam por links*", e portanto necessitam de uma descrição mais clara por nem sempre terem acesso ao contexto. Esse argumento é mais consonante com o [Critério de sucesso 2.4.9: Finalidade do Link (Apenas o Link)](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#link-purpose-link-only), de nível AAA. Por isso, a defasagem foi classificada como nula.
 
 Portanto:
 
-- Foi acrescentada ao texto da descrição e aos critérios de verificação a possibilidade do link possuir uma imagem como conteúdo (ao invés de um texto), citando que, nesse caso, o texto do link considerado por tecnologias assistivas será aquele definido no atributo `alt` da imagem. Um exemplo de boa prática e má prática disso também foi acrescentado.
+- Foi acrescentada ao texto da descrição e aos critérios de verificação a possibilidade do *link* possuir uma imagem como conteúdo (em vez de um texto), citando que, nesse caso, o texto do *link* considerado por tecnologias assistivas será aquele definido no atributo `alt` da imagem. Um exemplo de boa prática e um de má prática também foram acrescentados.
 
-- Novos exemplos de boas e más práticas mais detalhados foram incluídos para ilustrar a recomendação. Dentre eles, é válido destacar o exemplo 2, reaproveitado da recomendação 1.9 "Não abrir novas instâncias sem a solicitação do usuário" da seção "Marcação" , que acaba se relacionando também com essa recomendação. Além disso, outros exemplos de uso inapropriado do atributo `title` foram incluídos.
+- Novos exemplos de boas e más práticas mais detalhados foram incluídos para ilustrar a recomendação. Dentre eles, é válido destacar o exemplo 2, reaproveitado da recomendação 1.9 "Não abrir novas instâncias sem a solicitação do usuário" da seção "Marcação", que acaba se relacionando também com essa recomendação. Além disso, outros exemplos de uso inapropriado do atributo `title` foram incluídos.
 
 ----------------------------------------------------------------------------
 
@@ -491,11 +491,11 @@ Portanto:
 
 **Defasagem do eMAG: nível leve**
 
-A recomendação permanece absolutamente atual. O fornecimento de alternativas textuais para imagem é de extrema importância para a acessibilidade. O único ponto que pode ser considerado como defasagem é quanto à orientação sobre as "imagens decorativas" que, segundo o eMAG, "devem ser inseridas por CSS". Apesar de não estar errada, essa é uma abordagem muito restritiva, sendo que há alternativas a ela atualmente. Uma possível forma é inserir a imagem com atributo `alt` vazio (`alt=""`) ou com atributo `aria-hidden="true"`, indicando que a imagem deve ser ignorada por tecnologias assistivas, como discutido no [W3C WAI Tutorials: Decorative Images](https://www.w3.org/WAI/tutorials/images/decorative/). Seguir essa recomendação do eMAG não traz nenhum prejuízo de acessibilidade, mas marginaliza uma prática muito mais comum, mais simples e mais adequada na atualidade. Por isso, a defasagem foi classificada como leve.
+A recomendação permanece absolutamente atual. O fornecimento de alternativas textuais para imagem é de extrema importância para a acessibilidade. O único ponto que pode ser considerado como defasagem é quanto à orientação sobre as "imagens decorativas", que, segundo o eMAG, "*devem ser inseridas por CSS*". Apesar de não estar errada, essa é uma abordagem muito restritiva, visto que há alternativas a ela atualmente. Uma possível forma é inserir a imagem com o atributo `alt` vazio (`alt=""`) ou com o atributo `aria-hidden="true"`, indicando que a imagem deve ser ignorada por tecnologias assistivas, como discutido no [*W3C WAI Tutorials: Decorative Images*](https://www.w3.org/WAI/tutorials/images/decorative/). Seguir essa recomendação do eMAG não traz nenhum prejuízo de acessibilidade, mas marginaliza uma prática muito mais comum, mais simples e mais adequada na atualidade. Por isso, a defasagem foi classificada como leve.
 
 Portanto:
 
-- A descrição da recomendação foi adaptada para incluir a estratégia `alt=""` ou  `aria-hidden="true"` como válida para imagem decorativas, ao invés de somente a inserção via CSS. Um exemplo do tipo também foi acrescentado.
+- A descrição da recomendação foi adaptada para incluir a estratégia `alt=""` ou `aria-hidden="true"` como válida para imagens decorativas, em vez de somente a inserção via CSS. Um exemplo do tipo também foi acrescentado.
 
 ----------------------------------------------------------------------------
 
@@ -503,21 +503,21 @@ Portanto:
 
 **Defasagem do eMAG: nível leve**
 
-A recomendação em si como ideia geral continua válida. Acontece que o recurso de mapas de imagem, no cenário de desenvolvimento de interfaces atual, é algo raro de se encontrar, sendo um mecanismo em bastante desuso. No entanto, o próprio eMAG reconhece esse fato, e apresenta um cenário que ele poderia ser usado ("*acessibilidade de infográficos*"). Esse reconhecimento é importante pois evita que a recomendação possa ser interpretada em algum nível como um estímulo ao uso de mapas de imagem. Ainda assim, a recomendação falha em dar justificativas mais claras do *porquê* os mapas estão em desuso e são evitados. E uma das possíveis justificativas para isso é importante no contexto de acessibilidade, pois trata do fato dos mapas de imagem usarem coordenadas fixas em CSS pixels ([MDN Web Docs: The Image Map Area Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/area)), o que dificulta o seu uso em layouts responsivos. Por isso, a defasagem é classificado como leve.
+A recomendação em si como ideia geral continua válida. Acontece que o recurso de mapas de imagem, no cenário de desenvolvimento de interfaces atual, é algo raro de se encontrar, sendo um mecanismo em bastante desuso. No entanto, o próprio eMAG reconhece esse fato e apresenta um cenário em que ele poderia ser usado ("*acessibilidade de infográficos*"). Esse reconhecimento é importante, pois evita que a recomendação possa ser interpretada em algum nível como um estímulo ao uso de mapas de imagem. Ainda assim, a recomendação falha em dar justificativas mais claras do motivo pelo qual os mapas estarem em desuso e serem evitados. Uma das possíveis justificativas para isso é importante no contexto de acessibilidade, pois trata do fato de os mapas de imagem usarem coordenadas fixas em *CSS pixels* ([MDN Web Docs: The Image Map Area Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/area)), o que dificulta o seu uso em *layouts* responsivos. Por isso, a defasagem é classificada como leve.
 
-Além disso, há um problema de implementação no exemplo de mapas do lado do servidor, um recurso ainda mais legado que o mapa do lado do cliente. Antes dele, o eMAG afirma corretamente que esse tipo de mapa de imagem deve ser evitado, pois não é possível torná-lo por si só acessível. Ele segue dizendo que, caso utilizados, links redundantes relativos a cada região ativa do mapa devem ser fornecidos logo após, e mostra o exemplo. O problema é que o exemplo **não apresenta uma implementação correta** de um mapa de imagem do lado do servidor. Isso porque a imagem referente ao mapa aplica o atributo `usemap="#Map"`, que é utilizado para referenciar o hash-name (`name`) de um elemento `<map>` presente no código HTML ([HTML Living Standard: The map element](https://html.spec.whatwg.org/multipage/image-maps.html)). Em outras palavras, é um atributo para mapas do lado do *cliente*. Para mapas do lado do servidor, o atributo booleano `ismap` é utilizado para indicar que o elemento provê acesso a um mapa desse tipo ([HTML Living Standard: The ismap attribute](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-ismap)). Apesar de um erro HTML, como se trata de um erro em um exemplo ilustrativo de um recurso legado, que não necessariamente induz ao uso dele, não foi considerado forte o suficiente para classificar como um nível de defasagem maior.
+Além disso, há um problema de implementação no exemplo de mapas do lado do servidor, um recurso ainda mais legado que o mapa do lado do cliente. Antes dele, o eMAG afirma corretamente que esse tipo de mapa de imagem deve ser evitado, pois não é possível torná-lo por si só acessível. Ele segue dizendo que, caso utilizados, *links* redundantes relativos a cada região ativa do mapa devem ser fornecidos logo após, e mostra o exemplo. O problema é que o exemplo **não apresenta uma implementação correta** de um mapa de imagem do lado do servidor. Isso porque a imagem referente ao mapa aplica o atributo `usemap="#Map"`, que é utilizado para referenciar o *hash-name* (`name`) de um elemento `<map>` presente no código HTML ([HTML Living Standard: The map element](https://html.spec.whatwg.org/multipage/image-maps.html)). Em outras palavras, é um atributo para mapas do lado do *cliente*. Para mapas do lado do servidor, o atributo booleano `ismap` é utilizado para indicar que o elemento provê acesso a um mapa desse tipo ([HTML Living Standard: The ismap attribute](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-ismap)). Apesar de ser um erro HTML, como se trata de um erro em um exemplo ilustrativo de um recurso legado, que não necessariamente induz ao uso dele, não foi considerado forte o suficiente para classificar como um nível de defasagem maior.
 
 Portanto:
 
-- Acrescentou-se na descrição uma justificativa mais clara do porquê mapas de imagem são um recurso em desuso ("dificultam a implementação de um design responsivo").
+- Acrescentou-se na descrição uma justificativa mais clara do motivo pelo qual os mapas de imagem serem um recurso em desuso ("dificultam a implementação de um *design* responsivo").
 
 - Há ênfase de que a expectativa de encontrar esse recurso concentra-se em sistemas mais antigos.
 
-- O erro do exemplo de mapa do lado do servidor foi corrigido. O exemplo também foi melhorado para agrupar os links numa lista, ao invés de texto.
+- O erro do exemplo de mapa do lado do servidor foi corrigido. O exemplo também foi melhorado para agrupar os *links* numa lista, em vez de texto.
 
 - Os exemplos foram marcados como "neutros", para não dar a entender que o uso de mapas de imagem está sendo incentivado, uma vez que se trata de um recurso um tanto ultrapassado.
 
-*OBS: Não há também citação do uso de SVG como uma alternativa moderna para mapas de imagem, provavelmente por ainda não ser um recurso consolidado suficiente na época de redação. Tratar disso, no entanto, provavelmente teria que gerar uma ou mais recomendações de acessibilidade novas específicas para a aplicação de SVG nesse sentido.*
+*OBS: Não há também citação do uso de SVG como uma alternativa moderna para mapas de imagem, provavelmente por ainda não ser um recurso consolidado o suficiente na época de redação. Tratar disso, no entanto, provavelmente teria que gerar uma ou mais recomendações de acessibilidade novas específicas para a aplicação de SVG nesse sentido.*
 
 ----------------------------------------------------------------------------
 
@@ -525,25 +525,27 @@ Portanto:
 
 **Defasagem do eMAG: nível leve**
 
-Esse talvez seja um dos itens mais difíceis de analisar a defasagem pelo fato de não haver um Critério de Sucesso do WCAG que seja indicado como fonte ou inspiração. O epicentro da dificuldade está na orientação:
+Esse talvez seja um dos itens cuja defasagem é mais difícil de analisar pelo fato de não haver um Critério de Sucesso do WCAG que seja indicado como fonte ou inspiração. O epicentro da dificuldade está na orientação:
 
 > "Se um arquivo for disponibilizado em PDF, deverá ser fornecida uma alternativa em HTML ou ODF"
 
 É possível conjecturar possíveis razões para ela:
 
-1) Historicamente, o formato PDF apresentava sérios problemas em termos de acessibilidade, que só passaram a ser endereçados com a norma [ISO 14289-1 (PDF/UA)](https://pdfa.org/resource/iso-14289-pdfua) em 2012. O próprio WCAG, inclusive, enumera uma série de [técnicas para tornar documentos em PDF acessíveis](https://www.w3.org/WAI/WCAG22/Techniques/#pdf). No entanto, mesmo assim, ainda é extremamente comum encontrar PDFs inacessíveis, por uma série de razões. Talvez na época de redação do eMAG 3.1 (2014), a acessibilidade do PDF ainda não estava tão consolidada, e os autores julgaram ser melhor requerer que formatos alternativos acessíveis fossem disponibilizados.
+1. Historicamente, o formato PDF apresentava sérios problemas em termos de acessibilidade, que só passaram a ser endereçados com a norma [ISO 14289-1 (PDF/UA)](https://pdfa.org/resource/iso-14289-pdfua) em 2012. O próprio WCAG, inclusive, enumera uma série de [técnicas para tornar documentos em PDF acessíveis](https://www.w3.org/WAI/WCAG22/Techniques/#pdf). No entanto, mesmo assim, ainda é extremamente comum encontrar PDFs inacessíveis, por uma série de razões. Talvez na época de redação do eMAG 3.1 (2014), a acessibilidade do PDF ainda não estivesse tão consolidada, e os autores julgaram ser melhor requerer que formatos alternativos acessíveis fossem disponibilizados.
 
-2) Outro ponto da discussão passa pelo fato do PDF só ter sido elevado a um padrão aberto em 2008. O ODF, por definição, desde sempre foi um padrão aberto (assim como o HTML). Historicamente, há uma tendência de instituições governamentais preferirem padrões abertos e softwares livres como forma de garantir mais autonomia e segurança em governança eletrônica (algo estabelecido inclusive no [Padrões de Interoperabilidade de Governo Eletrônico - ePING](https://eping.governoeletronico.gov.br/), e talvez por isso a recomendação siga a linha dos formatos alternativos.
+2. Outro ponto da discussão passa pelo fato de o PDF só ter sido elevado a um padrão aberto em 2008. O ODF, por definição, desde sempre foi um padrão aberto (assim como o HTML). Historicamente, há uma tendência de instituições governamentais preferirem padrões abertos e *softwares* livres como forma de garantir mais autonomia e segurança em governança eletrônica (algo estabelecido inclusive nos [Padrões de Interoperabilidade de Governo Eletrônico - ePING](https://eping.governoeletronico.gov.br/)), e talvez por isso a recomendação siga a linha dos formatos alternativos.
 
-No entanto, o fato é que hoje o PDF é um padrão aberto e com suporte a acessibilidade, o que levanta um ponto em relação a defasagem do eMAG. Pode até ser discutível se a acessibilidade de documentos HTML e ODF é mais fácil de ser garantida. Alguns sites governamentais, como o [Government Digital Service do Reino Unido](https://www.gov.uk/guidance/publishing-accessible-documents), o [Section 508 dos EUA](https://www.section508.gov/create/pdfs/) e o [Web Accessibility Guide da Nova Zelândia](https://govtnz.github.io/web-a11y-guidance/wct/pdf-and-office-documents/publishing-pdf-and-office-documents.html) ainda especificam que haja preferência por HTML em detrimento do PDF.
+No entanto, o fato é que hoje o PDF é um padrão aberto e com suporte à acessibilidade, o que levanta um ponto em relação à defasagem do eMAG. Pode até ser discutível se a acessibilidade de documentos HTML e ODF é mais fácil de ser garantida. Alguns *sites* governamentais, como o [*Government Digital Service* do Reino Unido](https://www.gov.uk/guidance/publishing-accessible-documents), o [*Section 508* dos EUA](https://www.section508.gov/create/pdfs/) e o [*Web Accessibility Guide* da Nova Zelândia](https://govtnz.github.io/web-a11y-guidance/wct/pdf-and-office-documents/publishing-pdf-and-office-documents.html) ainda especificam que haja preferência por HTML em detrimento do PDF.
 
-Ainda assim, há exemplos de publicações de documentos em PDF do GOV.BR que não possuem alternativa em HTML ou ODF (por exemplo, alguns [editais do CPNU](https://www.gov.br/gestao/pt-br/concursonacional/editais)) e fica difícil dizer se essa recomendação deixou de ser adotada oficialmente ou se esses são de fato erros de acessibilidade. O grande cerne da questão portanto se torna: disponibilizar um documento somente no formato PDF, porém garantindo a sua acessibilidade, seria suficiente para cumprir essa recomendação? A sugestão de formatos alternativos é uma necessidade na visão do eMAG ou apenas uma padronização?
+Ainda assim, há exemplos de publicações de documentos em PDF do GOV.BR que não possuem alternativa em HTML ou ODF (por exemplo, alguns [editais do CPNU](https://www.gov.br/gestao/pt-br/concursonacional/editais)) e fica difícil dizer se essa recomendação deixou de ser adotada oficialmente ou se esses são de fato erros de acessibilidade. O grande cerne da questão, portanto, se torna: disponibilizar um documento somente no formato PDF, porém garantindo a sua acessibilidade, seria suficiente para cumprir essa recomendação? A sugestão de formatos alternativos é uma necessidade na visão do eMAG ou apenas uma padronização?
 
 É impossível ter certeza na resposta desses questionamentos sem que isso seja clarificado diretamente no eMAG ou pelos seus autores. Dito isso, foi considerado que, pelo fato de hoje o PDF ser um padrão aberto e com suporte à acessibilidade, ele pode ser suficiente desde que o documento seja de fato acessível, ainda que o formato HTML seja preferível.
 
 Portanto:
-- Foi reconhecida na descrição do item no checklist a possibilidade do formato PDF ser utilizado de maneira suficiente, desde que a acessibilidade do documento seja garantida. Ainda assim, ressaltou-se que a preferência ainda deve ser sobretudo para o formato HTML.
-- Uma nova referência às [Técnicas do WCAG para tornar documentos em PDF acessíveis](https://www.w3.org/WAI/WCAG22/Techniques/#pdf)
+
+- Foi reconhecida na descrição do item no *checklist* a possibilidade de o formato PDF ser utilizado de maneira suficiente, desde que a acessibilidade do documento seja garantida. Ainda assim, ressaltou-se que a preferência ainda deve ser sobretudo para o formato HTML.
+
+- Uma nova referência às [Técnicas do WCAG para tornar documentos em PDF acessíveis](https://www.w3.org/WAI/WCAG22/Techniques/#pdf).
 
 ----------------------------------------------------------------------------
 
@@ -589,27 +591,27 @@ Portanto:
 
 O princípio central de separar, nas tabelas, o cabeçalho dos dados utilizando os elementos `<th>` e `<td>` e de associar programaticamente cabeçalhos e células de dados, especialmente em tabelas complexas, continua válido e essencial no contexto de acessibilidade atual. No entanto, há pontos de defasagem muito significativos espalhados pelo texto do eMAG e pelos exemplos fornecidos.
 
-Em primeiro lugar, a orientação de se utilizar `<tfoot>` antes de `<tbody>`, característica do HTML4, caiu por terra. Não só isso, mas no HTML5, há [evidências que apontam que o emprego dessa prática atualmente, na verdade, é prejudicial em termos de acessibilidade](https://github.com/whatwg/html/commit/94d55af9cda601ce675d15f6a0e52c9bb9c6afa9), sobretudo por potencialmente bagunçar a ordem dos objetos de acessibilidade e do foco do teclado. O [HTML Living Standard ao tratar do elemento `<table>`](https://html.spec.whatwg.org/multipage/tables.html#the-table-element), inclusive, cita o `<tfoot>` na ordem dos conteúdos filhos de `<table>` como o último elemento. Como essa orientação pode gerar problemas de acessibilidade junto a uma falsa sensação de conformidade, a defasagem é classificada como crítica. 
+Em primeiro lugar, a orientação de se utilizar `<tfoot>` antes de `<tbody>`, característica do HTML4, caiu por terra. Não só isso, mas no HTML5, há [evidências que apontam que o emprego dessa prática atualmente, na verdade, é prejudicial em termos de acessibilidade](https://github.com/whatwg/html/commit/94d55af9cda601ce675d15f6a0e52c9bb9c6afa9), sobretudo por potencialmente bagunçar a ordem dos objetos de acessibilidade e do foco do teclado. O [HTML Living Standard ao tratar do elemento `<table>`](https://html.spec.whatwg.org/multipage/tables.html#the-table-element), inclusive, cita o `<tfoot>` na ordem dos conteúdos filhos de `<table>` como o último elemento. Como essa orientação pode gerar problemas de acessibilidade junto a uma falsa sensação de conformidade, a defasagem é classificada como crítica.
 
-Em segundo lugar, os exemplos dados pelo eMAG apresentam uma série de erros estruturais na especificação dos códigos. Em primeiro lugar `axis` utilizado no elemento `<td>` no último exemplo hoje está obsoleto ([HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#attr-tdth-axis) e [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/th#axis)), sendo recomendado o uso do atributo `scope` no elemento `<th>` adequado ao invés.
+Em segundo lugar, os exemplos dados pelo eMAG apresentam uma série de erros estruturais na especificação dos códigos. Primeiramente, o atributo `axis` utilizado no elemento `<td>` no último exemplo hoje está obsoleto ([HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#attr-tdth-axis) e [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/th#axis)), sendo recomendado o uso do atributo `scope` no elemento `<th>` adequado em vez disso.
 
-Além disso, no exemplo 3, o uso do atributo `scope` em elementos `<td>` também é considerado obsoleto ([HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#attr-td-scope) e [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/td#scope). Atualmente, esse atributo é estritamente restrito ao elemento `<th>`. Quando uma célula atua como cabeçalho para outras (como parece ser a intenção de "Maçã" e "Banana" no exemplo), ela deveria ser marcada semanticamente como `<th>`, vide a própria recomendação do eMAG.
+Além disso, no exemplo 3, o uso do atributo `scope` em elementos `<td>` também é considerado obsoleto ([HTML Living Standard](https://html.spec.whatwg.org/multipage/obsolete.html#attr-td-scope) e [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/td#scope)). Atualmente, esse atributo é estritamente restrito ao elemento `<th>`. Quando uma célula atua como cabeçalho para outras (como parece ser a intenção de "Maçã" e "Banana" no exemplo), ela deveria ser marcada semanticamente como `<th>`, vide a própria recomendação do eMAG.
 
-Há ainda o uso inadequado do atributo `summary` em `<table>`, que também é considerado obsoleto, algo já discutido no item "Em tabelas, utilizar títulos e resumos de forma apropriada" anterior.
+Há ainda o uso inadequado do atributo `summary` em `<table>`, que também é considerado obsoleto, algo já discutido no item [3.9 "Em tabelas, utilizar títulos e resumos de forma apropriada"](#39-em-tabelas-utilizar-títulos-e-resumos-de-forma-apropriada).
 
 Com isso, a defasagem da recomendação do eMAG foi classificada como crítica.
 
 Portanto:
 
-- A essência da recomendação de separar, nas tabelas, o cabeçalho dos dados utilizando os elementos `<th>` e `<td>` e de associar programaticamente cabeçalhos e células de dados foi mantida na descrição desse item. Além disso, a orientação de separação subdivisão da tabela em `<thead>`, `<tbody>` e `<tfoot>` também foi mantida.
+- A essência da recomendação de separar, nas tabelas, o cabeçalho dos dados utilizando os elementos `<th>` e `<td>` e de associar programaticamente cabeçalhos e células de dados foi mantida na descrição desse item. Além disso, a orientação de separação e subdivisão da tabela em `<thead>`, `<tbody>` e `<tfoot>` também foi mantida.
 
--  A orientação de se implementar `<tfoot>` antes de `<tbody>` foi removida.
+- A orientação de se implementar `<tfoot>` antes de `<tbody>` foi removida.
 
 - Uma descrição mais adequada sobre o atributo `scope` foi elaborada. São especificados na descrição todos os valores possíveis para `scope`, além de indicar que se trata de um atributo do elemento `<th>`.
 
-- Uma distinção mais clara sobre os casos de uso das estratégias com `scope` e `headers` foi acrescentada. Enquanto o `scope` é opcional para tabelas simples, tabelas complexas exigem que uma das estratégias citadas sejam abordadas. No caso específico de algumas tabelas muito complexas, pode ser que somente a estratégia do `headers` consiga garantir acessibilidade adequada.
+- Uma distinção mais clara sobre os casos de uso das estratégias com `scope` e `headers` foi acrescentada. Enquanto o `scope` é opcional para tabelas simples, tabelas complexas exigem que uma das estratégias citadas seja abordada. No caso específico de algumas tabelas muito complexas, pode ser que somente a estratégia do `headers` consiga garantir acessibilidade adequada.
 
-- O exemplo 1, que posiciona `<tfoot>` em cima de `<tbody>` foi redefinido como uma má-prática.
+- O exemplo 1, que posiciona `<tfoot>` em cima de `<tbody>`, foi redefinido como uma má prática.
 
 - Os exemplos 2 a 4 originais do eMAG foram removidos, por serem confusos ou possuírem vários pontos de defasagem.
 
@@ -623,7 +625,7 @@ Portanto:
 
 **Defasagem do eMAG: nível nulo**
 
-A recomendação continua alinhada aos padrões de acessibilidade vigentes, e não possui defasagem técnica ou conceitual. O único ponto de atenção dela é que pode ser subjetivo avaliar a clareza e a compreensibilidade de um texto, mas o eMAG sugere algumas técnicas que podem auxiliar nisso. Pode ser discutível também até que ponto é possível clarificar o conteúdo de um texto quando ele pode abordar um assunto inerentemente complexo e de difícil entendimento, mesmo com os mecanismos de explicações suplementares. Entretanto, em casos de sistemas de informação para a população (por exemplo, assuntos de saúde ou justiça), os textos podem passar a informação sem o necessariamente usar o jargão técnico.
+A recomendação continua alinhada aos padrões de acessibilidade vigentes, e não possui defasagem técnica ou conceitual. O único ponto de atenção dela é que pode ser subjetivo avaliar a clareza e a compreensibilidade de um texto, mas o eMAG sugere algumas técnicas que podem auxiliar nisso. Pode ser discutível também até que ponto é possível clarificar o conteúdo de um texto quando ele pode abordar um assunto inerentemente complexo e de difícil entendimento, mesmo com os mecanismos de explicações suplementares. Entretanto, em casos de sistemas de informação para a população (por exemplo, assuntos de saúde ou justiça), os textos podem passar a informação sem necessariamente usar o jargão técnico.
 
 Além disso, o WCAG trata essa orientação como nível AAA ([Critério de sucesso 3.1.5: Nível de Leitura](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#reading-level)), ou seja, ela não é obrigatória para conformidade básica. Por outro lado, o eMAG descartou essa classificação deliberadamente na sua versão 3.0, como explicado no próprio documento, optando por estabelecer um nível igualitário de prioridade para suas recomendações. Logo, a defasagem é nula.
 
@@ -637,19 +639,19 @@ A princípio, portanto:
 
 **Defasagem do eMAG: nível moderado**
 
-A a ideia central da recomendação em si é adequada e permanece atual em termos de acessibilidade. O problema está quando o eMAG sugere a utilização do elemento `<abbr title="...">` para explicar uma abreviação como suficiente para a conformidade da recomendação. 
+A ideia central da recomendação em si é adequada e permanece atual em termos de acessibilidade. O problema está quando o eMAG sugere a utilização do elemento `<abbr title="...">` para explicar uma abreviação como suficiente para a conformidade da recomendação.
 
-Tanto o [WCAG na técnica H28](https://www.w3.org/WAI/WCAG21/Techniques/html/H28) quanto o [HTML Living Standard](https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute) alertam que contar com o uso do atributo `title` no elemento `<abbr>` sozinho para a explicação do termo é desencorajado, pois muitos agentes de usuário não expõem esse atributo de maneira acessível, requirindo a utilização de um mouse para fazer o valor do `title` aparecer como um tooltip, excluindo usuários que usam somente o teclado ou mesmo dispositivos touchscreen. Apesar de ser recomendado utilizar o `<abbr>` para abreviações, pois é justamente esse seu papel semântico, depender somente do atributo `title` da explicação é um potencial problema de acessibilidade, mesmo sendo recomendado pelo eMAG. 
+Tanto o [WCAG na técnica H28](https://www.w3.org/WAI/WCAG21/Techniques/html/H28) quanto o [HTML Living Standard](https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute) alertam que contar com o uso do atributo `title` no elemento `<abbr>` sozinho para a explicação do termo é desencorajado, pois muitos agentes de usuário não expõem esse atributo de maneira acessível, requerendo a utilização de um *mouse* para fazer o valor do `title` aparecer como um *tooltip*. Isso acaba excluindo usuários que usam somente o teclado ou mesmo dispositivos *touchscreen*. Apesar de ser recomendado utilizar o `<abbr>` para abreviações, pois é justamente esse seu papel semântico, depender somente do atributo `title` da explicação é um potencial problema de acessibilidade, mesmo sendo recomendado pelo eMAG.
 
-Utilizar somente esse atributo pode trazer uma falsa sensação de conformidade com diretrizes de acessibilidade mais atuais, pois ela, em tese, cumpre a recomendação do eMAG. Entretanto, o nível de defasagem é classificado como moderado, uma vez que o eMAG não obriga o uso desse atributo e fornece algumas outras maneiras adequadas em termos de acessibilidade para cumprir a recomendação. 
+Utilizar somente esse atributo pode trazer uma falsa sensação de conformidade com diretrizes de acessibilidade mais atuais, pois ela, em tese, cumpre a recomendação do eMAG. Entretanto, o nível de defasagem é classificado como moderado, uma vez que o eMAG não obriga o uso desse atributo e fornece algumas outras maneiras adequadas em termos de acessibilidade para cumprir a recomendação.
 
 Portanto:
 
 - A descrição do item foi alterada para excluir o uso do `<abbr title="">` como mecanismo suficiente para prover a explicação de um termo. Um critério de verificação alertando para isso também foi adicionado.
 
-- Os exemplos do eMAG foram reaproveitados, mas o exemplo utilizando `<abbr title="">`  foi tratado como uma má prática.
+- Os exemplos do eMAG foram reaproveitados, mas o exemplo utilizando `<abbr title="">` foi tratado como uma má prática.
 
-- O exemplo com explicação de texto inline foi levemente aprimorado semanticamente para envolver a sigla "ONU" num elemento `<abbr>` sem `title`, para não ficar redundante. É razoável usar `<abbr>` sem `title`, como explicitado na [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/abbr).
+- O exemplo com explicação de texto *inline* foi levemente aprimorado semanticamente para envolver a sigla "ONU" num elemento `<abbr>` sem `title`, para não ficar redundante. É razoável usar `<abbr>` sem `title`, como explicitado na [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/abbr).
 
 ----------------------------------------------------------------------------
 

@@ -444,7 +444,7 @@ A princípio, portanto:
 
 - Um novo critério de verificação foi adicionado para que se atente às mudanças dinâmicas de título ao navegar pelo sistema, sobretudo em SPAs. Uma chamada de atenção para isso também foi incluída no exemplo.
 
-- Uma nova referência à [Técnica WCAG H25: Fornecer um título à página usando o elemento <title> (em inglês)](https://www.w3.org/WAI/WCAG22/Techniques/html/H25) foi adicionada.
+- Uma nova referência à [Técnica WCAG H25: Fornecer um título à página usando o elemento `<title>` (em inglês)](https://www.w3.org/WAI/WCAG22/Techniques/html/H25) foi adicionada.
 
 ----------------------------------------------------------------------------
 

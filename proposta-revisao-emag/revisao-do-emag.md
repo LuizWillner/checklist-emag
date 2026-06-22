@@ -659,8 +659,6 @@ Portanto:
 
 #### 4.1 Oferecer contraste mínimo entre plano de fundo e primeiro plano
 
-#### 4.1 Oferecer contraste mínimo entre plano de fundo e primeiro plano
-
 **Defasagem do eMAG: nível leve**
 
 A recomendação permanece tecnicamente válida e alinhada ao critério 1.4.3 do WCAG. Contudo, o eMAG adota uma abordagem que parece ser deliberadamente simplificada ao exigir um contraste mínimo de 4,5:1 para todos os casos e ao desaconselhar o uso de imagens de fundo atrás do texto.
@@ -687,11 +685,11 @@ Portanto:
 
 **Defasagem do eMAG: nível nulo**
 
-A recomendação permanece muito relevante no contexto de acessibilidade atual, e não apresenta pontos de defasagem notáveis. Os exemplos dados são simples, mas a diferenciação dos elementos via indicação por texto feita no exemplo não é a única maneira sugerida pelo eMAG. Trata-se de um exemplo ilustrativo.
+A recomendação permanece muito relevante no contexto de acessibilidade atual e não apresenta pontos de defasagem notáveis. Os exemplos dados são simples, mas a diferenciação dos elementos via indicação por texto feita no exemplo não é a única maneira sugerida pelo eMAG. Trata-se de um exemplo ilustrativo.
 
 Portanto:
 
-- Manteve-se a essência do texto e dos exemplos originais, com pequenas mudanças na descrição da recomendação para deixá-la mais enxuta nesse checklist, e no exemplo para deixá-lo mais didático.
+- Manteve-se a essência do texto e dos exemplos originais, com pequenas mudanças na descrição da recomendação para deixá-la mais enxuta neste *checklist*, e no exemplo para deixá-lo mais didático.
 
 ----------------------------------------------------------------------------
 
@@ -701,31 +699,31 @@ Portanto:
 
 No eMAG, essa recomendação referencia o [Critério de sucesso 1.4.4: Redimensionar Texto do WCAG 2.0](https://www.w3.org/TR/WCAG20/#visual-audio-contrast-scale). Esse critério do WCAG trata particularmente do redimensionamento de **texto**, sem perda de funcionalidade e conteúdo, em até 200%. O eMAG, por sua vez, extrapola o redimensionamento não só para o texto, mas para os elementos da página em geral.
 
-A questão é que, na época de redação do eMAG, o WCAG 2.0 parecia só abordar o redimensionamento de texto, de maneira mais específica. No entanto, com o lançamento da versão WCAG 2.1, um novo [Critério de Sucesso 1.4.10 Realinhar](https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/#reflow) foi incluído como forma de complementar mais a discussão em torno do redimensionamento abordando elementos de maneira geral da página (similar ao que o eMAG discutia). O ponto é que, de acordo com esse critério, o limite superior do zoom para manutenção de informação, funcionalidade e sem rolagem horizontal (esse último com algumas exceções) é de 400%, o dobro do que o eMAG estipulava.
+A questão é que, na época da redação do eMAG, o WCAG 2.0 parecia só abordar o redimensionamento de texto, de maneira mais específica. No entanto, com o lançamento da versão WCAG 2.1, um novo [Critério de Sucesso 1.4.10 Realinhar](https://www.w3c.br/traducoes/wcag/wcag21-pt-BR/#reflow) foi incluído como forma de complementar mais a discussão em torno do redimensionamento, abordando os elementos da página de maneira geral (similar ao que o eMAG discutia). O ponto é que, de acordo com esse critério, o limite superior do *zoom* para manutenção de informação e funcionalidade sem rolagem horizontal (esta última com algumas exceções) é de 400%, o dobro do que o eMAG estipulava.
 
-O fato estranho é que, por mais que os critérios 1.4.4 e o 1.4.10 tenham abordagens um pouco diferentes, o critério 1.4.10 parece uma generalização mais ampla do 1.4.4, de forma que o cumprimento 1.4.10 parece garantir (pelo menos na maioria das vezes) o cumprimento do 1.4.4. Em outras palavras, garantir a funcionalidade e a manutenção de informação da página em zoom de 400% normalmente já garante a compreensibilidade do texto dela em zoom de 200% de maneira natural.
+O fato estranho é que, por mais que os critérios 1.4.4 e 1.4.10 tenham abordagens um pouco diferentes, o critério 1.4.10 parece uma generalização mais ampla do 1.4.4, de forma que o cumprimento do 1.4.10 parece garantir (pelo menos na maioria das vezes) o cumprimento do 1.4.4. Em outras palavras, garantir a funcionalidade e a manutenção de informação da página em *zoom* de 400% normalmente já garante a compreensibilidade do texto dela em *zoom* de 200% de maneira natural.
 
 Além disso, o critério 1.4.10 estabelece algumas exceções para elementos em que pode ocorrer o aparecimento da barra horizontal, definindo como válido para:
 
-> "partes do conteúdo que requerem layout bidimensional para uso ou significado" 
+> "partes do conteúdo que requerem layout bidimensional para uso ou significado"
 
 Por exemplo:
 
 > "imagens, mapas, diagramas, vídeos, jogos, apresentações, tabelas de dados e interfaces em que seja necessário manter barras de ferramentas à vista ao se manipular conteúdo".
 
-O cumprimento à recomendação do eMAG hoje, na forma que está, pode garantir a aderência ao critério 1.4.4 do WCAG e até contribuir para fornecer boa acessibilidade para a página, mas pode falhar no critério 1.4.10. Por isso, a defasagem foi classificada como de nível moderado.
+O cumprimento da recomendação do eMAG hoje, na forma que está, pode garantir a aderência ao critério 1.4.4 do WCAG e até contribuir para fornecer boa acessibilidade para a página, mas pode falhar no critério 1.4.10. Por isso, a defasagem foi classificada como de nível moderado.
 
 Portanto:
 
 - O limite superior para manutenção da compreensibilidade e funcionalidade da página foi aumentado de 200% para 400%, vide o novo critério 1.4.10 do WCAG 2.1. No entanto, o limite original de 200% estabelecido pelo eMAG ainda é citado no texto, para fins de rastreabilidade e entendimento.
 
-- Exceções para a validez do aparecimento da barra horizontal ao fazer o zoom foram estabelecidas, vide o novo critério 1.4.10 do WCAG 2.1.
+- Exceções para a validade do aparecimento da barra horizontal ao fazer o *zoom* foram estabelecidas, vide o novo critério 1.4.10 do WCAG 2.1.
 
-- Além do emprego de diferentes folhas de estilo, o uso de *media queries* do CSS foi citado como possível abordagem para garantir a responsividade da página em diferentes resoluções de tela ou zooms.
+- Além do emprego de diferentes folhas de estilo, o uso de *media queries* do CSS foi citado como possível abordagem para garantir a responsividade da página em diferentes resoluções de tela ou *zooms*.
 
-- O primeiro exemplo com imagens de um site em redimensionamento de 200% foi descartado, visto que o novo limite é 400%.
+- O primeiro exemplo com imagens de um site em redimensionamento de 200% foi descartado, visto que o novo limite é de 400%.
 
-- O outro exemplo com imagem de layout responsivo foi mantido.
+- O outro exemplo com imagem de *layout* responsivo foi mantido.
 
 - Uma nova referência ao critério de sucesso 1.4.10 foi adicionada.
 
@@ -735,17 +733,17 @@ Portanto:
 
 **Defasagem do eMAG: nível leve**
 
-A ideia central da recomendação de que elementos devem ter foco visível continua atual e relevante em termos de acessibilidade. No entanto, a recomendação apresenta alguns pontos de defasagem leves que valem a pena serem notados.
+A ideia central da recomendação de que elementos devem ter foco visível continua atual e relevante em termos de acessibilidade. No entanto, a recomendação apresenta alguns pontos de defasagem leves que valem a pena ser notados.
 
-Em primeiro lugar, o exemplo do eMAG ilustra a estilização da borda dos elementos utilizando a propriedade `border`. Atualmente, entretanto, a boa prática dita que a estilização da borda ao focar em um elemento deve ser feita utilizando a propriedade `outline`. Isso porque `outline`, ao contrário de `border`, não faz parte do cálculo do espaço do elemento. Por isso, quando `border` é utilizado com uma certa espessura, o tamanho total do elemento aumenta em e isso pode empurrar os elementos ao redor, causando o efeito desagradável de *layout shift* (veja mais em [Outline - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/outline#description) e [Border - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border#borders_vs._outlines). Esse é o ponto principal que leva a classificar defasagem como leve.
+Em primeiro lugar, o exemplo do eMAG ilustra a estilização da borda dos elementos utilizando a propriedade `border`. Atualmente, entretanto, a boa prática dita que a estilização da borda ao focar em um elemento deve ser feita utilizando a propriedade `outline`. Isso porque `outline`, ao contrário de `border`, não faz parte do cálculo do espaço do elemento. Por isso, quando `border` é utilizado com uma certa espessura, o tamanho total do elemento aumenta, e isso pode empurrar os elementos ao redor, causando o efeito desagradável de *layout shift* (veja mais em [Outline - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/outline#description) e [Border - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border#borders_vs._outlines)). Esse é o ponto principal que leva a classificar a defasagem como leve.
 
-Além disso, há ainda um outro pequeno ajuste no exemplo que poderia ser feito. Atualmente, em algumas situações é costumeiro desenvolvedores optarem pela pseudo-classe do CSS `:focus-visible` ao invés da classe `:focus` sugerida. Isso porque, ao utilizar `:focus` em um botão configurando a propriedade `outline`, por exemplo, o destaque para a borda não é apenas aplicado ao botão durante a navegação pelo teclado, mas também brevemente quando ele é pressionado. A pseudo-classe `:focus-visible`, por outro lado, garantiria que a borda só seria destacada pela navegação do teclado, a omitindo quando o botão fosse clicado.
+Além disso, há ainda um outro pequeno ajuste no exemplo que poderia ser feito. Atualmente, em algumas situações, é costumeiro que os desenvolvedores optem pela pseudoclasse do CSS `:focus-visible` em vez da classe `:focus` sugerida. Isso ocorre porque, ao utilizar `:focus` em um botão configurando a propriedade `outline`, por exemplo, o destaque para a borda não é apenas aplicado ao botão durante a navegação pelo teclado, mas também brevemente quando ele é pressionado. A pseudoclasse `:focus-visible`, por outro lado, garantiria que a borda só seria destacada pela navegação do teclado, omitindo-a quando o botão fosse clicado.
 
 Portanto:
 
-- A propriedade `border` do exemplo foi substituída por `outline`
+- A propriedade `border` do exemplo foi substituída por `outline`.
 
-- A pseudo-classe `:focus` foi substituída por `:focus-visible`
+- A pseudoclasse `:focus` foi substituída por `:focus-visible`.
 
 - Um exemplo de má prática que retira o foco visual com `outline: none` foi adicionado, e uma explicação histórica contextualizando o porquê de alguns desenvolvedores tomarem essa decisão inacessível foi explicitada.
 
